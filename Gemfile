@@ -40,6 +40,11 @@ group :development, :test do
   gem "rspec-rails", "~> 2.13.2"
 end
 
+group :development do
+  gem 'guard-livereload'
+  gem 'growl'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
