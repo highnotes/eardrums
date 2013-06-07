@@ -41,8 +41,14 @@ group :development, :test do
 end
 
 group :development do
+  # Guard and LiveReload - Install LiveReload Chrome Extension as well
   gem 'guard-livereload'
   gem 'growl'
+
+  # Better Errors and Rails Panel - Install RailsPanel Chrome Extension as well
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end
 
 # Use ActiveModel has_secure_password
