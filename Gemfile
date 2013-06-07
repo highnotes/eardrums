@@ -38,6 +38,7 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 2.13.2"
+  gem 'debugger'
 end
 
 group :development do
@@ -63,6 +64,3 @@ gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

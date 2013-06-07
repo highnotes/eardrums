@@ -54,7 +54,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    columnize (0.3.6)
     debug_inspector (0.0.2)
+    debugger (1.6.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.2)
     diff-lcs (1.2.4)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
@@ -188,6 +195,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
+  debugger
   growl
   guard-livereload
   jbuilder (~> 1.0.1)
