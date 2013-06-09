@@ -21,6 +21,45 @@ header {
   margin: 10px;
 }
 
-body {
-  background: rgb(220, 220, 220);
+.account-buttons {
+  float: left;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+#sign-in-block {
+  display: none;
+}
+
+.btn-group {
+  margin-top: 5px;
+}
+
+.btn {
+  color: #fff;
+  padding: 5px;
+  background-color: #82cb33;
+}
+
+.btn:first-child {
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn:last-child {
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#coming-soon {
+  color: rgb(138,33, 134);
+  font-size: 48px;
 }
