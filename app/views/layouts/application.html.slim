@@ -23,19 +23,15 @@ head
   = csrf_meta_tags
 
 body
-  header
-    .row
-      .large-4.columns.text-center
-        p.logo
-          = image_tag("Eardrums_logo.png")
-      .large-5.columns
-      .large-3.columns
-        #sign-in-block.account-buttons
-          .btn-group 
-            a.btn href="#" Login
-            a.btn href="#" Signup
-    
+  = render 'layouts/header'
+  /= render 'layouts/subheader'
+  
   .container
+    p.notice = notice
+    p.alert = alert
+    
     == yield
+  
+  = render 'layouts/footer'
   
   = javascript_include_tag "application"

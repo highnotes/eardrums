@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "zurb-foundation", "~> 4.2.1"
 
 # Use slim for templating engine
-gem "slim", "~> 2.0.0"
+gem "slim-rails", "~> 2.0.1"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -57,6 +57,9 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Authentication
+gem "devise", "~> 3.0.0.rc"
 
 # Use puma as the app server
 gem 'puma'

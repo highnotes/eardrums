@@ -1,0 +1,19 @@
+= content_for :title do 
+  | Sign in
+
+.row
+  .large-4.columns
+    h2 Sign in
+
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      div = f.email_field :email, :autofocus => true, :placeholder => 'Username or Email'
+      div = f.password_field :password, :placeholder => 'Password'
+
+      - if devise_mapping.rememberable?
+        div
+          .row
+            .large-5.columns
+              = f.check_box :remember_me
+              = f.label :remember_me, :class => 'right'
+
+        div = f.submit "Sign in"

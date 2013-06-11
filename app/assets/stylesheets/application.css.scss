@@ -13,12 +13,14 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Overlock+SC|Port+Lligat+Sans|Monofett);
+
 header {
-  background: rgb(138,33, 134);
+  background: rgb(138, 33, 134);
 }
 
-.logo {
-  margin: 10px;
+footer {
+  background: #48711C;
 }
 
 .account-buttons {
@@ -27,18 +29,20 @@ header {
   margin-left: 30px;
 }
 
-#sign-in-block {
-  display: none;
+.btn-group {
+  margin-top: 30px;  
 }
 
-.btn-group {
-  margin-top: 5px;
+%button {
+  color: darken(#82cb33, 20%);
+  padding: 2px 10px 2px 10px;
+  background-color: lighten(#95CB5B,5%);
+  border: 10px;
+  border-color: darken(#F07241, 25%);
 }
 
 .btn {
-  color: #fff;
-  padding: 5px;
-  background-color: #82cb33;
+  @extend %button;
 }
 
 .btn:first-child {
@@ -59,7 +63,52 @@ header {
   border-bottom-right-radius: 5px;
 }
 
-#coming-soon {
+.banner-highlight {
+  font-family: 'Monofett';
   color: rgb(138,33, 134);
-  font-size: 48px;
+  font-size: 32px;
+}
+
+.footer-nav{
+  color: darken(#82cb33, 40%);
+  float:right;
+  position:relative;
+  left:-50%;
+  text-align:left;
+  padding: 10px;
+  ul {
+    list-style:none; 
+    position:relative;
+    left:50%;
+  }
+  li {
+    float:left;
+    position:relative;
+    padding-left: 15px;
+    padding-right: 15px;
+  }/* ie needs position:relative here*/
+}
+
+.links {
+  margin: 20px;
+}
+
+#new_user input[type="submit"] {
+  @extend %button;
+  margin-right: 10px;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.rounded {
+  border-radius: 4px;
 }

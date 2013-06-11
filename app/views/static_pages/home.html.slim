@@ -1,8 +1,10 @@
 = content_for :title do 
-  = Eardrums
+ | Eardrums
 
 .row
-  .large-12.columns.text-center
-    = image_tag("Banner.png")
-#coming-soon.row
-  .large-12.columns.text-center Coming Soon!
+  .large-6.columns.text-center
+    = image_tag("Banner.png", :class => "banner")
+    .banner-highlight Let your music out!
+  .large-6.columns.text-center
+    .flex-video
+      iframe scrolling="no" allowTransparency="true" frameborder="0" width="400" height="258" src="http://goanimate.com/player/embed/0rB5nGN3tOro"

@@ -19,5 +19,9 @@ module Eardrums
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    # On config/application.rb forcing your application to not access the DB
+    # or load models when precompiling your assets. - From Devise
+    config.assets.initialize_on_precompile = false
   end
 end

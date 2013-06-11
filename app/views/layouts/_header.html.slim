@@ -1,0 +1,17 @@
+header
+  .row
+    .large-4.columns
+      p.logo
+        = link_to image_tag("Eardrums_logo.png"), '/'
+    .large-5.columns
+    .large-3.columns
+      #sign-in-block.account-buttons
+        .btn-group
+          - if user_signed_in?
+            Logged in as
+            strong = current_user.email
+            = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
+            = link_to 'Logout', destroy_user_session_path, method: :delete, :class => "btn"
+          - else
+            = link_to "Sign up", new_user_registration_path, :class => "btn"
+            = link_to "Login", new_user_session_path, :class => "btn"
