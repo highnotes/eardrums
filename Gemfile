@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0.rc2'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -45,14 +45,23 @@ group :development, :test do
 end
 
 group :development do
+  #Guard Goodies
+  gem "guard-bundler", "~> 1.0.0"
+  gem "guard-rspec", "~> 3.0.2"
+  
+  #Spork and related guard
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
+  
   # Guard and LiveReload - Install LiveReload Chrome Extension as well
-  gem 'guard-livereload'
-  gem 'growl'
+  gem "guard-livereload", "~> 1.4.0"
+  gem "growl", "~> 1.0.3"
 
   # Better Errors and Rails Panel - Install RailsPanel Chrome Extension as well
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
+  gem "better_errors", "~> 0.9.0"
+  gem "binding_of_caller", "~> 0.7.2"
+  gem "meta_request", "~> 0.2.6"
 end
 
 # Use ActiveModel has_secure_password
