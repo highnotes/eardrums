@@ -23,5 +23,10 @@ module Eardrums
     # On config/application.rb forcing your application to not access the DB
     # or load models when precompiling your assets. - From Devise
     config.assets.initialize_on_precompile = false
+    
+    # Overriding field_with_errors class because Foundation styles apply to "errors" class by default
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+      "<div class=\"field_with_errors control-group error\">#{html_tag}</div>".html_safe
+    }
   end
 end

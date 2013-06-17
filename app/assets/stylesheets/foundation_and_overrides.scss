@@ -278,17 +278,17 @@ $header-font-color: rgb(138,33, 134);
 
 // Fieldset border and spacing.
 
-// $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
-// $fieldset-border-color: #ddd;
+$fieldset-border-style: solid;
+$fieldset-border-width: 1px;
+$fieldset-border-color: #BFBFBF;
 // $fieldset-padding: emCalc(20px);
 // $fieldset-margin: emCalc(18px) 0;
 
 // Legends
 
-// $legend-bg: #fff;
-// $legend-font-weight: bold;
-// $legend-padding: 0 emCalc(3px);
+$legend-bg: rgb(232, 232, 232);
+$legend-font-weight: bold;
+$legend-padding: 0 emCalc(1px);
 
 // Prefix and postfix input elements
 
