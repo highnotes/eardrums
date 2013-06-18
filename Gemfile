@@ -42,6 +42,11 @@ end
 group :development, :test do
   gem "rspec-rails", "~> 2.13.2"
   
+  # Capybara and Poltergeist
+  gem "capybara", "~> 2.1.0"
+  gem "poltergeist", "~> 1.3.0"
+  gem "launchy", "~> 2.3.0"
+  
   #Factory Girl instead of Fixtures
   gem "factory_girl_rails", "~> 4.0"
   
