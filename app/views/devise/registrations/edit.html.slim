@@ -9,6 +9,9 @@
       = devise_error_messages!
 
       = f.email_field :email, :autofocus => true, :placeholder => 'myself@example.com'
+      
+      = f.text_field :first_name, :placeholder => 'First Name'
+      = f.text_field :last_name, :placeholder => 'Last Name'
 
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         Currently waiting confirmation for: #{resource.unconfirmed_email}
@@ -18,7 +21,7 @@
 
         = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
 
-      = f.password_field :current_password, :placeholder => 'We need your current password to confirm changes'
+      = f.password_field :current_password, :placeholder => 'Your current password to confirm changes'
 
       span.btn-group
         = f.submit "Update", :class => "btn"
