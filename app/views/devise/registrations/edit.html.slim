@@ -17,7 +17,7 @@
         Currently waiting confirmation for: #{resource.unconfirmed_email}
 
       = field_set_tag 'Password', :class => 'rounded' do
-        = f.password_field :password, :autocomplete => "off", :placeholder => 'Password (leave blank if you don''t want to change)'
+        = f.password_field :password, :autocomplete => "off", :placeholder => "Password"
 
         = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
 
