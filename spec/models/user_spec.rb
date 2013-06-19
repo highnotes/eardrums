@@ -90,4 +90,11 @@ describe User do
       expect { @user.save }.to change{User.count}.by(1)
     end
   end
+  
+  context "update" do
+    it "should update email" do
+      @user.update_attributes(email: "jane.doe@gmail.com")
+      expect(@user.email).to eq("jane.doe@gmail.com")
+    end
+  end
 end
