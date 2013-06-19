@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe "Session" do
+  before :each do
+    user = FactoryGirl.create(:user)
+  end
+    
   it "should have the content 'Login'" do
-    pending
     visit '/users/sign_in'
     expect(page).to have_content 'Login'
   end
@@ -10,16 +13,14 @@ describe "Session" do
   it "should sign in user" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_email', with: 'subhash.bhushan@stratalabs.in'
-      fill_in 'user_password', with: 'Password123'
+      fill_in 'user_email', with: 'john.doe@example.com'
+      fill_in 'user_password', with: 'johndoe123'
     end
-    save_and_open_page
     click_button "Login"
     expect(page).to have_content 'Signed in successfully'
   end
   
   it "should not sign in user when password is not given" do
-    pending
     visit '/users/sign_in'
     within("#new_user") do
       fill_in 'user_email', with: 'subhash.bhushan@gmail.com'
