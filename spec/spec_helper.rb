@@ -53,8 +53,11 @@ require 'rspec/autorun'
 # For Capybara
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-
 Capybara.javascript_driver = :poltergeist
+
+# Code Coverage
+require 'coveralls'
+Coveralls.wear!
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

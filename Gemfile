@@ -82,6 +82,9 @@ gem "devise", "~> 3.0.0.rc"
 # Use puma as the app server
 gem 'puma'
 
+# Coverage
+gem 'coveralls', require: false
+
 group :production do
   # For Heroku
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
