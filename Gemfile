@@ -88,6 +88,9 @@ gem 'puma'
 # Coverage
 gem 'coveralls', require: false
 
+# New Relic
+gem "newrelic_rpm", "~> 3.6.4.122"
+
 group :production do
   # For Heroku
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
