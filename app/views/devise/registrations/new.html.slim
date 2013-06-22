@@ -10,12 +10,16 @@
 
       div
         = f.email_field :email, :autofocus => true, :placeholder => 'myself@example.com'
+      
+      - if f.object.password_required?
+        div
+          = f.password_field :password, :placeholder => 'Password'
 
-      div
-        = f.password_field :password, :placeholder => 'Password'
-
-      div
-        = f.password_field :password_confirmation, :placeholder => 'Retype Password'
+        div
+          = f.password_field :password_confirmation, :placeholder => 'Retype Password'
 
       div
         = f.submit "Sign up"
+    
+    | or Sign up with
+    = link_to(image_tag("twitter-bird-light.png", :alt => " Twitter", :width => 50, :height => 50, :title => "Click here to sign up with Twitter"), user_omniauth_authorize_path(:twitter))

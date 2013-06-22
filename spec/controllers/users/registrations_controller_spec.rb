@@ -24,8 +24,7 @@ describe Users::RegistrationsController do
       pending
       @user = subject.current_user
       patch :update, id: @user, user: {:email => "john.doe@example1.com"}
-      @user.reload
-      expect(@user.email).to eq("john.doe@example1.com")
+      expect(@user.reload.email).to eq("john.doe@example1.com")
     end
     
     it "should update names" do

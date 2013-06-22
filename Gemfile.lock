@@ -71,7 +71,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    colorize (0.5.8)
     columnize (0.3.6)
+    coveralls (0.6.7)
+      colorize
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      thor
     debug_inspector (0.0.2)
     debugger (1.6.0)
       columnize (>= 0.3.1)
@@ -122,6 +129,7 @@ GEM
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
+    hashie (2.0.5)
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.4)
@@ -152,6 +160,16 @@ GEM
     multi_json (1.7.7)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (0.0.17)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
     orm_adapter (0.4.0)
     pg (0.15.1)
     poltergeist (1.3.0)
@@ -191,6 +209,8 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -214,6 +234,10 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slim (2.0.0)
       temple (~> 0.6.5)
       tilt (~> 1.3, >= 1.3.3)
@@ -263,6 +287,7 @@ DEPENDENCIES
   capybara (~> 2.1.0)
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
+  coveralls
   debugger
   devise (~> 3.0.0.rc)
   factory_girl_rails (~> 4.0)
@@ -275,6 +300,7 @@ DEPENDENCIES
   jquery-rails
   launchy (~> 2.3.0)
   meta_request (~> 0.2.6)
+  omniauth-twitter (~> 0.0.17)
   pg
   poltergeist (~> 1.3.0)
   puma

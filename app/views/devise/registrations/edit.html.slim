@@ -20,8 +20,9 @@
         = f.password_field :password, :autocomplete => "off", :placeholder => "Password"
 
         = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
-
-      = f.password_field :current_password, :placeholder => 'Your current password to confirm changes'
+      
+      - if f.object.encrypted_password.present?
+        = f.password_field :current_password, :placeholder => 'Your current password to confirm changes'
 
       span.btn-group
         = f.submit "Update", :class => "btn"

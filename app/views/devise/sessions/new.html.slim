@@ -17,3 +17,6 @@
               = f.label :remember_me, :class => 'right'
 
         div = f.submit "Login"
+    
+    | or Sign in with
+    = link_to(image_tag("twitter-bird-light.png", :alt => " Twitter", :width => 50, :height => 50, :title => "Click here to sign up with Twitter"), user_omniauth_authorize_path(:twitter))
