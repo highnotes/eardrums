@@ -78,5 +78,7 @@ Eardrums::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.action_mailer.default_url_options = { :host => 'www.eardrums.in' }
+  config.action_mailer.default_url_options = { host: 'www.eardrums.in' }
+  config.action_mailer.delivery_method = :ses
+  config.action_mailer.default_options = { from: "Manager <itmanager@eardrums.in>" }
 end

@@ -42,6 +42,9 @@ gem "omniauth-google-oauth2", "~> 0.2.0"
 # Authentication
 gem "devise", "~> 3.0.0.rc"
 
+# Mailers
+gem "aws-ses", "~> 0.5.0"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
