@@ -6,15 +6,26 @@ header
     .large-1.columns
     .large-7.columns
       - if user_signed_in?
+        .row
+          .large-6.columns
+          .large-6.columns
+            | Connect other accounts:     
+            = link_to(image_tag("twitter-hand-drawn.png", :alt => " Twitter", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Twitter"), user_omniauth_authorize_path(:twitter))
+            = link_to(image_tag("facebook-hand-drawn.png", :alt => " Facebook", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Facebook"), user_omniauth_authorize_path(:facebook))
+            = link_to(image_tag("google-hand-drawn.png", :alt => "Google", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Google"), user_omniauth_authorize_path(:google_oauth2))
+      .row
         #sign-in-block
-          | Hello 
-          strong = current_user.full_name.empty? ? current_user.email : current_user.full_name
-          | !
-          span.btn-group
-            = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
-            = link_to 'Logout', destroy_user_session_path, method: :delete, :class => "btn"
-      - else
-        #sign-in-block
-          span.btn-group
-            = link_to "Sign up", new_user_registration_path, :class => "btn"
-            = link_to "Login", new_user_session_path, :class => "btn"
+          - if user_signed_in?
+            .large-7.columns
+              div#hellouser
+                | Hey 
+                strong = current_user.full_name.empty? ? current_user.email : current_user.full_name
+                | !
+            .large-5.columns
+              span.btn-group
+                = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
+                = link_to 'Logout', destroy_user_session_path, method: :delete, :class => "btn"
+          - else
+            span.btn-group
+              = link_to "Sign up", new_user_registration_path, :class => "btn"
+              = link_to "Login", new_user_session_path, :class => "btn"

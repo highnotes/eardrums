@@ -16,7 +16,7 @@
 @import url(http://fonts.googleapis.com/css?family=Port+Lligat+Sans|Monofett|Oswald|Poiret+One);
 @import "foundation";
 
-$footer-height: 100px;
+$footer-height: 75px;
 $border-radius: 5px;
 
 html, body {height: 100%;}
@@ -27,6 +27,16 @@ html, body {height: 100%;}
 
 header {
   background: rgb(138, 33, 134);
+  color: #fff;
+}
+
+.small-padding {
+  padding: 2px;
+}
+
+#hellouser {
+  margin-top: 7px;
+  text-align: right;
 }
 
 #footer {
@@ -55,8 +65,9 @@ body:before {
 }
 
 #sign-in-block {
-  margin-top: 80px;
+  margin-top: 50px;
   margin-left: 30px;
+  margin-bottom: 20px;
   color: #fff;
 }
 
@@ -119,7 +130,7 @@ body:before {
   float:right;
   position:relative;
   left:-50%;
-  text-align:left;
+  text-align:center;
   padding: 10px;
   ul {
     list-style:none; 
@@ -144,6 +155,10 @@ body:before {
 
 .rounded {
   border-radius: $border-radius;
+}
+
+.top-margin {
+  margin-top: 10px;
 }
 
 #error_explanation {

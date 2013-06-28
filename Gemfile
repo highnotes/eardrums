@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 1.0.1'
 
 # Omniauth
 gem "omniauth-twitter", "~> 0.0.17"
+gem "omniauth-facebook", "~> 1.4.1"
+gem "omniauth-google-oauth2", "~> 0.2.0"
 
 # Authentication
 gem "devise", "~> 3.0.0.rc"

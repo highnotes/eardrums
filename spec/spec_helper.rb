@@ -67,6 +67,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+OmniAuth.config.test_mode = true
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -98,7 +100,8 @@ RSpec.configure do |config|
   # For testing Devise Controllers
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+  
+  # Omniauth Test Mode
   config.include OmniauthMacros
+  OmniauthMacros.mock_auth_hash
 end
-
-OmniAuth.config.test_mode = true

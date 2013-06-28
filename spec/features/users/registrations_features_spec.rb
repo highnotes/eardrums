@@ -25,12 +25,4 @@ describe "Registration" do
     click_button "Sign up"
     expect(page).to have_content "Password can't be blank"
   end
-  
-  it "can sign up user with Twitter Account" do
-    visit '/users/sign_up'
-    mock_auth_hash
-    click_link "Twitter"
-    
-    page.should have_content("Email can't be blank")
-  end
 end

@@ -28,4 +28,12 @@ describe "Session" do
     click_button "Login"
     expect(page).to have_content "Invalid email or password"
   end
+  
+  it "should sign in user with Twitter" do
+    pending
+    visit '/users/sign_in'
+    expect(page).to have_content "Twitter"
+    find(:xpath, "//a/img[@alt='Twitter']/..").click
+    expect(page).to have_content "Signed in successfully"
+  end
 end
