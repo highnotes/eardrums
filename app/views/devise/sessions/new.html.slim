@@ -2,8 +2,10 @@
   | Login
 
 .row
-  .large-4.columns
+  .large-8.columns
     h2 Login
+.row
+  .large-4.columns
 
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       div = f.email_field :email, :autofocus => true, :placeholder => 'Email'
@@ -16,9 +18,7 @@
               = f.check_box :remember_me
               = f.label :remember_me, :class => 'right'
 
-        div 
-          = f.submit "Login"
-          | or with
-          = link_to(image_tag("twitter-hand-drawn.png", :alt => " Twitter", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Twitter"), user_omniauth_authorize_path(:twitter))
-          = link_to(image_tag("facebook-hand-drawn.png", :alt => " Facebook", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Facebook"), user_omniauth_authorize_path(:facebook))
-          = link_to(image_tag("google-hand-drawn.png", :alt => "Google", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Google"), user_omniauth_authorize_path(:google_oauth2))
+      div 
+        = f.submit "Login"
+        
+  = render "devise/shared/links"

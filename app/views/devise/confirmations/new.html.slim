@@ -1,17 +1,15 @@
 = content_for :title do 
   | Resend confirmation instructions
 
-h2 Resend confirmation instructions
+.row
+  .large-8.columns
+    h2 Resend confirmation instructions
+.row
+  .large-4.columns
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
 
-= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
+      div = f.email_field :email, :autofocus => true, placeholder: 'Email'
+      div = f.submit "Resend confirmation instructions"
 
-  div
-    = f.label :email %>
-    br /
-    = f.email_field :email, :autofocus => true
-
-  div
-    = f.submit "Resend confirmation instructions"
-
-= render "devise/shared/links"
+  = render "devise/shared/links"

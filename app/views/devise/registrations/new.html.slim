@@ -2,9 +2,10 @@
   | Sign up
 
 .row
-  .large-4.columns
+  .large-8.columns
     h2 Sign up
-
+.row
+  .large-4.columns
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do | f |
       = devise_error_messages!
 
@@ -20,9 +21,6 @@
 
       div
         = f.submit "Sign up"
-        | or with
-        = link_to(image_tag("twitter-hand-drawn.png", :alt => " Twitter", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Twitter"), user_omniauth_authorize_path(:twitter))
-        = link_to(image_tag("facebook-hand-drawn.png", :alt => " Facebook", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Facebook"), user_omniauth_authorize_path(:facebook))
-        = link_to(image_tag("google-hand-drawn.png", :alt => "Google", :class => "small-padding", :width => 30, :height => 30, :title => "Click here to sign up with Google"), user_omniauth_authorize_path(:google_oauth2))
-        
+
+  = render "devise/shared/links"
     

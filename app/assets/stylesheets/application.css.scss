@@ -146,7 +146,7 @@ body:before {
 }
 
 .links {
-  margin: 20px;
+  margin: 10px;
 }
 
 #new_user input[type="submit"] {
@@ -159,6 +159,10 @@ body:before {
 
 .top-margin {
   margin-top: 10px;
+}
+
+.small-top-margin {
+  margin-top: 5px;
 }
 
 #error_explanation {
@@ -182,4 +186,16 @@ body:before {
 
 .alert {
   color: red;
+}
+
+.float-left {
+  float: left;
+}
+
+.left-margin {
+  margin-left: 20px;
+}
+
+.right-margin {
+  margin-right: 20px;
 }
