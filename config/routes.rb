@@ -1,5 +1,5 @@
 Eardrums::Application.routes.draw do
-  devise_for :users, :controllers => { registrations: "users/registrations", omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, :controllers => { registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
   
   root "static_pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
