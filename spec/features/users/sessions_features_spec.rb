@@ -13,7 +13,7 @@ describe "Session" do
   it "should sign in user" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_email', with: 'john.doe@example.com'
+      fill_in 'user_login', with: 'john.doe@example.com'
       fill_in 'user_password', with: 'johndoe123'
     end
     click_button "Login"
@@ -23,7 +23,7 @@ describe "Session" do
   it "should not sign in user when password is not given" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_email', with: 'subhash.bhushan@gmail.com'
+      fill_in 'user_login', with: 'subhash.bhushan@gmail.com'
     end
     click_button "Login"
     expect(page).to have_content "Invalid email or password"

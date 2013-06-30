@@ -6,4 +6,6 @@ describe Users::SessionsController do
   it "should have a current_user" do
     subject.current_user.should_not be_nil
   end
+  
+  it "should be able to login via username or email"
 end

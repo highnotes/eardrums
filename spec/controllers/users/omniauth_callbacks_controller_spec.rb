@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OmniauthCallbacksController do
+describe Users::OmniauthCallbacksController do
   before do
     request.env["devise.mapping"] = Devise.mappings[:user]
   end

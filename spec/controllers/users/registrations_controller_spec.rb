@@ -39,4 +39,9 @@ describe Users::RegistrationsController do
     get user_omniauth_authorize_path(:twitter)
     puts @request.env
   end
+  
+  context "mailers" do
+    it "should send confirmation mail after signing up"
+    it "should resend confirmation mail from profile page"
+  end
 end

@@ -10,7 +10,10 @@
       = devise_error_messages!
 
       div
-        = f.email_field :email, :autofocus => true, :placeholder => 'myself@example.com'
+        = f.email_field :email, :autofocus => true, :placeholder => 'Email'
+        
+      div
+        = f.text_field :username, :placeholder => 'Username'
       
       - if f.object.password_required?
         div
