@@ -1,7 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     auth = request.env['omniauth.auth']
-    puts "Auth: #{auth}"
     # Find an identity here
     # If no identity was found, a brand new one will be created
     @identity = Identity.from_omniauth(auth)

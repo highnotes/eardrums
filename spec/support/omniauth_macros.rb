@@ -8,6 +8,9 @@ module OmniauthMacros
       'uid' => '123544',
       'info' => {
         'name' => 'mockuser',
+        'first_name' => 'Mock',
+        'last_name' => 'User',
+        'email' => 'mockuser@example.com',
         'image' => 'mock_user_thumbnail_url'
       },
       'credentials' => {

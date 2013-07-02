@@ -12,46 +12,23 @@ class User < ActiveRecord::Base
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')
   end
-    
+  
   def self.create_from_omniauth(auth)
-    # Identity will always be created before this code is executed
-    identity = Identity.where(auth.slice(:provider, :uid)).first
+    identity = Identity.where(auth.slice(:provider, :uid)).first || Identity.from_omniauth(auth)
+    
     where(id: identity.user_id).first_or_create do |user|
-      # UserName will get defaulted to the first registered identity's nickname
-      user.username = auth["info"].try(:fetch, "nickname", nil)
-      
-      if user.username.blank?
-        email = auth["info"].try(:fetch, "email", nil)
-        user.username = email[/[^@]+/] unless email.blank?
-      end
-      
-      user.email = auth["info"].try(:fetch, "email", nil)
-      user.first_name = auth["info"].try(:fetch, "first_name", nil)
-      user.last_name = auth["info"].try(:fetch, "last_name", nil)
-      
-      user.identities << identity
+      user.populate_from_auth(auth, identity)
     end
   end
   
   def self.update_from_omniauth(auth)
     identity = Identity.where(auth.slice(:provider, :uid)).first
+    return nil if identity.nil?
+    
     user = User.where(id: identity.user_id).first
+    return nil if user.nil?
     
-    user.username = auth["info"].try(:fetch, "nickname", nil) unless auth["info"].try(:fetch, "nickname", nil)
-    
-    if user.username.blank?
-      email = auth["info"].try(:fetch, "email", nil)
-      user.username = email[/[^@]+/] unless email.blank?
-    end
-    
-    #Don't update email, may cause problems of uniqueness
-    #user.email = auth["info"].try(:fetch, "email", nil) unless auth["info"].try(:fetch, "email", nil).nil?
-
-    user.first_name = auth["info"].try(:fetch, "first_name", nil) unless auth["info"].try(:fetch, "first_name", nil).nil?
-    user.last_name = auth["info"].try(:fetch, "last_name", nil)unless auth["info"].try(:fetch, "first_name", nil).nil?
-    
-    user.identities << identity
-    
+    user.populate_from_auth(auth, identity)
     user.save!
   end
   
@@ -92,5 +69,15 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+  
+  def populate_from_auth(auth, identity)
+    self.username = auth["info"].try(:fetch, "nickname", nil) || self.username
+    self.email = auth["info"].try(:fetch, "email", nil) || self.email
+    self.username = email[/[^@]+/] if self.username.blank? && !self.email.blank?
+    self.first_name = auth["info"].try(:fetch, "first_name", nil) || self.first_name
+    self.last_name = auth["info"].try(:fetch, "last_name", nil) || self.last_name
+    
+    self.identities << identity
   end
 end

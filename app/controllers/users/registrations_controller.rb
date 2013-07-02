@@ -12,7 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user].delete(:current_password)
       @user.update_without_password(devise_parameter_sanitizer.for(:account_update))
     end
-
     if successfully_updated
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
