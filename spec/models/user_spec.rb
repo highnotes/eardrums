@@ -142,6 +142,10 @@ describe User do
         it "should create from omniauth hash" do
           expect { User.create_from_omniauth(@auth) }.to change{User.count}.by(1)
         end
+        
+        it "should add an identity if it doesn't exist" do
+          expect { User.create_from_omniauth(@auth) }.to change{Identity.count}.by(1)
+        end
       end
     
       context "when email is missing" do
@@ -163,8 +167,21 @@ describe User do
       before { @auth = OmniAuth.config.mock_auth[:default] }
       
       it "should update from omniauth hash" do
-        User.create_from_omniauth(@auth)
-        expect { User.update_from_omniauth(@auth) }.to_not change{User.count}
+        user = User.create_from_omniauth(@auth)
+        expect { user.update_from_omniauth(@auth) }.to_not change{User.count}
+      end
+      
+      context "when identity already exists" do
+        before {
+          @auth_user = User.create_from_omniauth(@auth)
+          @other_auth = OmniAuth.config.mock_auth[:facebook]
+        }
+        it "should add second identity if one exists already" do
+          expect { @auth_user.update_from_omniauth(@other_auth) }.to change{Identity.count}.by(1)
+        end
+        it "should not add a user" do
+          expect { @auth_user.update_from_omniauth(@other_auth) }.to_not change{User.count}
+        end
       end
     end
   end

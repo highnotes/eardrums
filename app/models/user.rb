@@ -21,15 +21,11 @@ class User < ActiveRecord::Base
     end
   end
   
-  def self.update_from_omniauth(auth)
-    identity = Identity.where(auth.slice(:provider, :uid)).first
-    return nil if identity.nil?
+  def update_from_omniauth(auth)
+    identity = Identity.where(auth.slice(:provider, :uid)).first || Identity.from_omniauth(auth)
     
-    user = User.where(id: identity.user_id).first
-    return nil if user.nil?
-    
-    user.populate_from_auth(auth, identity)
-    user.save!
+    populate_from_auth(auth, identity)
+    save!
   end
   
   def self.new_with_session(params, session)

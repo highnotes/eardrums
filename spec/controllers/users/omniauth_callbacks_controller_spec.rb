@@ -18,7 +18,7 @@ describe Users::OmniauthCallbacksController do
         @identity.should_receive(:user).at_least(1).times.and_return(@user)
         
         @user.stub(:authenticatable_salt)
-        User.should_receive(:update_from_omniauth).and_return(@user)
+        @user.should_receive(:update_from_omniauth)
         
         get :twitter
       end
@@ -37,33 +37,10 @@ describe Users::OmniauthCallbacksController do
     
   context "when user has signed in" do
     login_user
-  
-    it "should add another identity to current user" do
+
+    it "should sign in if identity already exists or by adding identity" do
       Identity.should_receive(:from_omniauth).and_return(@identity)
-      @identity.should_receive(:user).at_least(1).times
-      @identity.should_receive(:update_attributes)
-    
-      User.should_receive(:update_from_omniauth)
-    
-      get :twitter
-    end
-  
-    it "should sign in if identity already exists" do
-      Identity.should_receive(:from_omniauth).and_return(@identity)
-      @identity.should_receive(:user).at_least(1).times.and_return(subject.current_user)
-      @identity.should_not_receive(:update_attributes)
-    
-      User.should_receive(:update_from_omniauth)
-    
-      get :twitter
-    end
-  
-    it "should change linkage if identity is already linked to another user" do
-      user = mock_model(User)
-    
-      Identity.should_receive(:from_omniauth).and_return(@identity)
-      @identity.should_receive(:user).at_least(1).times.and_return(user)
-      @identity.should_receive(:update_attributes)
+      subject.current_user.should_receive(:update_from_omniauth)
     
       get :twitter
     end
