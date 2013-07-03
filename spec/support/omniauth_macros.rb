@@ -100,5 +100,6 @@ module OmniauthMacros
         }
       }
     })
+    OmniAuth.config.mock_auth[:invalid] = :invalid_credentials
   end
 end
