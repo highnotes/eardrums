@@ -1,0 +1,13 @@
+= content_for :title do 
+ | Courses
+
+.row
+  .large-8.columns
+    h2 Courses
+    
+.row
+  - @courses.each do |course|
+    .large-5.columns.panel.radius.left.margin-10px class=cycle('left', 'right')
+      h3
+        = course.name
+    

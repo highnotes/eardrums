@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130628124121) do
+ActiveRecord::Schema.define(version: 20130704015146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "duration"
+    t.decimal  "price"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "level_id"
+    t.integer  "discipline_id"
+  end
+
+  create_table "disciplines", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "identities", force: true do |t|
     t.string   "uid"
@@ -25,6 +44,36 @@ ActiveRecord::Schema.define(version: 20130628124121) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "lessons", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
+
+  create_table "levels", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "discipline_id"
+  end
+
+  add_index "levels", ["discipline_id"], name: "index_levels_on_discipline_id", using: :btree
+
+  create_table "materials", force: true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "materials", ["lesson_id"], name: "index_materials_on_lesson_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
