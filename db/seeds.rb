@@ -6,11 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Discipline.delete_all
 disciplines = Discipline.create([{name: 'Guitar', description: 'Guitar'}, 
                                  {name: 'Hindustani', description: 'Hindustani'},
                                  {name: 'Keyboard', description: 'Keyboard'},
                                  {name: 'Carnatic', description: 'Carnatic'}])
-                                 
+
+Level.delete_all                                 
 levels = Level.create([{name: 'Early Elementary', description: 'Early Elementary'}, 
               {name: 'Elementary', description: 'Elementary'}, 
               {name: 'Beginner', description: 'Beginner'}, 
@@ -42,6 +44,7 @@ levels = Level.create([{name: 'Early Elementary', description: 'Early Elementary
               {name: 'Advanced +', description: 'Advanced +'}, 
               {name: 'Professional', description: 'Professional'}])
 
+Course.delete_all
 courses = Course.create([{name: "Beginner - Carnatic", description: "Beginner - Carnatic", duration: 8, price: "1500", status: "Active", level: levels[2], discipline: disciplines[3]},
                {name: "Beginner - Guitar", description: "Beginner - Guitar", duration: 8, price: "1500", status: "Active", level: levels[2], discipline: disciplines.first},
                {name: "Beginner - Keyboard", description: "Beginner - Keyboard", duration: 8, price: "1500", status: "Active", level: levels[2], discipline: disciplines[2]}])
