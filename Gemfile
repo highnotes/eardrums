@@ -42,6 +42,13 @@ gem "omniauth-google-oauth2", "~> 0.2.0"
 # Authentication
 gem "devise", "~> 3.0.0.rc"
 
+# Administration - Temporary github refs until rails 4 compatible releases
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack',            branch: 'rails-4'
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'formtastic',          github: 'justinfrench/formtastic'
+
 # Mailers
 gem "aws-ses", "~> 0.5.0"
 

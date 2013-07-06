@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  before_filter :authenticate_user!
   before_filter :authorize
   
   delegate :allow_action?, to: :current_permission
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
   
   delegate :allow_param?, to: :current_permission
   helper_method :allow_param?
-
+  
   private
     def current_permission
       @current_permission ||= Permissions.permission_for(current_user)

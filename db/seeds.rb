@@ -6,6 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.where(email: 'admin@eardrums.in').first.try(:delete)
+User.create! do |r|
+  r.first_name  = "Admin"
+  r.email       = 'admin@eardrums.in'
+  r.password    = 'password'
+  r.role        = 'admin'
+end
+    
 Discipline.delete_all
 disciplines = Discipline.create([{name: 'Guitar', description: 'Guitar'}, 
                                  {name: 'Hindustani', description: 'Hindustani'},
