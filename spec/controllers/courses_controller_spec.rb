@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe CoursesController do
-
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
@@ -16,7 +15,7 @@ describe CoursesController do
     it "collects all courses" do
       course = FactoryGirl.create(:course)
       get 'index'
-      assigns(:courses).should eq([course])
+      assigns(:courses).should include(course)
     end
   end
 end

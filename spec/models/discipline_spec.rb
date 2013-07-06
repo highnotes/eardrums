@@ -8,5 +8,5 @@ describe Discipline do
   
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
-  it { should have_many(:levels) }
+  it { should have_many(:courses) }
 end

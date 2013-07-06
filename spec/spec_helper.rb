@@ -104,7 +104,9 @@ RSpec.configure do |config|
   
   # For testing Devise Controllers
   config.include Devise::TestHelpers, :type => :controller
+  
   config.extend ControllerMacros, :type => :controller
+  config.include FeatureMacros, :type => :feature
   
   # Omniauth Test Mode
   config.include OmniauthMacros

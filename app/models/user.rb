@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
          
   has_many :identities
   
+  ROLES = %w[admin teacher user]
+  
   attr_accessor :login
   
   def full_name
@@ -75,5 +77,9 @@ class User < ActiveRecord::Base
     self.last_name = auth["info"].try(:fetch, "last_name", nil) || self.last_name
     
     self.identities << identity
+  end
+  
+  def admin?
+    (self.role == "admin")
   end
 end
