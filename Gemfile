@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc2'
+gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,7 +26,7 @@ gem "slim-rails", "~> 2.0.1"
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem "jquery-rails", "~> 3.0.4"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -43,7 +43,6 @@ gem "omniauth-google-oauth2", "~> 0.2.0"
 gem "devise", "~> 3.0.0.rc"
 
 # Administration - Temporary github refs until rails 4 compatible releases
-gem 'responders',          github: 'plataformatec/responders'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'ransack',             github: 'ernie/ransack',            branch: 'rails-4'
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
@@ -51,6 +50,9 @@ gem 'formtastic',          github: 'justinfrench/formtastic'
 
 # Mailers
 gem "aws-ses", "~> 0.5.0"
+
+# Functionality
+gem "acts-as-taggable-on", "~> 2.4.1"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -90,6 +92,9 @@ group :development do
   gem "better_errors", "~> 0.9.0"
   gem "binding_of_caller", "~> 0.7.2"
   gem "meta_request", "~> 0.2.6"
+  
+  # Quiet assets turn off rails assets log
+  gem "quiet_assets", "~> 1.0.2"
 end
 
 # Use ActiveModel has_secure_password

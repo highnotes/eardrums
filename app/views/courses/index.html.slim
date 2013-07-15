@@ -6,8 +6,21 @@
     h2 Courses
     
 .row
-  - @courses.each do |course|
-    .large-5.columns.panel.radius.left.margin-10px class=cycle('left', 'right')
-      h3
-        = course.name
-    
+  .large-2.columns.panel
+    - @disciplines.each do |d|
+      h4
+        = d.name
+  .large-10.columns.panel
+    .row
+      h3 = @discipline.name
+    .row
+      - Course.tag_counts.each do |tag|
+        - if @discipline.courses.tagged_with(tag.name).count > 0
+          .row.tagrow
+            .large-3.columns
+              span.tag = tag.name
+            .large-9.columns
+              - @discipline.courses.tagged_with(tag.name).each do |course|
+                span.course
+                  span.level_color class="#{course.level.name.parameterize}"
+                  = course.name

@@ -1,5 +1,4 @@
 ActiveAdmin.setup do |config|
-
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -10,14 +9,14 @@ ActiveAdmin.setup do |config|
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
   #
   # Note: Recommended image height is 21px to properly fit in the header
   #
-  # config.site_title_image = "/images/logo.png"
+  config.site_title_image = "Eardrums_logo_activeadmin.png"
 
   # == Default Namespace
   #
@@ -105,7 +104,8 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.allow_comments = false
+  config.allow_comments = false
+  
   #
   # You can disable the menu item for the comments index page:
   # config.show_comments_in_menu = false
@@ -199,7 +199,7 @@ ActiveAdmin.setup do |config|
   # Pagination is enabled by default for all resources.
   # You can control the default per page count for all resources here.
   #
-  # config.default_per_page = 30
+  config.default_per_page = 10
 
 
   # == Filters

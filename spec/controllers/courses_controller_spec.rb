@@ -12,10 +12,16 @@ describe CoursesController do
       response.should render_template :index
     end
     
-    it "collects all courses" do
+    it "collects all disciplines" do
+      discipline = FactoryGirl.create(:discipline)
+      get 'index'
+      assigns(:disciplines).should include(discipline)
+    end
+    
+    it "collects all courses of discipline" do
       course = FactoryGirl.create(:course)
       get 'index'
-      assigns(:courses).should include(course)
+      assigns(:discipline).courses.should include(course)
     end
   end
 end
