@@ -41,6 +41,7 @@ gem "omniauth-google-oauth2", "~> 0.2.0"
 
 # Authentication
 gem "devise", "~> 3.0.0.rc"
+gem "devise_invitable", github: 'scambra/devise_invitable'
 
 # Administration - Temporary github refs until rails 4 compatible releases
 gem 'inherited_resources', github: 'josevalim/inherited_resources'

@@ -153,6 +153,10 @@ body:before {
   @extend %button;
 }
 
+#edit_user input[type="submit"] {
+  @extend %button;
+}
+
 .rounded {
   border-radius: $border-radius;
 }

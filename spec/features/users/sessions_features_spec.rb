@@ -26,7 +26,7 @@ describe "Session" do
       fill_in 'user_login', with: 'subhash.bhushan@gmail.com'
     end
     click_button "Login"
-    expect(page).to have_content "Invalid email or password"
+    expect(page).to have_content "Invalid email/username or password"
   end
   
   it "should sign in user with Twitter" do

@@ -92,6 +92,23 @@ describe User do
         end
       end
     end
+    
+    context "username", focus: true do
+      context "when already taken" do
+        before {
+          @user_with_same_username = @user.dup
+          @user_with_same_username.email = "testing_dup@example.com"
+          @user_with_same_username.username = @user.username.upcase
+          @user_with_same_username.save
+        }
+        it "should be invalid" do
+          expect(@user).to be_invalid
+        end
+        after {
+          @user_with_same_username.destroy
+        }
+      end
+    end
   
     context "create" do
       it "should increment the no. of records" do

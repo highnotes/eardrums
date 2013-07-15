@@ -1,0 +1,7 @@
+h2 Send invitation
+ 
+= form_for @user, :url => send_invitation_admin_users_path do |f|
+  div = f.text_field :email, :required => true, placeholder: "Email"
+  div = f.text_field :first_name, placeholder: "First Name"
+  div = f.text_field :last_name, placeholder: "Last Name"
+  div = f.submit  "Send an Invitation"

@@ -1,6 +1,7 @@
 Eardrums::Application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks",
+                                       invitations: 'users/invitations' }
   
   root "static_pages#home"
   

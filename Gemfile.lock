@@ -61,6 +61,14 @@ GIT
     spork-rails (3.2.1)
       spork (>= 1.0rc0)
 
+GIT
+  remote: git://github.com/scambra/devise_invitable.git
+  revision: 8d8fcd0b37e66addc4b38910b7395715aee1ba66
+  specs:
+    devise_invitable (1.1.8)
+      actionmailer (>= 3.2.6, < 5)
+      devise (>= 3.0.0.rc)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -392,6 +400,7 @@ DEPENDENCIES
   coveralls
   debugger
   devise (~> 3.0.0.rc)
+  devise_invitable!
   factory_girl_rails (~> 4.0)
   formtastic!
   growl (~> 1.0.3)

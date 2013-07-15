@@ -1,0 +1,16 @@
+= content_for :title do 
+  = t 'devise.invitations.edit.header'
+
+.row
+  .large-8.columns
+    h2 = t 'devise.invitations.edit.header'
+
+.row
+  .large-4.columns
+    = form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f|
+      = devise_error_messages!
+      = f.hidden_field :invitation_token
+
+      div = f.password_field :password, placeholder: "Password"
+      div = f.password_field :password_confirmation, placeholder: "Password Confirmation"
+      div = f.submit "Set my password"

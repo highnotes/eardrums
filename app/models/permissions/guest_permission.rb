@@ -3,6 +3,7 @@ module Permissions
     def initialize
       allow_action "devise/sessions", [:all]
       allow_action "devise/confirmations", [:all]
+      allow_action "users/invitations", [:edit, :update]
       allow_action "users/registrations", [:new, :create]
       allow_action "users/omniauth_callbacks", [:all]
       allow_action "static_pages", [:all]

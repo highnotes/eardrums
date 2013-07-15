@@ -11,6 +11,7 @@ FactoryGirl.define do
     email "john.doe@example.com"
     password "johndoe123"
     role "user"
+    username "johndoe"
     
     factory :omniauth_user do
       email "john.not.doe@example.com"

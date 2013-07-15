@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :confirmable
          
@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   ROLES = %w[admin teacher user]
   
   attr_accessor :login
+  
+  validates_uniqueness_of :username, case_sensitive: false
   
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')
