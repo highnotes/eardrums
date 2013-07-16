@@ -28,8 +28,6 @@ ActiveAdmin.register User do
     f.actions
   end
   
-  
-  
   action_item do
     link_to 'Invite New User', new_invitation_admin_users_path
   end

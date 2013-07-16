@@ -6,21 +6,21 @@
     h2 Courses
     
 .row
-  .large-2.columns.panel
+  .section-container.vertical-tabs.rounded data-section="vertical-tabs"
     - @disciplines.each do |d|
-      h4
-        = d.name
-  .large-10.columns.panel
-    .row
-      h3 = @discipline.name
-    .row
-      - Course.tag_counts.each do |tag|
-        - if @discipline.courses.tagged_with(tag.name).count > 0
-          .row.tagrow
-            .large-3.columns
-              span.tag = tag.name
-            .large-9.columns
-              - @discipline.courses.tagged_with(tag.name).each do |course|
-                span.course
-                  span.level_color class="#{course.level.name.parameterize}"
-                  = course.name
+      section
+        p.title data-section-title=""
+          a href="#" = d.name
+        .content data-section-content=""
+          .row
+            - Course.tag_counts.each do |tag|
+              - if d.courses.tagged_with(tag.name).count > 0
+                .row.tagrow
+                  .large-3.columns
+                    span.tag = tag.name
+                  .large-9.columns
+                    span.courses.rounded
+                      - d.courses.tagged_with(tag.name).each do |course|
+                        span.course
+                          span.level_color class="#{course.level.name.parameterize}"
+                          = course.name

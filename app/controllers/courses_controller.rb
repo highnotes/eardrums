@@ -3,7 +3,6 @@ class CoursesController < ApplicationController
   
   def index
     @disciplines = Discipline.all
-    @discipline = Discipline.first
   end
   
   private

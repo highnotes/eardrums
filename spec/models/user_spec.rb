@@ -93,7 +93,7 @@ describe User do
       end
     end
     
-    context "username", focus: true do
+    context "username" do
       context "when already taken" do
         before {
           @user_with_same_username = @user.dup

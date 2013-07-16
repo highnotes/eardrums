@@ -3,7 +3,7 @@
 
 .row
   .large-8.columns
-    h2 Edit #{resource_name.to_s.humanize}
+    h2 Edit Profile
 
 - if devise_mapping.confirmable? && resource.pending_reconfirmation?
   .row
@@ -35,5 +35,5 @@
       
       span.btn-group
         = f.submit "Update", :class => "btn"
-
-    = link_to "Back", :back, :class => "btn"
+        
+      = link_to "Back", :back, :class => "btn"

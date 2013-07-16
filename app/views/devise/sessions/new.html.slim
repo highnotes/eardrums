@@ -12,11 +12,11 @@
       div = f.password_field :password, :placeholder => 'Password'
 
       - if devise_mapping.rememberable?
-        div
-          .row
-            .large-5.columns
-              = f.check_box :remember_me
-              = f.label :remember_me, :class => 'right'
+        .row
+          .large-1.columns
+            = f.check_box :remember_me
+          .large-10.columns
+            = f.label :remember_me, for: "remember-me", class: "inline"        
 
       div 
         = f.submit "Login"

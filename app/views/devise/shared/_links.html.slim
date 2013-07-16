@@ -21,4 +21,4 @@
     span.float-left.small-padding.small-top-margin.left-margin or Login with
     - resource_class.omniauth_providers.each do |provider|
       div 
-        = link_to(image_tag("#{provider.to_s}-hand-drawn.png", :alt => "#{provider.to_s.titleize}", :class => "small-padding float-left", :width => 30, height: 30, :title => "Click here to sign up with #{provider.to_s.titleize}"), user_omniauth_authorize_path(provider))
+        = link_to(image_tag("#{provider.to_s}_32.png", :alt => "#{provider.to_s.titleize}", :class => "small-padding float-left", :width => 32, height: 32, :title => "Click here to sign up with #{provider.to_s.titleize}"), user_omniauth_authorize_path(provider))

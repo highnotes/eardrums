@@ -17,11 +17,5 @@ describe CoursesController do
       get 'index'
       assigns(:disciplines).should include(discipline)
     end
-    
-    it "collects all courses of discipline" do
-      course = FactoryGirl.create(:course)
-      get 'index'
-      assigns(:discipline).courses.should include(course)
-    end
   end
 end

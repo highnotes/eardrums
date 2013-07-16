@@ -13,72 +13,28 @@
  *= require_tree .
  */
 
-@import url(http://fonts.googleapis.com/css?family=Port+Lligat+Sans|Monofett|Oswald|Poiret+One);
+// @import url(http://fonts.googleapis.com/css?family=Port+Lligat+Sans|Monofett|Oswald|Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Fauna+One|Monofett|Oswald);
 @import "foundation";
 
-$footer-height: 75px;
 $border-radius: 5px;
 
-html, body {height: 100%;}
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 #wrap {
   min-height: 100%;
-}
-
-header {
-  background: rgb(138, 33, 134);
-  color: #fff;
 }
 
 .small-padding {
   padding: 2px;
 }
 
-#hellouser {
-  margin-top: 7px;
-  text-align: right;
-}
-
-#footer {
-  position: relative;
-	margin-top: -$footer-height; /* negative value of footer height */
-	height: $footer-height;
-	clear:both;
-  background: #48711C;
-} 
-
-/*Opera Fix*/
-body:before {
-	content:"";
-	height:100%;
-	float:left;
-	width:0;
-	margin-top:-32767px;
-}
-
-.container {
-  background: #DFDFDF;
-  padding-left: 20px;
-  padding-right: 20px;
-  overflow:auto;
-  padding-bottom: $footer-height;
-}
-
-#sign-in-block {
-  margin-top: 50px;
-  margin-left: 30px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.btn-group {
-  float: right;
-}
-
 %button {
-  color: darken(#48711C, 20%);
+  color: #fff;
   padding: 2px 10px 2px 10px;
-  background-color: lighten(#95CB5B,5%);
   border: 10px;
   border-color: darken(#F07241, 25%);
   margin-right: 10px;
@@ -87,17 +43,25 @@ body:before {
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1;
-  text-shadow: 1px 1px 1px #fff;
   -webkit-border-radius: $border-radius;
   -moz-border-radius: $border-radius;
   -o-border-radius: $border-radius;
   border-radius: $border-radius;
   display: inline-block;
-  font-family: 'Oswald','Port Lligat Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Oswald', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: bold;
+  background-color: rgb(80, 0, 80);
+  &:hover {
+    color: #fff;
+    background-color: lighten(rgb(80, 0, 80),25%);
+  }
 }
 
-.btn {
+.btn-group {
+  float: right;
+}
+
+.btn, #new_user input[type="submit"], #edit_user input[type="submit"] {
   @extend %button;
 }
 
@@ -119,42 +83,23 @@ body:before {
   border-bottom-right-radius: $border-radius;
 }
 
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
 .banner-highlight {
   font-family: 'Monofett';
   color: rgb(138,33, 134);
   font-size: 32px;
 }
 
-.footer-nav{
-  color: darken(#82cb33, 40%);
-  float:right;
-  position:relative;
-  left:-50%;
-  text-align:center;
-  padding: 10px;
-  ul {
-    list-style:none; 
-    position:relative;
-    left:50%;
-  }
-  li {
-    float:left;
-    position:relative;
-    padding-left: 15px;
-    padding-right: 15px;
-  }/* ie needs position:relative here*/
-}
-
 .links {
   margin: 10px;
-}
-
-#new_user input[type="submit"] {
-  @extend %button;
-}
-
-#edit_user input[type="submit"] {
-  @extend %button;
 }
 
 .rounded {
