@@ -150,11 +150,11 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
-    devise (3.0.0.rc)
+    devise (3.0.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
-      warden (~> 1.2.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.4)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
@@ -374,10 +374,10 @@ GEM
     turbolinks (1.3.0)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.1.1)
+    uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.2)
+    warden (1.2.3)
       rack (>= 1.0)
     xml-simple (1.1.2)
     xpath (2.0.0)
@@ -399,7 +399,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   debugger
-  devise (~> 3.0.0.rc)
+  devise (~> 3.0.0)
   devise_invitable!
   factory_girl_rails (~> 4.0)
   formtastic!
