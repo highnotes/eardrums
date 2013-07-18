@@ -27,5 +27,21 @@ FactoryGirl.define do
       password "admin"
       role "admin"
     end
+    
+    factory :teacher do
+      email "teacher.1@eardrums.in"
+      username "teacher.1"
+      role "teacher"
+    end
+    
+    factory :student do
+      email "student.1@eardrums.in"
+      username "student.1"
+      role "student"
+      
+      factory :student_with_course do
+        course
+      end
+    end
   end
 end

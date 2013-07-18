@@ -14,6 +14,8 @@ describe User do
     it { should respond_to(:first_name) }
     it { should respond_to(:last_name) }
     it { should respond_to(:full_name) }    
+    
+    it { should belong_to(:course) }
   end
   
   context "when created directly" do
@@ -107,6 +109,37 @@ describe User do
         after {
           @user_with_same_username.destroy
         }
+      end
+    end
+    
+    context "is not a student" do
+      context "with course" do
+        before { @user_with_course = FactoryGirl.build(:student_with_course, role: 'user') }
+        subject { @user_with_course }
+      
+        context "should not be valid" do
+          it { should_not be_valid }
+        end
+      end
+    end
+    
+    context "is a student" do
+      context "without course" do
+        before { @student = FactoryGirl.build(:student) }
+        subject { @student }
+      
+        context "should not be valid" do
+          it { should_not be_valid }
+        end
+      end
+      
+      context "with course linked" do
+        before { @student_with_course = FactoryGirl.build(:student_with_course) }
+        subject { @student_with_course }
+    
+        context "should be valid" do
+          it { should be_valid }
+        end
       end
     end
   

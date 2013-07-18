@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe "Courses" do
   it "should list courses to guests" do
-    FactoryGirl.create(:course, name: "Beginner - Carnatic", description: "Beginner - Carnatic")
     FactoryGirl.create(:course, name: "Beginner - Guitar", description: "Beginner - Guitar")
     visit courses_path
     expect(page).to have_content 'Courses'

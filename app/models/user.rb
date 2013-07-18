@@ -7,11 +7,15 @@ class User < ActiveRecord::Base
          
   has_many :identities
   
-  ROLES = %w[admin teacher user]
+  ROLES = %w[admin teacher student user]
   
   attr_accessor :login
   
   validates_uniqueness_of :username, case_sensitive: false
+  validate :students_belong_to_a_course
+  validate :non_students_do_not_belong_to_a_course
+  
+  belongs_to :course
   
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')
@@ -84,4 +88,13 @@ class User < ActiveRecord::Base
   def admin?
     (self.role == "admin")
   end
+  
+  private
+    def students_belong_to_a_course
+      errors.add(:course, " should be associated with a course" ) if self.role == "student" && self.course_id.nil?
+    end
+    
+    def non_students_do_not_belong_to_a_course
+      errors.add(:course, " should be associated with a course" ) if self.role != "student" && self.course_id.present?
+    end
 end
