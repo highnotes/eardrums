@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validate :non_students_do_not_belong_to_a_course
   
   belongs_to :course
+  has_and_belongs_to_many :batches
   
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')
