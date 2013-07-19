@@ -16,6 +16,7 @@ describe User do
     it { should respond_to(:full_name) }    
     
     it { should belong_to(:course) }
+    it { should have_and_belong_to_many (:batches) }
   end
   
   context "when created directly" do

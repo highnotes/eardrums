@@ -39,26 +39,79 @@ $border-radius: 3px;
   margin-right: 15px;
   font-size: 12px;
   padding: 5px;
-  
-  .level_color {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    line-height: 12px;
-    -webkit-border-radius: 6.5px;
-    -moz-border-radius: 6.5px;
-    border-radius: 6.5px;
-    margin-right: 5px;
-    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-    position: relative;
-    text-align: center;
-  }
+}
+
+.level_color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  -webkit-border-radius: 6.5px;
+  -moz-border-radius: 6.5px;
+  border-radius: 6.5px;
+  margin-right: 5px;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+  position: relative;
+  text-align: center;
 }
 
 .course:hover {
   color: white;
   background-color: lighten(black, 25%);
+  a {
+    color: white;
+  }
 };
+
+.lessons:first-child {
+  -webkit-border-top-left-radius: $border-radius;
+  -moz-border-radius-topleft: $border-radius;
+  border-top-left-radius: $border-radius;
+  -webkit-border-bottom-left-radius: $border-radius;
+  -moz-border-radius-bottomleft: $border-radius;
+  border-bottom-left-radius: $border-radius;
+}
+
+.lessons:last-child {
+  -webkit-border-top-right-radius: $border-radius;
+  -moz-border-radius-topright: $border-radius;
+  border-top-right-radius: $border-radius;
+  -webkit-border-bottom-right-radius: $border-radius;
+  -moz-border-radius-bottomright: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+.details {
+  padding-bottom: 20px;
+}
+
+.odd {
+  background-color: lighten(black, 90%);
+}
+
+.even {
+  background-color: lighten(black, 80%);
+}
+
+.batch {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.course-contents {
+  height: 600px;
+}
+
+.course-price {
+  background-color: green;
+  -webkit-border-radius: 6.5px;
+  -moz-border-radius: 6.5px;
+  border-radius: 6.5px;
+  padding: 10px;
+  color: white;
+}
 
 .professional { background-color: red; }
 .advanced { background-color: red; }

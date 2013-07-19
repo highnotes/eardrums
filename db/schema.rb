@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130715030458) do
+ActiveRecord::Schema.define(version: 20130718133935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 20130715030458) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "batches", force: true do |t|
+    t.string   "status"
+    t.integer  "discipline_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "day"
+    t.time     "start_time"
+    t.integer  "duration"
+  end
+
+  add_index "batches", ["discipline_id"], name: "index_batches_on_discipline_id", using: :btree
+
+  create_table "batches_users", id: false, force: true do |t|
+    t.integer "batch_id"
+    t.integer "user_id"
+  end
+
   create_table "courses", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -41,6 +59,7 @@ ActiveRecord::Schema.define(version: 20130715030458) do
     t.datetime "updated_at"
     t.integer  "level_id"
     t.integer  "discipline_id"
+    t.integer  "teacher_id"
   end
 
   create_table "disciplines", force: true do |t|
@@ -66,6 +85,7 @@ ActiveRecord::Schema.define(version: 20130715030458) do
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "index"
   end
 
   add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
@@ -131,6 +151,7 @@ ActiveRecord::Schema.define(version: 20130715030458) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
+    t.integer  "course_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

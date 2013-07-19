@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :lesson do
     name "Sarali Varishai - 1"
     description "Sarali Varishai - 1"
+    index 1
     course
   end
 end

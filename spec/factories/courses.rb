@@ -2,13 +2,14 @@
 
 FactoryGirl.define do
   factory :course do
-    name "Beginner - Carnatic"
-    description "Beginner - Carnatic"
+    name "Intro to Guitar"
+    description "Introduction to Guitar"
     duration 8
     price "1500"
     status "Active"
     
     level
     discipline
+    teacher
   end
 end

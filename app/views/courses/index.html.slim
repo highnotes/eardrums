@@ -23,4 +23,4 @@
                       - d.courses.tagged_with(tag.name).each do |course|
                         span.course
                           span.level_color class="#{course.level.name.parameterize}"
-                          = course.name
+                          = link_to course.name, course_path(course)

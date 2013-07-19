@@ -23,11 +23,13 @@ ActiveAdmin.register Course do
       row :updated_at
       row :level
       row :discipline
+      row :teacher
       row :tag_list
     end
   end
   
   filter :discipline
+  filter :teacher, :collection => User.where(role: 'teacher')
   filter :level
   filter :lessons
   filter :name
@@ -43,6 +45,7 @@ ActiveAdmin.register Course do
       f.input :status
       f.input :price
       f.input :tag_list, label: "Tags (separated by commas)"
+      f.input :teacher, :collection => User.where(role: 'teacher')
     end
     f.actions
   end

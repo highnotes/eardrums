@@ -13,8 +13,10 @@ describe Course do
   it { should validate_presence_of(:status) }
   it { should validate_presence_of(:discipline) }
   it { should validate_presence_of(:level) }
+  it { should validate_presence_of(:teacher) }
   
   it { should belong_to(:discipline) }
   it { should belong_to(:level) }
   it { should have_many(:lessons) }
+  it { should belong_to(:teacher) }
 end

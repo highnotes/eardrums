@@ -7,10 +7,12 @@ class Course < ActiveRecord::Base
   
   validates_presence_of :level
   validates_presence_of :discipline
+  validates_presence_of :teacher
   
   belongs_to :level
   belongs_to :discipline
   has_many :lessons
+  belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
   
   STATUSES = %w[active retired]
   

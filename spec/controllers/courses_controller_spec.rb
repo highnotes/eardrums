@@ -17,5 +17,11 @@ describe CoursesController do
       get 'index'
       assigns(:disciplines).should include(discipline)
     end
+    
+    it "shows a course's details" do
+      course = FactoryGirl.create(:course)
+      get 'show', id: course.id
+      response.should render_template :show
+    end
   end
 end

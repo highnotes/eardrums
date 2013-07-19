@@ -5,6 +5,10 @@ class CoursesController < ApplicationController
     @disciplines = Discipline.all
   end
   
+  def show
+    @course = Course.find(params[:id])
+  end
+  
   private
     def permitted_params
       params.permit!
