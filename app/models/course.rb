@@ -14,7 +14,10 @@ class Course < ActiveRecord::Base
   has_many :lessons
   belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
   
-  STATUSES = %w[active retired]
+  STATUSES = %w[Active Inactive Retired]
+
+  scope :active, -> { where(status: "Active") }
+  scope :order_by_level, -> { joins(:level).order('levels.index') }
   
   acts_as_taggable
   

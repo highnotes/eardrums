@@ -9,4 +9,6 @@ class Lesson < ActiveRecord::Base
   
   belongs_to :course
   has_many :materials
+  
+  default_scope { order(:index) }
 end
