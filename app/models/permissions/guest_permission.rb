@@ -7,7 +7,7 @@ module Permissions
       allow_action "users/registrations", [:new, :create]
       allow_action "users/omniauth_callbacks", [:all]
       allow_action "static_pages", [:all]
-      allow_action "devise/passwords", [:new, :create]
+      allow_action "devise/passwords", [:new, :create, :edit, :update]
       allow_action "courses", [:index, :show]
     end
   end
