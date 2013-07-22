@@ -2,6 +2,7 @@ ActiveAdmin.register Course do
   index do
     column :discipline
     column :level
+    column :index
     column :name
     column :description
     column :duration
@@ -21,6 +22,7 @@ ActiveAdmin.register Course do
       row :status
       row :created_at
       row :updated_at
+      row :index
       row :level
       row :discipline
       row :teacher
@@ -39,6 +41,7 @@ ActiveAdmin.register Course do
     f.inputs "Details" do
       f.input :discipline
       f.input :level
+      f.input :index
       f.input :name
       f.input :description
       f.input :duration, label: "Duration (in weeks)"

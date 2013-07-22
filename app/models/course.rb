@@ -9,6 +9,10 @@ class Course < ActiveRecord::Base
   validates_presence_of :discipline
   validates_presence_of :teacher
   
+  validates_presence_of :index
+  validates_numericality_of :index, only_integer: true
+  validates_uniqueness_of :index, scope: :discipline
+  
   belongs_to :level
   belongs_to :discipline
   has_many :lessons
@@ -16,6 +20,7 @@ class Course < ActiveRecord::Base
   
   STATUSES = %w[Active Inactive Retired]
 
+  default_scope { order(:index) }
   scope :active, -> { where(status: "Active") }
   scope :order_by_level, -> { joins(:level).order('levels.index') }
   

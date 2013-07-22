@@ -7,6 +7,7 @@ FactoryGirl.define do
     duration 8
     price "1500"
     status "Active"
+    index 1
     
     level
     discipline
