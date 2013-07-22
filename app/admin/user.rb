@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+  config.clear_action_items! # To clear "New User" link
+  
   index do
     column :email
     column :last_sign_in_at
