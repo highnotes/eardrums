@@ -166,3 +166,10 @@ body:before {
   color: rgb(80, 0 ,80);
   box-shadow: 0 0 1em rgb(87, 0 ,84);;
 }
+
+.hint {
+  font-size: 12px;
+  a {
+    text-decoration: underline;
+  }
+}

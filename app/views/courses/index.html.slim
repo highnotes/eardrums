@@ -2,8 +2,21 @@
  | Courses
 
 .row
-  .large-8.columns
+  .large-6.columns
     h2 Courses
+.row
+  .large-12.columns
+    | Pick and choose your courses 
+    span.hint
+      | or ask for 
+      = link_to "help", "#"
+.row
+  .large-12.columns.meter.text-right
+    span.meter-tag Newbie
+    span.meters
+      - Level.all.collect { |l| l.name }.each do |level|
+        span.level_color class="#{level.parameterize}"
+    span.meter-tag Expert
     
 .row
   .section-container.vertical-tabs.rounded data-section="vertical-tabs"
@@ -13,14 +26,47 @@
           a href="#" = d.name
         .content data-section-content=""
           .row
-            - Course.tag_counts.each do |tag|
-              - if d.courses.tagged_with(tag.name).count > 0
-                .row.tagrow
-                  .large-3.columns
-                    span.tag = tag.name
-                  .large-9.columns
-                    span.courses.rounded
-                      - d.courses.tagged_with(tag.name).each do |course|
+            - if Course.beginner_courses(d).count > 0
+              .row.tagrow
+                .large-3.columns
+                  span.tag Beginner
+                .large-9.columns
+                  span.courses.rounded
+                    - Course.beginner_courses(d).each do |course|
+                      = link_to course_path(course) do
                         span.course
                           span.level_color class="#{course.level.name.parameterize}"
-                          = link_to course.name, course_path(course)
+                          = course.name
+            - if Course.intermediate_courses(d).count > 0
+              .row.tagrow
+                .large-3.columns
+                  span.tag Intermediate
+                .large-9.columns
+                  span.courses.rounded
+                    - Course.intermediate_courses(d).each do |course|
+                      = link_to course_path(course) do
+                        span.course
+                          span.level_color class="#{course.level.name.parameterize}"
+                          = course.name
+            - if Course.advanced_courses(d).count > 0
+              .row.tagrow
+                .large-3.columns
+                  span.tag Advanced
+                .large-9.columns
+                  span.courses.rounded
+                    - Course.advanced_courses(d).each do |course|
+                      = link_to course_path(course) do
+                        span.course
+                          span.level_color class="#{course.level.name.parameterize}"
+                          = course.name
+            - if Course.special_courses(d).count > 0
+              .row.tagrow
+                .large-3.columns
+                  span.tag Specialities
+                .large-9.columns
+                  span.courses.rounded
+                    - Course.special_courses(d).each do |course|
+                      = link_to course_path(course) do
+                        span.course
+                          span.level_color class="#{course.level.name.parameterize}"
+                          = course.name

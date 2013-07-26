@@ -24,6 +24,11 @@ class Course < ActiveRecord::Base
   scope :active, -> { where(status: "Active") }
   scope :order_by_level, -> { joins(:level).order('levels.index') }
   
+  scope :beginner_courses, ->(discipline) { where(level_id: Level.beginner_levels, discipline_id: discipline.id) }
+  scope :intermediate_courses, ->(discipline) { where(level_id: Level.intermediate_levels, discipline_id: discipline.id) }
+  scope :advanced_courses, ->(discipline) { where(level_id: Level.advanced_levels, discipline_id: discipline.id) }
+  scope :special_courses, ->(discipline) { where(level_id: Level.special_levels, discipline_id: discipline.id) }
+  
   acts_as_taggable
   
   def duration

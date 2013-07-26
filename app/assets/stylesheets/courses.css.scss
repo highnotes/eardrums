@@ -23,22 +23,48 @@ $border-radius: 3px;
 
 .courses {
   display: inline-block;
-  width: 500px;
-  height: 35px;
   background-color: #e7e7e7;
   margin-left: 5px;
   padding-left: 20px;
   padding-top: 5px;
+  width: 100%;
 }
 
 .course {
   display: inline-block;
-  -webkit-border-radius: $border-radius;
-  -moz-border-radius: $border-radius;
-  -o-border-radius: $border-radius; 
   margin-right: 15px;
   font-size: 12px;
+  padding: 8px;
+}
+
+.meter {
+  display: inline-block;
   padding: 5px;
+  padding-top: 40px;
+  .level_color {
+    margin-right: 10px;
+  }
+  .level_color:first-child {
+    margin-left: 20px;
+  }
+  .level_color:last-child {
+    margin-right: 20px;
+  }
+}
+
+.meter-tag {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  text-shadow: grey 0 -1px;;
+}
+
+.meters {
+  background-color: #d7d7d7;
+  padding: 5px;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
 }
 
 .level_color {
@@ -58,6 +84,9 @@ $border-radius: 3px;
 .course:hover {
   color: white;
   background-color: lighten(black, 25%);
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
   a {
     color: white;
   }
@@ -113,6 +142,7 @@ $border-radius: 3px;
   color: white;
 }
 
+.specialities { background-color: blue; }
 .professional { background-color: red; }
 .advanced { background-color: red; }
 .early-advanced { background-color: rgb(180, 95, 6); }
