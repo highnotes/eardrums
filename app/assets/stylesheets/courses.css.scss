@@ -142,6 +142,10 @@ $border-radius: 3px;
   color: white;
 }
 
+.inactive {
+  opacity: 0.5;
+}
+
 .specialities { background-color: blue; }
 .professional { background-color: red; }
 .advanced { background-color: red; }

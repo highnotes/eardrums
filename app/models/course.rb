@@ -18,7 +18,7 @@ class Course < ActiveRecord::Base
   has_many :lessons
   belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
   
-  STATUSES = %w[Active Inactive Retired]
+  STATUSES = %w[Active Upcoming Inactive Retired]
 
   default_scope { order(:index) }
   scope :active, -> { where(status: "Active") }
@@ -34,5 +34,13 @@ class Course < ActiveRecord::Base
   def duration
     duration_temp = read_attribute :duration
     duration_temp.nil? ? nil : "#{duration_temp} weeks"
+  end
+  
+  def active?
+    status == "Active"
+  end
+  
+  def upcoming?
+    status == "Upcoming"
   end
 end

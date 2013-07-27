@@ -17,7 +17,6 @@
       - Level.all.collect { |l| l.name }.each do |level|
         span.level_color class="#{level.parameterize}"
     span.meter-tag Expert
-    
 .row
   .section-container.vertical-tabs.rounded data-section="vertical-tabs"
     - @disciplines.each do |d|
@@ -33,8 +32,13 @@
                 .large-9.columns
                   span.courses.rounded
                     - Course.beginner_courses(d).each do |course|
-                      = link_to course_path(course) do
-                        span.course
+                      - if course.active?
+                        = link_to course_path(course) do
+                          span.course
+                            span.level_color class="#{course.level.name.parameterize}"
+                            = course.name
+                      - elsif course.upcoming?
+                        span.course.inactive.has-tip title="Coming soon!"
                           span.level_color class="#{course.level.name.parameterize}"
                           = course.name
             - if Course.intermediate_courses(d).count > 0
@@ -44,8 +48,13 @@
                 .large-9.columns
                   span.courses.rounded
                     - Course.intermediate_courses(d).each do |course|
-                      = link_to course_path(course) do
-                        span.course
+                      - if course.active?
+                        = link_to course_path(course) do
+                          span.course
+                            span.level_color class="#{course.level.name.parameterize}"
+                            = course.name
+                      - elsif course.upcoming?
+                        span.course.inactive.has-tip title="Coming soon!"
                           span.level_color class="#{course.level.name.parameterize}"
                           = course.name
             - if Course.advanced_courses(d).count > 0
@@ -55,8 +64,13 @@
                 .large-9.columns
                   span.courses.rounded
                     - Course.advanced_courses(d).each do |course|
-                      = link_to course_path(course) do
-                        span.course
+                      - if course.active?
+                        = link_to course_path(course) do
+                          span.course
+                            span.level_color class="#{course.level.name.parameterize}"
+                            = course.name
+                      - elsif course.upcoming?
+                        span.course.inactive.has-tip title="Coming soon!"
                           span.level_color class="#{course.level.name.parameterize}"
                           = course.name
             - if Course.special_courses(d).count > 0
@@ -66,7 +80,12 @@
                 .large-9.columns
                   span.courses.rounded
                     - Course.special_courses(d).each do |course|
-                      = link_to course_path(course) do
-                        span.course
+                      - if course.active?
+                        = link_to course_path(course) do
+                          span.course
+                            span.level_color class="#{course.level.name.parameterize}"
+                            = course.name
+                      - elsif course.upcoming?
+                        span.course.inactive.has-tip title="Coming soon!"
                           span.level_color class="#{course.level.name.parameterize}"
                           = course.name
