@@ -39,8 +39,8 @@ describe Permissions do
     it "allows devise/passwords" do
       should allow_action("devise/passwords", "new")
       should allow_action("devise/passwords", "create")
-      should_not allow_action("devise/passwords", "edit")
-      should_not allow_action("devise/passwords", "update")
+      should allow_action("devise/passwords", "edit")
+      should allow_action("devise/passwords", "update")
     end
     
     it "allows users/omniauth_callbacks" do
