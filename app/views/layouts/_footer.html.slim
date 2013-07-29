@@ -4,13 +4,18 @@ footer#footer
       section
         nav.footer-nav
           ul
+            li
+              = link_to image_tag("twitter.png"), 'https://twitter.com/eardrumsindia', :target => "_blank"
+            li
+              = link_to image_tag("facebook.png"), 'https://www.facebook.com/EardrumsIndia', :target => "_blank"
+  .row
+    .large-12.columns.text-center
+      section
+        nav.footer-nav
+          ul
             li 
-              = link_to 'Terms', '/', :class => "btn"
+              = link_to 'Terms', terms_path, :class => "btn"
             li
               = link_to 'Privacy', '/', :class => "btn"
-            li
-              = link_to 'Cookies', '/', :class => "btn"
-            li
-              = link_to 'Copyright', '/', :class => "btn"
             li
               = link_to 'Contact us', '/', :class => "btn"

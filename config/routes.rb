@@ -5,6 +5,8 @@ Eardrums::Application.routes.draw do
   
   root "static_pages#home"
   
+  get 'terms' => 'static_pages#terms'
+  
   resources :courses
   
   # The priority is based upon order of creation: first created -> highest priority.
