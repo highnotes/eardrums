@@ -6,6 +6,7 @@ Eardrums::Application.routes.draw do
   root "static_pages#home"
   
   get 'terms' => 'static_pages#terms'
+  get 'contact_us' => 'static_pages#contact_us'
   
   resources :courses
   
