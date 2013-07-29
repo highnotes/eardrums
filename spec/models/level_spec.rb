@@ -15,7 +15,7 @@ describe Level do
   
   it { should have_many(:courses) }
   
-  context "display levels", focus: true do
+  context "display levels" do
     it "should return beginner level" do
       @level1 = FactoryGirl.create(:level, index: 1)
       expect(Level.beginner_levels).to include(@level1.id)
