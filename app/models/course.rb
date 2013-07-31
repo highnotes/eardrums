@@ -4,6 +4,7 @@ class Course < ActiveRecord::Base
   validates_presence_of :status
   validates_presence_of :duration
   validates_presence_of :price
+  validates_presence_of :code
   
   validates_presence_of :level
   validates_presence_of :discipline

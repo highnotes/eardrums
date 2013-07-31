@@ -4,6 +4,7 @@ ActiveAdmin.register Course do
     column :level
     column :index
     column :name
+    column :code
     column :description
     column :duration
     column :status
@@ -16,6 +17,7 @@ ActiveAdmin.register Course do
     attributes_table do
       row :id
       row :name
+      row :code
       row :description
       row :duration
       row :price
@@ -35,6 +37,7 @@ ActiveAdmin.register Course do
   filter :level
   filter :lessons
   filter :name
+  filter :code
   filter :status
   
   form do |f|
@@ -43,6 +46,7 @@ ActiveAdmin.register Course do
       f.input :level
       f.input :index
       f.input :name
+      f.input :code
       f.input :description
       f.input :duration, label: "Duration (in weeks)"
       f.input :status

@@ -11,6 +11,7 @@ describe Course do
   it { should validate_presence_of(:duration) }
   it { should validate_presence_of(:price) }
   it { should validate_presence_of(:status) }
+  it { should validate_presence_of(:code) }
   it { should validate_presence_of(:discipline) }
   it { should validate_presence_of(:level) }
   it { should validate_presence_of(:teacher) }
