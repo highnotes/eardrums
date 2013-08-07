@@ -13,10 +13,11 @@ describe User do
     it { should respond_to(:email) }
     it { should respond_to(:first_name) }
     it { should respond_to(:last_name) }
-    it { should respond_to(:full_name) }    
+    it { should respond_to(:full_name) }
     
     it { should belong_to(:course) }
     it { should have_and_belong_to_many (:batches) }
+    it { should belong_to(:branch) }
   end
   
   context "when created directly" do
@@ -234,6 +235,33 @@ describe User do
           expect { @auth_user.update_from_omniauth(@other_auth) }.to_not change{User.count}
         end
       end
+    end
+  end
+  
+  context "as admin" do
+    before { @admin = FactoryGirl.build(:admin) }
+    subject { @admin }
+  
+    it "should return true for admin?" do
+      expect(@admin.admin?).to be_true
+    end
+  end
+  
+  context "as staff" do
+    before { @staff = FactoryGirl.build(:staff) }
+    subject { @staff }
+  
+    it "should be invalid when no branch is associated with staff" do
+      @staff.branch_id = nil
+      expect(@staff).to_not be_valid
+    end
+    
+    it "should have valid branch when staff" do
+      expect(@staff).to be_valid
+    end
+    
+    it "should return true for staff?" do
+      expect(@staff.staff?).to be_true
     end
   end
 end

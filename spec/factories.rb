@@ -20,7 +20,7 @@ FactoryGirl.define do
       end
     end
     
-    factory :admin_user do
+    factory :admin do
       first_name "Admin"
       last_name  "User"
       email "admin@example.com"
@@ -42,6 +42,13 @@ FactoryGirl.define do
       factory :student_with_course do
         course
       end
+    end
+    
+    factory :staff do
+      email "staff.1@eardrums.in"
+      username "staff.1"
+      role "staff"
+      branch_id 1
     end
   end
 end

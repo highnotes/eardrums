@@ -24,4 +24,6 @@ describe Course do
   it { should belong_to(:level) }
   it { should have_many(:lessons) }
   it { should belong_to(:teacher) }
+  
+  it { should have_and_belong_to_many (:branches) }
 end

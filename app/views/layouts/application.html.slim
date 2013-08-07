@@ -27,7 +27,9 @@ head
 body
   #wrap
     = render 'layouts/header'
-    /= render 'layouts/subheader'
+    - if current_user
+      - if current_user.staff?
+        = render 'layouts/staff_menu'
 
     .row
       .large-12.columns
