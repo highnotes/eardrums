@@ -18,6 +18,7 @@ class Course < ActiveRecord::Base
   belongs_to :discipline
   has_many :lessons
   belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
+  has_and_belongs_to_many :branches
   
   STATUSES = %w[Active Upcoming Inactive Retired]
 

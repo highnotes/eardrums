@@ -14,6 +14,6 @@ class Batch < ActiveRecord::Base
   has_and_belongs_to_many :students, -> { where role: 'student' }, class_name: 'User'
   
   def timings
-    "#{Date::ABBR_DAYNAMES[self.day]} #{self.start_time.strftime "%l:%M %p"}-#{(self.start_time + (self.duration*60*60)).strftime "%l:%M %p"}"
+    "#{Date::ABBR_DAYNAMES[self.day]} #{self.start_time.strftime "%l:%M %p"} -#{(self.start_time + (self.duration*60*60)).strftime "%l:%M %p"}"
   end
 end

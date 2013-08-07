@@ -7,15 +7,17 @@ class User < ActiveRecord::Base
          
   has_many :identities
   
-  ROLES = %w[admin teacher student user]
+  ROLES = %w[admin teacher staff student user]
   
   attr_accessor :login
   
   validates_uniqueness_of :username, case_sensitive: false
   validate :students_belong_to_a_course
   validate :non_students_do_not_belong_to_a_course
+  validate :staff_are_associated_with_branch
   
   belongs_to :course
+  belongs_to :branch
   has_and_belongs_to_many :batches
   
   def full_name
@@ -90,6 +92,10 @@ class User < ActiveRecord::Base
     (self.role == "admin")
   end
   
+  def staff?
+    (self.role == "staff")
+  end
+  
   private
     def students_belong_to_a_course
       errors.add(:course, " should be associated with a course" ) if self.role == "student" && self.course_id.nil?
@@ -97,5 +103,9 @@ class User < ActiveRecord::Base
     
     def non_students_do_not_belong_to_a_course
       errors.add(:course, " should be associated with a course" ) if self.role != "student" && self.course_id.present?
+    end
+    
+    def staff_are_associated_with_branch
+      errors.add(:branch, " should be associated with a branch" ) if self.role == "staff" && self.branch_id.nil?
     end
 end

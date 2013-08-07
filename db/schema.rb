@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722064405) do
+ActiveRecord::Schema.define(version: 20130731151821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,30 @@ ActiveRecord::Schema.define(version: 20130722064405) do
     t.integer "user_id"
   end
 
+  create_table "branches", force: true do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.string   "status"
+    t.date     "opened_on"
+    t.string   "email"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "phones"
+    t.integer  "franchise_id"
+    t.date     "closed_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "branches", ["franchise_id"], name: "index_branches_on_franchise_id", using: :btree
+
+  create_table "branches_courses", id: false, force: true do |t|
+    t.integer "branch_id"
+    t.integer "course_id"
+  end
+
   create_table "courses", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -61,11 +85,25 @@ ActiveRecord::Schema.define(version: 20130722064405) do
     t.integer  "discipline_id"
     t.integer  "teacher_id"
     t.integer  "index"
+    t.string   "code"
   end
 
   create_table "disciplines", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "franchises", force: true do |t|
+    t.string   "name"
+    t.string   "franchisees"
+    t.string   "emails"
+    t.string   "phones"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -154,8 +192,10 @@ ActiveRecord::Schema.define(version: 20130722064405) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "course_id"
+    t.integer  "branch_id"
   end
 
+  add_index "users", ["branch_id"], name: "index_users_on_branch_id", using: :btree
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree

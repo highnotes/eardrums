@@ -19,12 +19,15 @@ ActiveAdmin.register User do
   filter :invited_by_type
   
   form do |f|
+    f.semantic_errors *f.object.errors.keys
+  
     f.inputs "Details" do
       f.input :email
       f.input :first_name
       f.input :last_name
       f.input :username
       f.input :role
+      f.input :branch
       f.input :invitation_limit
     end
     f.actions
