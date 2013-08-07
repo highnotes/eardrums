@@ -15,10 +15,12 @@ describe Batch do
   
   it { should validate_numericality_of(:day).only_integer }
   it { should validate_numericality_of(:duration).only_integer }
+  it { should ensure_inclusion_of(:status).in_array(Batch::STATUSES) }
   
   it { should belong_to(:discipline) }
   it { should belong_to(:teacher) }
   it { should have_and_belong_to_many (:students) }
+  it { should have_many(:batch_schedules) }
   
   context "timings" do
     it "should return correct day" do

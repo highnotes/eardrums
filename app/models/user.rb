@@ -6,10 +6,9 @@ class User < ActiveRecord::Base
          :omniauthable, :confirmable
          
   has_many :identities
+  attr_accessor :login
   
   ROLES = %w[admin teacher staff student user]
-  
-  attr_accessor :login
   
   validates_uniqueness_of :username, case_sensitive: false
   validate :students_belong_to_a_course
