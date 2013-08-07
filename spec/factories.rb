@@ -1,12 +1,4 @@
 FactoryGirl.define do
-  sequence :email do |n|
-    "john.doe#{n}@example.com"
-  end
-  
-  sequence :username do |n|
-    "johndoe#{n}"
-  end
-    
   factory :identity do
     uid "1234567890"
     provider "twitter"
@@ -16,10 +8,11 @@ FactoryGirl.define do
   factory :user do
     first_name "John"
     last_name  "Doe"
-    email
+    sequence(:email) { |n| "john.doe#{n}@example.com" }
+    
     password "johndoe123"
     role "user"
-    username
+    sequence(:username) { |n| "johndoe#{n}" }
     
     factory :omniauth_user do
       after(:create) do |user|
@@ -40,9 +33,10 @@ FactoryGirl.define do
     
     factory :student do
       role "student"
+      course
       
-      factory :student_with_course do
-        course
+      factory :student_without_course do
+        course nil
       end
     end
     

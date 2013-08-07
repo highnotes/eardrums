@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :level do
     name "Early Elementary"
     description "Early Elementary"
-    index 1
+    sequence(:index) {|n| n }
   end
 end

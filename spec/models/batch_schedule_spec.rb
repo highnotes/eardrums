@@ -9,8 +9,10 @@ describe BatchSchedule do
   it { should validate_presence_of(:status) }
   it { should validate_presence_of(:batch_id) }
   it { should validate_presence_of(:scheduled_on) }
+  it { should ensure_inclusion_of(:status).in_array(BatchSchedule::STATUSES) }
   
   it { should belong_to(:batch) }
+  it { should have_many(:student_schedules) }
   
   context "Scheduled on" do
     it "should not be valid if Scheduled in the past" do

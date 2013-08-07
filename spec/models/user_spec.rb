@@ -16,8 +16,9 @@ describe User do
     it { should respond_to(:full_name) }
     
     it { should belong_to(:course) }
-    it { should have_and_belong_to_many (:batches) }
+    it { should have_and_belong_to_many(:batches) }
     it { should belong_to(:branch) }
+    it { should have_many(:student_schedules) }
   end
   
   context "when created directly" do
@@ -116,7 +117,7 @@ describe User do
     
     context "is not a student" do
       context "with course" do
-        before { @user_with_course = FactoryGirl.build(:student_with_course, role: 'user') }
+        before { @user_with_course = FactoryGirl.build(:student, role: 'user') }
         subject { @user_with_course }
       
         context "should not be valid" do
@@ -127,8 +128,8 @@ describe User do
     
     context "is a student" do
       context "without course" do
-        before { @student = FactoryGirl.build(:student) }
-        subject { @student }
+        before { @student_without_course = FactoryGirl.build(:student_without_course) }
+        subject { @student_without_course }
       
         context "should not be valid" do
           it { should_not be_valid }
@@ -136,7 +137,7 @@ describe User do
       end
       
       context "with course linked" do
-        before { @student_with_course = FactoryGirl.build(:student_with_course) }
+        before { @student_with_course = FactoryGirl.build(:student) }
         subject { @student_with_course }
     
         context "should be valid" do
