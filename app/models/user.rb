@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   belongs_to :branch
   has_and_belongs_to_many :batches
   has_many :student_schedules, foreign_key: "student_id"
+  has_many :enrollments, foreign_key: "student_id"
   
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')

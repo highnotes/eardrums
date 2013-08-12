@@ -12,4 +12,5 @@ class Branch < ActiveRecord::Base
   belongs_to :franchise
   has_and_belongs_to_many :courses
   has_many :staffs, -> { where role: 'staff' }, class_name: 'User'
+  has_many :enrollments
 end

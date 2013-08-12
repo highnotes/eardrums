@@ -19,6 +19,7 @@ describe User do
     it { should have_and_belong_to_many(:batches) }
     it { should belong_to(:branch) }
     it { should have_many(:student_schedules) }
+    it { should have_many(:enrollments) }
   end
   
   context "when created directly" do

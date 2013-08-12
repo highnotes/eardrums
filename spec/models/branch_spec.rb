@@ -19,4 +19,5 @@ describe Branch do
   it { should belong_to(:franchise) }
   it { should have_and_belong_to_many (:courses) }
   it { should have_many(:staffs) }
+  it { should have_many(:enrollments) }
 end

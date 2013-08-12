@@ -21,6 +21,7 @@ describe Batch do
   it { should belong_to(:teacher) }
   it { should have_and_belong_to_many (:students) }
   it { should have_many(:batch_schedules) }
+  it { should have_many(:enrollments) }
   
   context "timings" do
     it "should return correct day" do
