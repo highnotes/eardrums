@@ -60,4 +60,10 @@ describe Enrollment do
   it { should ensure_inclusion_of(:txn_status).in_array(Enrollment::TXN_STATUSES) }
   it { should ensure_inclusion_of(:mode).in_array(Enrollment::MODES) }
   
+  it { should belong_to(:creator) }
+  it { should belong_to(:modifier) }
+  it { should belong_to(:branch) }
+  it { should belong_to(:course) }
+  it { should belong_to(:student) }
+  it { should belong_to(:batch) }
 end

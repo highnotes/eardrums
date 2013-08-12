@@ -33,4 +33,7 @@ class Enrollment < ActiveRecord::Base
               presence: true, inclusion: { in: Enrollment::TXN_STATUSES, message: "%{value} is not a valid transaction status" }
   validates :mode, 
               presence: true, inclusion: { in: Enrollment::MODES, message: "%{value} is not a valid mode" }
+              
+  belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
+  belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
 end
