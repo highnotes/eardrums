@@ -19,6 +19,7 @@ describe Course do
   it { should validate_presence_of(:index) }
   it { should validate_numericality_of(:index).only_integer }
   it { should validate_uniqueness_of(:index).scoped_to(:discipline_id) }
+  it { should validate_numericality_of(:price) }
   
   it { should belong_to(:discipline) }
   it { should belong_to(:level) }

@@ -12,6 +12,7 @@ class Course < ActiveRecord::Base
   
   validates_presence_of :index
   validates_numericality_of :index, only_integer: true
+  validates_numericality_of :price
   validates_uniqueness_of :index, scope: :discipline
   
   belongs_to :level
