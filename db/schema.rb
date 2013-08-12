@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812075249) do
+ActiveRecord::Schema.define(version: 20130812102027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,42 @@ ActiveRecord::Schema.define(version: 20130812075249) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "enrollments", force: true do |t|
+    t.string   "application_no"
+    t.string   "membership_no"
+    t.integer  "branch_id"
+    t.integer  "course_id"
+    t.integer  "batch_id"
+    t.integer  "student_id"
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.date     "enrolled_on"
+    t.integer  "duration"
+    t.string   "status"
+    t.decimal  "registration_fee"
+    t.decimal  "course_fee"
+    t.decimal  "total"
+    t.string   "mode"
+    t.string   "details"
+    t.integer  "created_by"
+    t.integer  "modified_by"
+    t.string   "txn_status"
+    t.string   "reversal_reason_id"
+    t.date     "date_of_birth"
+    t.string   "gender"
+    t.text     "experience"
+    t.text     "additional_courses"
+    t.integer  "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "enrollments", ["batch_id"], name: "index_enrollments_on_batch_id", using: :btree
+  add_index "enrollments", ["branch_id"], name: "index_enrollments_on_branch_id", using: :btree
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
 
   create_table "franchises", force: true do |t|
     t.string   "name"
