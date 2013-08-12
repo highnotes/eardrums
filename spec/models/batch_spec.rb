@@ -25,9 +25,10 @@ describe Batch do
   context "timings" do
     it "should return correct day" do
       t = Time.now
-      expect(@batch.timings).to include("Sat")
-      expect(@batch.timings).to include("#{t.strftime "%l:%M %p"}")
-      expect(@batch.timings).to include("#{(t + @batch.duration*60*60).strftime "%l:%M %p"}")
+      @batch_now = FactoryGirl.build(:batch, start_time: t)
+      expect(@batch_now.timings).to include("Sat")
+      expect(@batch_now.timings).to include("#{t.strftime "%l:%M %p"}")
+      expect(@batch_now.timings).to include("#{(t + @batch_now.duration*60*60).strftime "%l:%M %p"}")
     end
   end
 end
