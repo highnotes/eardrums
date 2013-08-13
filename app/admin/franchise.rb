@@ -35,4 +35,21 @@ ActiveAdmin.register Franchise do
     end
     f.actions
   end
+  
+  controller do
+    def create
+      @franchise = Franchise.new(params[:franchise].merge(created_by: current_user.id, modified_by: current_user.id))
+      create! do |format|
+        format.html { redirect_to admin_franchises_path }
+      end
+    end
+    
+    def update
+      @franchise = Franchise.find(params[:id])
+      @franchise.modified_by = current_user.id
+      update! do |format|
+        format.html { redirect_to admin_franchises_path }
+      end
+    end
+  end
 end

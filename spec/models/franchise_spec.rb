@@ -14,6 +14,10 @@ describe Franchise do
   it { should validate_presence_of(:city) }
   it { should validate_presence_of(:state) }
   it { should validate_presence_of(:country) }
+  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:modified_by) }
   
   it { should have_many(:branches) }
+  it { should belong_to(:creator) }
+  it { should belong_to(:modifier) }
 end

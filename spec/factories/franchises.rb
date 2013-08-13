@@ -10,5 +10,7 @@ FactoryGirl.define do
     city "Bangalore"
     state "Karnataka"
     country "India"
+    created_by 1
+    modified_by 1
   end
 end
