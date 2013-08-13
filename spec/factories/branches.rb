@@ -14,5 +14,7 @@ FactoryGirl.define do
     phones "+91-80-23442234"
     franchise_id 1
     closed_on ""
+    created_by 1
+    modified_by 1
   end
 end

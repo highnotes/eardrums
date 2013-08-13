@@ -15,10 +15,14 @@ describe Branch do
   it { should validate_presence_of(:state) }
   it { should validate_presence_of(:country) }
   it { should validate_presence_of(:phones) }
+  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:modified_by) }
   
   it { should belong_to(:franchise) }
   it { should have_and_belong_to_many (:courses) }
   it { should have_many(:staffs) }
   it { should have_many(:enrollments) }
   it { should have_many(:rolls) }
+  it { should belong_to(:creator) }
+  it { should belong_to(:modifier) }
 end

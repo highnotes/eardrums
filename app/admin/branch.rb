@@ -36,4 +36,21 @@ ActiveAdmin.register Branch do
     end
     f.actions
   end
+  
+  controller do
+    def create
+      @branch = Branch.new(params[:branch].merge(created_by: current_user.id, modified_by: current_user.id))
+      create! do |format|
+        format.html { redirect_to admin_branches_path }
+      end
+    end
+    
+    def update
+      @branch = Branch.find(params[:id])
+      @branch.modified_by = current_user.id
+      update! do |format|
+        format.html { redirect_to admin_branches_path }
+      end
+    end
+  end 
 end
