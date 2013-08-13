@@ -20,6 +20,7 @@ describe User do
     it { should belong_to(:branch) }
     it { should have_many(:student_schedules) }
     it { should have_many(:enrollments) }
+    it { should have_many(:rolls) }
   end
   
   context "when created directly" do
