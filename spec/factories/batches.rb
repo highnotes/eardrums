@@ -1,5 +1,3 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :batch do
     status "Active"
@@ -8,5 +6,7 @@ FactoryGirl.define do
     day 6
     start_time Time.now
     duration 60
+    created_by 1
+    modified_by 1
   end
 end

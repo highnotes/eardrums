@@ -12,6 +12,8 @@ describe Batch do
   it { should validate_presence_of(:day) }
   it { should validate_presence_of(:start_time) }
   it { should validate_presence_of(:duration) }
+  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:modified_by) }
   
   it { should validate_numericality_of(:day).only_integer }
   it { should validate_numericality_of(:duration).only_integer }
@@ -22,6 +24,8 @@ describe Batch do
   it { should have_and_belong_to_many (:students) }
   it { should have_many(:batch_schedules) }
   it { should have_many(:enrollments) }
+  it { should belong_to(:creator) }
+  it { should belong_to(:modifier) }
   
   context "timings" do
     it "should return correct day" do

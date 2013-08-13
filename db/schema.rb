@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813132439) do
+ActiveRecord::Schema.define(version: 20130813140721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20130813132439) do
     t.integer  "day"
     t.time     "start_time"
     t.integer  "duration"
+    t.integer  "created_by"
+    t.integer  "modified_by"
   end
 
   add_index "batches", ["discipline_id"], name: "index_batches_on_discipline_id", using: :btree

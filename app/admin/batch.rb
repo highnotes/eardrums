@@ -17,4 +17,21 @@ ActiveAdmin.register Batch do
     end
     f.actions
   end
+  
+  controller do
+    def create
+      @batch = Batch.new(params[:batch].merge(created_by: current_user.id, modified_by: current_user.id))
+      create! do |format|
+        format.html { redirect_to admin_batches_path }
+      end
+    end
+    
+    def update
+      @batch = Batch.find(params[:id])
+      @batch.modified_by = current_user.id
+      update! do |format|
+        format.html { redirect_to admin_batches_path }
+      end
+    end
+  end
 end
