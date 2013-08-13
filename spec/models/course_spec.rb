@@ -28,4 +28,5 @@ describe Course do
   
   it { should have_and_belong_to_many (:branches) }
   it { should have_many(:enrollments) }
+  it { should have_many(:installments) }
 end

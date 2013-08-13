@@ -1,11 +1,16 @@
 ActiveAdmin.register Course do
+  sidebar "Course Details", :only => :show do
+    ul do
+      li link_to("Installments", admin_course_installments_path(course))
+    end
+  end
+  
   index do
     column :discipline
     column :level
     column :index
     column :name
     column :code
-    column :description
     column :duration
     column :status
     column :price

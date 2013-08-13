@@ -19,6 +19,7 @@ class Course < ActiveRecord::Base
   belongs_to :discipline
   has_many :lessons
   has_many :enrollments
+  has_many :installments
   belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
   has_and_belongs_to_many :branches
   
