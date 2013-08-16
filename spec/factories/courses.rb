@@ -13,5 +13,8 @@ FactoryGirl.define do
     level
     discipline
     teacher
+    
+    created_by 1
+    modified_by 1
   end
 end

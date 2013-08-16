@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813141459) do
+ActiveRecord::Schema.define(version: 20130816060626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,8 @@ ActiveRecord::Schema.define(version: 20130813141459) do
     t.integer  "teacher_id"
     t.integer  "index"
     t.string   "code"
+    t.integer  "created_by"
+    t.integer  "modified_by"
   end
 
   create_table "disciplines", force: true do |t|

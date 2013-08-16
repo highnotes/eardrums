@@ -5,6 +5,8 @@ class Course < ActiveRecord::Base
   validates_presence_of :duration
   validates_presence_of :price
   validates_presence_of :code
+  validates_presence_of :created_by
+  validates_presence_of :modified_by
   
   validates_presence_of :level
   validates_presence_of :discipline
@@ -23,6 +25,8 @@ class Course < ActiveRecord::Base
   has_many :rolls
   belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
   has_and_belongs_to_many :branches
+  belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
+  belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
   
   STATUSES = %w[Active Upcoming Inactive Retired]
 

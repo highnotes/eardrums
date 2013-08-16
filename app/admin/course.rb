@@ -61,4 +61,21 @@ ActiveAdmin.register Course do
     end
     f.actions
   end
+  
+  controller do
+    def create
+      @course = Course.new(params[:course].merge(created_by: current_user.id, modified_by: current_user.id))
+      create! do |format|
+        format.html { redirect_to admin_courses_path }
+      end
+    end
+    
+    def update
+      @course = Course.find(params[:id])
+      @course.modified_by = current_user.id
+      update! do |format|
+        format.html { redirect_to admin_courses_path }
+      end
+    end
+  end 
 end

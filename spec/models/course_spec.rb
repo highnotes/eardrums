@@ -15,6 +15,8 @@ describe Course do
   it { should validate_presence_of(:discipline) }
   it { should validate_presence_of(:level) }
   it { should validate_presence_of(:teacher) }
+  it { should validate_presence_of(:created_by) }
+  it { should validate_presence_of(:modified_by) }
   
   it { should validate_presence_of(:index) }
   it { should validate_numericality_of(:index).only_integer }
@@ -25,7 +27,8 @@ describe Course do
   it { should belong_to(:level) }
   it { should have_many(:lessons) }
   it { should belong_to(:teacher) }
-  
+  it { should belong_to(:creator) }
+  it { should belong_to(:modifier) }
   it { should have_and_belong_to_many (:branches) }
   it { should have_many(:enrollments) }
   it { should have_many(:installments) }
