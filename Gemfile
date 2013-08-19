@@ -49,6 +49,9 @@ gem 'ransack',             github: 'ernie/ransack',            branch: 'rails-4'
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
+#Forms
+gem "simple_form", "~> 3.0.0.rc"
+
 # Mailers
 gem "aws-ses", "~> 0.5.0"
 

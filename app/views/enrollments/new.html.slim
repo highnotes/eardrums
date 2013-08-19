@@ -5,115 +5,103 @@
   .large-6.columns
     h2 New Enrollment
     
-= form_for :enrollment, url: {action: "create"} do |f|
+= simple_form_for @enrollment do |f|
   fieldset.rounded
     .row
-      .large-12.columns
-          .small-2.columns
-            label.inline for="enrollment_membership_no" Membership No:
+      .small-6.columns
+        .row
           .small-4.columns
-            = f.text_field :membership_no
-          .small-2.columns
-            label.inline for="enrollment_branch" Branch:
-          .small-4.columns
-            = f.select :branch_id, Branch.all.map{ |b| [b.name, b.id] }, include_blank: true
+            = f.label :membership_no, class: 'inline'
+          .small-8.columns
+            = f.input :membership_no, label: false
+      .small-6.columns
+        .row
+          .small-3.columns.text-right
+            = f.label :branch_id, class: 'inline'
+          .small-9.columns
+            = f.association :branch, label: false
   fieldset.rounded
     legend Personal Details
     .row
       .large-12.columns
         .row
-          .small-1.columns
-            label.inline for="enrollment_name" Name:
-          .small-11.columns
-            = f.text_field :name, placeholder: "John Doe"
+          .small-2.columns
+            = f.label :name, class: 'inline'
+          .small-10.columns
+            = f.input :name, placeholder: "John Doe", label: false
         .row
-          .small-1.columns
-            label.inline for="enrollment_address" Address:
-          .small-11.columns
-            = f.text_area :address, placeholder: "#A701, New House Road, Bangalore, Karnataka"
+          .small-2.columns
+            = f.label :address, class: 'inline'
+          .small-10.columns
+            = f.input :address, as: :text, placeholder: "#A701, New House Road, Bangalore, Karnataka", label: false
         .row
           .small-6.columns
             .row
-              .small-2.columns
-                label.inline for="enrollment_phone" Phone:
-              .small-10.columns
-                = f.text_field :phone, placeholder: "+91-9880597292", size: 15
+              .small-4.columns
+                = f.label :phone, class: 'inline'
+              .small-8.columns
+                = f.input :phone, placeholder: "+91-9880597292", size: 15, label: false
           .small-6.columns
             .row
-              .small-2.columns
-                label.inline for="enrollment_email" Email:
-              .small-10.columns
-                = f.text_field :email, placeholder: "john.doe@gmail.com", size: 25
+              .small-3.columns.text-right
+                = f.label :email, class: 'inline'
+              .small-9.columns
+                = f.input :email, placeholder: "john.doe@gmail.com", size: 25, label: false
   .row
     .large-6.columns
       fieldset.rounded
         legend Course Details
         .row
-          .small-2.columns
-            label.inline for="enrollment_discipline_id" Discipline:
+          .small-3.columns
+            = f.label :discipline_id, class: 'inline'
           .small-9.columns
-            = f.select :discipline_id, Discipline.all.map{ |d| [d.name, d.id] }, include_blank: true
+            = f.association :discipline, include_blank: true, label: false
         .row
-          .small-2.columns.hide
-            label.inline for="enrollment_course_id" Course:
-          .small-9.columns.hide
+          .small-3.columns.no-show
+            = f.label :course_id, class: 'inline'
+          .small-9.columns.no-show
             = f.grouped_collection_select :course_id, Discipline.order(:name), :courses, :name, :id, :name, include_blank: true
     .large-6.columns
         fieldset.rounded
           legend Payment Details
-          .row.large-bottom-padding
-            .small-4.columns
-              label for="enrollment_registration_fee" Mode:
-            .small-8.columns
-              .row
-                .large-3.columns
-                  label.right for="enrollment_mode" Cash
-                  = radio_button "enrollment", "mode", "Cash"
-                .large-3.columns
-                  label.right for="enrollment_mode" Card
-                  = radio_button "enrollment", "mode", "Card"
-                .large-4.columns
-                  label.right for="enrollment_mode" Cheque
-                  = radio_button "enrollment", "mode", "Cheque"
-                .large-2.columns
           .row
             .small-4.columns
-              label.inline for="enrollment_registration_fee" Registration Fee:
+              = f.label :mode, class: 'inline'
+            .small-8.columns
+              = f.input :mode, collection: ["Cash", "Card", "Cheque"], as: :radio_buttons, item_wrapper_class: 'inline-block', label: false
+          .row
+            .small-4.columns
+              = f.label :registration_fee, class: 'inline'
             .small-8.columns
               = f.text_field :registration_fee, placeholder: "Rs.0", size: 15, disabled: true
           .row
             .small-4.columns
-              label.inline for="enrollment_course_fee" Course Fee:
+              = f.label :course_fee, class: 'inline'
             .small-8.columns
               = f.text_field :course_fee, placeholder: "Rs.0", size: 15, disabled: true
           .row
             .small-4.columns
-              label.inline for="enrollment_total" Total:
+              = f.label :total, class: 'inline'
             .small-8.columns
               = f.text_field :total, placeholder: "Rs.0", size: 15, disabled: true
   fieldset.rounded
     legend Optional Details
-    .row.medium-bottom-padding
+    .row
       .large-12.columns
         .row
           .small-6.columns
-            label.inline for="enrollment_date_of_birth" Date of Birth:
+            = f.label :date_of_birth, class: 'inline'
           .small-3.columns.left
-            = f.text_field :date_of_birth, class: "datepicker", readonly: true
+            = f.input_field :date_of_birth, as: :string, class: 'datepicker', label: false
     .row
       .large-12.columns
-        .row.large-bottom-padding
+        .row
           .small-6.columns
-            label for="enrollment_registration_fee" Gender:
+            = f.label :gender, class: 'inline'
           .small-6.columns
             .row
-              .large-2.columns
-                label.right for="enrollment_gender" Male
-                = radio_button "enrollment", "gender", "Male"
-              .large-3.columns
-                label.right for="enrollment_gender" Female
-                = radio_button "enrollment", "gender", "Female"
-              .large-7.columns
+              .large-12.columns
+                = f.input_field :gender, collection: ["Male", "Female"], as: :radio_buttons, item_wrapper_class: 'inline-block', label: false
     .row
       .large-12.columns
         .row
@@ -134,12 +122,7 @@
           .small-6.columns
             label for="enrollment_source_id" How did you get to know about Eardrums:
           .small-6.columns
-            .row
-              - Master.get_group_collection("INFORMATION_SOURCES").each do |item|
-                span.left.right-margin
-                  label.right.medium-padding for="enrollment_source_id" 
-                    = item.description
-                  = radio_button "enrollment", "source_id", item.id
+            = f.input :source_id, collection: Master.get_group_collection("INFORMATION_SOURCES").collect { |m| [m.description, m.id] }, as: :radio_buttons, item_wrapper_class: 'radio inline-block', label: false
   .row
     .small-12.columns.text-center
       =link_to 'Submit', '#', class: 'submit button small success radius'
