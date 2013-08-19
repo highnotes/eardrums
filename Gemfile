@@ -63,6 +63,7 @@ end
 group :development, :test do
   gem "rspec-rails", "~> 2.13.2"
   gem "shoulda", "~> 3.5.0"
+  gem "database_cleaner", "~> 1.1.1"
   
   # Capybara and Poltergeist
   gem "capybara", "~> 2.1.0"
