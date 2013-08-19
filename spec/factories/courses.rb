@@ -8,7 +8,7 @@ FactoryGirl.define do
     price "1500"
     status "Active"
     code "C0001"
-    sequence(:index) {|n| n }
+    sequence(:index) {|n| 100000+n }
     
     level
     discipline

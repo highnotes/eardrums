@@ -4,6 +4,8 @@ module Permissions
       GuestPermission.new
     elsif user.admin?
       AdminPermission.new(user)
+    elsif user.staff?
+      StaffPermission.new(user)
     else
       UserPermission.new(user)
     end

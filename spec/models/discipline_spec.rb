@@ -9,5 +9,6 @@ describe Discipline do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
   it { should have_many(:courses) }
+  it { should have_many(:enrollments) }
   it { should have_many(:batches) }
 end

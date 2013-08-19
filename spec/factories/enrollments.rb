@@ -4,6 +4,7 @@ FactoryGirl.define do
     membership_no "ED0000001"
     branch
     course
+    discipline
     batch
     student
     name "John Doe"

@@ -5,10 +5,11 @@ class Enrollment < ActiveRecord::Base
   
   belongs_to :branch
   belongs_to :course
+  belongs_to :discipline
   belongs_to :batch
   belongs_to :student, -> { where role: 'student' }, class_name: 'User'
   
-  validates :branch_id, :course_id, :batch_id, :student_id, :name, :address, :phone, :enrolled_on,  
+  validates :branch_id, :course_id, :discipline_id, :batch_id, :student_id, :name, :address, :phone, :enrolled_on,  
               :duration, :registration_fee, :course_fee, :total, :created_by, :modified_by, :source_id, 
               presence: true
   

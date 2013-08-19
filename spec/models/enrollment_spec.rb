@@ -1,13 +1,14 @@
 require 'spec_helper'
 
 describe Enrollment do
-  before { @enrollment = FactoryGirl.build(:enrollment) }
-  subject { @enrollment }
+  let(:enrollment) { FactoryGirl.build(:enrollment) }
+  subject { enrollment }
   
   it { should be_valid }
   
   it { should validate_presence_of(:branch_id) }
   it { should validate_presence_of(:course_id) }
+  it { should validate_presence_of(:discipline_id) }
   it { should validate_presence_of(:batch_id) }
   it { should validate_presence_of(:student_id) }
   it { should validate_presence_of(:name) }
@@ -64,6 +65,7 @@ describe Enrollment do
   it { should belong_to(:modifier) }
   it { should belong_to(:branch) }
   it { should belong_to(:course) }
+  it { should belong_to(:discipline) }
   it { should belong_to(:student) }
   it { should belong_to(:batch) }
 end
