@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
   def populate_from_auth(auth, identity)
     self.username = auth["info"].try(:fetch, "nickname", nil) || self.username
     self.email = auth["info"].try(:fetch, "email", nil) || self.email
-    self.username = email[/[^@]+/] if self.username.blank? && !self.email.blank?
+    self.username = generate_username if self.username.blank? && !self.email.blank?
     self.first_name = auth["info"].try(:fetch, "first_name", nil) || self.first_name
     self.last_name = auth["info"].try(:fetch, "last_name", nil) || self.last_name
     
@@ -98,13 +98,37 @@ class User < ActiveRecord::Base
     (self.role == "staff")
   end
   
+  class << self
+    def build_from_enrollment(enrollment)
+      params = enrollment.attributes.with_indifferent_access
+      keys = columns.collect(&:name)
+      attrs = params.select{|k, v| keys.include?(k.to_s)}.merge(
+              first_name: params[:name],
+              email: params[:email],
+              address: params[:address], 
+              course_id: params[:course_id],
+              branch_id: params[:branch_id])
+            
+      new(attrs).tap do |user|
+        user.username = user.generate_username
+        user.course_id = params[:course_id]
+        user.password = ('a'..'z').to_a.shuffle[0,10].join
+        user.role = "student"
+      end
+    end
+  end
+  
+  def generate_username
+    email[/[^@]+/]
+  end
+  
   private
     def students_belong_to_a_course
       errors.add(:course, " should be associated with a course" ) if self.role == "student" && self.course_id.nil?
     end
     
     def non_students_do_not_belong_to_a_course
-      errors.add(:course, " should be associated with a course" ) if self.role != "student" && self.course_id.present?
+      errors.add(:course, " should not be associated with a course" ) if self.role != "student" && self.course_id.present?
     end
     
     def staff_are_associated_with_branch

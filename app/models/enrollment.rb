@@ -9,7 +9,7 @@ class Enrollment < ActiveRecord::Base
   belongs_to :batch
   belongs_to :student, -> { where role: 'student' }, class_name: 'User'
   
-  validates :branch_id, :course_id, :discipline_id, :batch_id, :student_id, :name, :address, :phone, :enrolled_on,  
+  validates :branch_id, :course_id, :discipline_id, :batch_id, :name, :address, :phone, :enrolled_on,  
               :duration, :registration_fee, :course_fee, :total, :created_by, :modified_by, :source_id, 
               presence: true
   
@@ -18,7 +18,7 @@ class Enrollment < ActiveRecord::Base
   validates :phone, 
               presence: true, :length => { :in => 12..16 }, format: { with: /[0-9\+\-]/, message: "format is invalid" }
   
-  validates :branch_id, :course_id, :batch_id, :student_id, :duration, :created_by, :modified_by, :reversal_reason_id,       
+  validates :branch_id, :course_id, :batch_id, :duration, :created_by, :modified_by, :reversal_reason_id,       
               :source_id, 
               numericality: { only_integer: true }
   
@@ -37,4 +37,24 @@ class Enrollment < ActiveRecord::Base
               
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
   belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
+  
+  after_initialize :set_defaults
+  
+  class << self
+    def build(params)
+      Enrollment.new(params).tap do |e|
+        e.set_defaults
+        e.student = User.build_from_enrollment(e)
+      end
+    end
+  end
+  
+  def set_defaults
+    if self.new_record?
+      self.status = "Active"
+      self.txn_status = "Active"
+      self.reversal_reason_id = 0
+      self.enrolled_on = Date.today
+    end
+  end
 end

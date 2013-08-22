@@ -20,6 +20,14 @@
             = f.label :branch_id, class: 'inline'
           .small-9.columns
             = f.association :branch, label: false
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :application_no, class: 'inline'
+          .small-8.columns
+            = f.input :application_no, label: false
+      .small-6.columns
   fieldset.rounded
     legend Personal Details
     .row
@@ -56,11 +64,19 @@
             = f.label :discipline_id, class: 'inline'
           .small-9.columns
             = f.association :discipline, include_blank: true, label: false
+        #discipline_config_error.row.hide
+          .small-12.columns.error
+            small No Courses or Batches configured for Discipline!
         .row
           .small-3.columns.no-show
             = f.label :course_id, class: 'inline'
           .small-9.columns.no-show
-            = f.grouped_collection_select :course_id, Discipline.order(:name), :courses, :name, :id, :name, include_blank: true
+            = f.grouped_collection_select :course_id, Discipline.order(:name), :courses, :name, :id, :display
+        .row
+          .small-3.columns.no-show
+            = f.label :batch_id, class: 'inline'
+          .small-9.columns.no-show
+            = f.grouped_collection_select :batch_id, Discipline.order(:name), :batches, :name, :id, :display
     .large-6.columns
         fieldset.rounded
           legend Payment Details
@@ -73,17 +89,20 @@
             .small-4.columns
               = f.label :registration_fee, class: 'inline'
             .small-8.columns
-              = f.text_field :registration_fee, placeholder: "Rs.0", size: 15, disabled: true
+              = f.text_field :registration_fee, placeholder: "Rs.0", size: 15, readonly: true
           .row
             .small-4.columns
               = f.label :course_fee, class: 'inline'
             .small-8.columns
-              = f.text_field :course_fee, placeholder: "Rs.0", size: 15, disabled: true
+              = f.text_field :course_fee, placeholder: "Rs.0", size: 15, readonly: true
           .row
             .small-4.columns
               = f.label :total, class: 'inline'
             .small-8.columns
-              = f.text_field :total, placeholder: "Rs.0", size: 15, disabled: true
+              = f.text_field :total, placeholder: "Rs.0", size: 15, readonly: true
+          .row.hidden
+            .small-12.columns
+              = f.hidden_field :duration
   fieldset.rounded
     legend Optional Details
     .row

@@ -41,9 +41,13 @@ class Course < ActiveRecord::Base
   
   acts_as_taggable
   
-  def duration
+  def duration_formatted
     duration_temp = read_attribute :duration
     duration_temp.nil? ? nil : "#{duration_temp} weeks"
+  end
+  
+  def display
+    "#{name} (#{duration} weeks)"
   end
   
   def active?

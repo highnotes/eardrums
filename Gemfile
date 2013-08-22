@@ -120,5 +120,8 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
+# Debugging
+gem "awesome_print", "~> 1.1.0"
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

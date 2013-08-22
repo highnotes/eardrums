@@ -8,8 +8,7 @@ class EnrollmentsController < ApplicationController
   end
   
   def create
-    @enrollment = Enrollment.new(enrollment_params)
-
+    @enrollment = Enrollment.build(enrollment_params.merge(created_by: current_user.id, modified_by: current_user.id))
     respond_to do |format|
       if @enrollment.save
         format.html { redirect_to root_url, notice: 'Successfully enrolled!' }

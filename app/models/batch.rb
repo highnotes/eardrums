@@ -22,8 +22,15 @@ class Batch < ActiveRecord::Base
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
   belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
   
+  default_scope { order(:day, :start_time) }
+  scope :active, -> { where(status: "Active") }
+  
   def timings
     "#{Date::ABBR_DAYNAMES[self.day]} #{self.start_time.strftime "%l:%M %p"} -#{(self.start_time + (self.duration*60*60)).strftime "%l:%M %p"}"
+  end
+  
+  def display
+    "#{timings} (#{students.count} students)"
   end
   
   def active?

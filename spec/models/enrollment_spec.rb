@@ -10,13 +10,11 @@ describe Enrollment do
   it { should validate_presence_of(:course_id) }
   it { should validate_presence_of(:discipline_id) }
   it { should validate_presence_of(:batch_id) }
-  it { should validate_presence_of(:student_id) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:address) }
   it { should validate_presence_of(:phone) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:enrolled_on) }
-  it { should validate_presence_of(:duration) }
   it { should validate_presence_of(:status) }
   it { should validate_presence_of(:registration_fee) }
   it { should validate_presence_of(:course_fee) }
@@ -30,8 +28,6 @@ describe Enrollment do
   it { should validate_numericality_of(:branch_id).only_integer }
   it { should validate_numericality_of(:course_id).only_integer }
   it { should validate_numericality_of(:batch_id).only_integer }
-  it { should validate_numericality_of(:student_id).only_integer }
-  it { should validate_numericality_of(:duration).only_integer }
   it { should validate_numericality_of(:created_by).only_integer }
   it { should validate_numericality_of(:modified_by).only_integer }
   it { should validate_numericality_of(:reversal_reason_id).only_integer }
