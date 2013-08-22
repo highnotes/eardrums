@@ -6,6 +6,17 @@
     h2 New Enrollment
     
 = simple_form_for @enrollment do |f|
+  - if @enrollment.student.errors.any?
+    fieldset.rounded
+      .row
+        .small-12.columns
+          #error_explanation
+            h3
+              = pluralize(@enrollment.student.errors.count, "error")
+              |  prohibited this post from being saved:
+            ul
+              - @enrollment.student.errors.full_messages.each do |msg|
+                li= msg
   fieldset.rounded
     .row
       .small-6.columns

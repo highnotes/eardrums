@@ -36,10 +36,7 @@ describe Enrollment do
   it { should validate_numericality_of(:registration_fee) }
   it { should validate_numericality_of(:course_fee) }
   it { should validate_numericality_of(:total) }
-  
-  it { should validate_uniqueness_of(:application_no) }
-  it { should validate_uniqueness_of(:membership_no).scoped_to(:course_id).with_message("can enroll only once for each course") }
-  
+    
   it { should_not allow_value('john@example').for(:email) }
   it { should_not allow_value('john.doe@example').for(:email) }
   it { should_not allow_value('john.doe@.com').for(:email) }
@@ -64,4 +61,37 @@ describe Enrollment do
   it { should belong_to(:discipline) }
   it { should belong_to(:student) }
   it { should belong_to(:batch) }
+  
+  context "Validations" do
+    before { @enrollment = FactoryGirl.build(:enrollment) }
+    subject { @enrollment }
+    
+    context "Application No." do
+      before {
+        @enrollment_with_dup_app_no = @enrollment.dup
+        @enrollment_with_dup_app_no.membership_no = "something valid"
+        @enrollment_with_dup_app_no.save
+      }
+      it "should be invalid" do
+        expect(@enrollment).not_to be_valid
+      end
+      after {
+        @enrollment_with_dup_app_no.destroy
+      }
+    end
+    
+    context "Membership No." do
+      before {
+        @enrollment_with_dup_mem_no = @enrollment.dup
+        @enrollment_with_dup_mem_no.application_no = "something valid"
+        @enrollment_with_dup_mem_no.save
+      }
+      it "should be invalid" do
+        expect(@enrollment).not_to be_valid
+      end
+      after {
+        @enrollment_with_dup_mem_no.destroy
+      }
+    end
+  end
 end

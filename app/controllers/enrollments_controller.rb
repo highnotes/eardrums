@@ -3,6 +3,7 @@ class EnrollmentsController < ApplicationController
   
   def new
     @enrollment = Enrollment.new
+    @enrollment.student = User.new
     @disciplines = Discipline.all
     @branches = Branch.all
   end

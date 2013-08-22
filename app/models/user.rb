@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
       new(attrs).tap do |user|
         user.username = user.generate_username
         user.course_id = params[:course_id]
-        user.password = ('a'..'z').to_a.shuffle[0,10].join
+        user.password = ('a'..'z').to_a.shuffle[0,10].join #TEMP
         user.role = "student"
       end
     end
@@ -128,7 +128,7 @@ class User < ActiveRecord::Base
     end
     
     def non_students_do_not_belong_to_a_course
-      errors.add(:course, " should not be associated with a course" ) if self.role != "student" && self.course_id.present?
+      errors.add("non-student", " should not be associated with a course" ) if self.role != "student" && self.course_id.present?
     end
     
     def staff_are_associated_with_branch
