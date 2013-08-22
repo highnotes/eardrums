@@ -134,4 +134,8 @@ class User < ActiveRecord::Base
     def staff_are_associated_with_branch
       errors.add(:branch, " should be associated with a branch" ) if self.role == "staff" && self.branch_id.nil?
     end
+    
+    def staff_are_associated_with_branch
+      errors.add(:branch, " should be associated with a branch" ) if self.role == "staff" && self.branch_id.nil?
+    end
 end

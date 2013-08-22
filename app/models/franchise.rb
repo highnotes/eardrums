@@ -7,6 +7,7 @@ class Franchise < ActiveRecord::Base
   validates_presence_of :city
   validates_presence_of :state
   validates_presence_of :country
+
   validates_presence_of :created_by
   validates_presence_of :modified_by
   
