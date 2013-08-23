@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # Use Zurb Foundation for Responsiveness
-gem "zurb-foundation", "~> 4.3.1"
+gem "zurb-foundation", "~> 4.2.1"
 
 # Use slim for templating engine
 gem "slim-rails", "~> 2.0.1"
