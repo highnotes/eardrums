@@ -43,9 +43,11 @@ gem "omniauth-google-oauth2", "~> 0.2.0"
 gem "devise", "~> 3.0.0"
 gem "devise_invitable", github: 'scambra/devise_invitable'
 
+# ActiveAdmin
+gem "ransack", "~> 1.0.0"
+
 # Administration - Temporary github refs until rails 4 compatible releases
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem 'ransack',             github: 'ernie/ransack',            branch: 'rails-4'
 gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
