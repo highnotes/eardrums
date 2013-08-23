@@ -30,8 +30,8 @@ $default-float: left;
 
 $body-bg: rgb(232, 232, 232);
 $body-font-color: #414141;
-// $body-font-family: 'Port Lligat Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$body-font-family: "Fauna One", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
+$body-font-family: "Casper", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
+//$body-font-family: "OpenSans-Regular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -137,7 +137,7 @@ $primary-color: #414141;
 
 // Heading font styles
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Signika-Bold', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
 // $header-font-weight: bold;
 // $header-font-style: normal;
 $header-font-color: rgb(138,33, 134);
