@@ -11,7 +11,6 @@ class Batch < ActiveRecord::Base
   validates_presence_of :created_by
   validates_presence_of :modified_by
   
-  validates_numericality_of :day, only_integer: true
   validates_numericality_of :duration, only_integer: true
   
   belongs_to :discipline
@@ -25,8 +24,12 @@ class Batch < ActiveRecord::Base
   default_scope { order(:day, :start_time) }
   scope :active, -> { where(status: "Active") }
   
+  after_update :invalidate_schedules
+  after_save :generate_schedule
+  after_touch :generate_schedule
+  
   def timings
-    "#{Date::ABBR_DAYNAMES[self.day]} #{self.start_time.strftime "%l:%M %p"} -#{(self.start_time + (self.duration*60*60)).strftime "%l:%M %p"}"
+    self.day + Chronic.parse("next #{self.day} #{self.start_time}").strftime("%l:%M %p") + " -" + (Chronic.parse("next #{self.day} #{self.start_time}")+(self.duration*60)).strftime("%l:%M %p")
   end
   
   def display
@@ -36,4 +39,23 @@ class Batch < ActiveRecord::Base
   def active?
     (self.status == "Active")
   end
+  
+  def generate_schedules_from(date)
+    generate_schedule(date)
+  end
+  
+  private
+    def generate_schedule(date = Date.today)
+      if batch_schedules.active.last.nil? or batch_schedules.active.last.scheduled_on <= date
+        BatchSchedule.create_from_batch_for_a_month(self, date)
+      end
+    end
+    
+    def invalidate_schedules
+      if day_changed? or start_time_changed?
+        batch_schedules.active.each do |schedule|
+          schedule.cancel!
+        end
+      end
+    end
 end

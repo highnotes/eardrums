@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20130828044649) do
 
-ActiveRecord::Schema.define(version: 20130822061550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 20130822061550) do
     t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "day"
-    t.time     "start_time"
+    t.string   "day"
+    t.string   "start_time"
     t.integer  "duration"
     t.integer  "created_by"
     t.integer  "modified_by"

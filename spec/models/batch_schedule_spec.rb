@@ -23,9 +23,28 @@ describe BatchSchedule do
   
   context "Batch" do
     it "should be active" do
-      inactive_batch = FactoryGirl.create(:batch, status: 'Inactive')
-      @batch_schedule_of_inactive_batch = FactoryGirl.build(:batch_schedule, batch: inactive_batch)
-      expect(@batch_schedule_of_inactive_batch).to_not be_valid
+      expect { FactoryGirl.create(:batch, status: 'Inactive') }.to raise_error(
+        ActiveRecord::RecordInvalid
+      )
+    end
+  end
+  
+  context "Generate" do
+    before { @batch = FactoryGirl.create(:batch) }
+    
+    it "should get 5 schedules for Sep 13" do
+      schedules = BatchSchedule.create_from_batch_for_a_month(@batch, Chronic.parse("Aug 31 2013"))
+      expect(schedules.count).to eq(5)
+    end
+    
+    it "should get 4 schedules for Oct 13" do
+      schedules = BatchSchedule.create_from_batch_for_a_month(@batch, Chronic.parse("Sep 30 2013"))
+      expect(schedules.count).to eq(4)
+    end
+    
+    it "should get 4 schedules for Nov 13" do
+      schedules = BatchSchedule.create_from_batch_for_a_month(@batch, Chronic.parse("Oct 31 2013"))
+      expect(schedules.count).to eq(4)
     end
   end
 end

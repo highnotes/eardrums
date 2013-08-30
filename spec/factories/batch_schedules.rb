@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :batch_schedule do
     batch
     status "Active"
-    scheduled_on "2014-08-07"
+    scheduled_on Date.today
   end
 end

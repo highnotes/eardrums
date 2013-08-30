@@ -125,5 +125,8 @@ end
 # Debugging
 gem "awesome_print", "~> 1.1.0"
 
+# DateTime manipulation
+gem "chronic", "~> 0.10.1"
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
