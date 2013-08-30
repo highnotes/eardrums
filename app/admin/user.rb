@@ -1,4 +1,7 @@
 ActiveAdmin.register User do
+  # TODO Refer to ROLES variable within User model
+  ROLES = %w[admin teacher staff student user]
+  
   config.clear_action_items! # To clear "New User" link
   
   index do
@@ -26,7 +29,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :username
-      f.input :role
+      f.input :role, as: :select, collection: ROLES.each.map { |x| [x.humanize, x] }
       f.input :branch
       f.input :invitation_limit
     end
