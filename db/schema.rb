@@ -325,6 +325,7 @@ ActiveRecord::Schema.define(version: 20130822061550) do
     t.integer  "course_id"
     t.integer  "branch_id"
     t.string   "address"
+    t.datetime "invitation_created_at"
   end
 
   add_index "users", ["branch_id"], name: "index_users_on_branch_id", using: :btree
