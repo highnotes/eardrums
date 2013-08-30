@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :enrollment do
-    application_no "10113423422-1"
-    membership_no "ED0000001"
+    sequence(:application_no) { |n| "10113423422-#{n}" }
+    sequence(:membership_no) { |n| "ED000000#{n}" }
     branch
     course
     discipline

@@ -151,7 +151,7 @@ describe Enrollment do
       @enrollment.save
     end
     
-    it "should generate atleast one payment record on save", focus: true do
+    it "should generate atleast one payment record on save" do
       @enrollment.save
       expect(@enrollment).to have_at_least(1).payments
     end
