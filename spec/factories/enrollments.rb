@@ -11,7 +11,7 @@ FactoryGirl.define do
     address "Address"
     phone "+91-9880592342"
     sequence(:email) { |n| "john.doe#{n}@example.com" }
-    enrolled_on "2013-08-12"
+    enrolled_on Date.today
     duration 8
     status "Active"
     registration_fee "500"

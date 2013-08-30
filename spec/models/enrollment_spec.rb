@@ -1,6 +1,16 @@
 require 'spec_helper'
 
 describe Enrollment do
+  before(:all) do
+    @branch = FactoryGirl.create(:branch)
+    @course = FactoryGirl.create(:course)
+    @discipline = FactoryGirl.create(:discipline)
+    @batch = FactoryGirl.create(:batch)
+    @student = FactoryGirl.create(:student)
+    @enrollment_attrs = FactoryGirl.build(:enrollment, branch_id: @branch.id, course_id: @course.id,
+                        discipline_id: @discipline.id, batch_id: @batch.id, student_id: @student.id).attributes
+  end
+  
   let(:enrollment) { FactoryGirl.build(:enrollment) }
   subject { enrollment }
   
@@ -94,4 +104,38 @@ describe Enrollment do
       }
     end
   end
+  
+  context "Defaults" do
+    before { @enrollment = FactoryGirl.build(:enrollment) }
+    subject { @enrollment }
+    
+    it { should be_course_in_progress }
+    its(:txn_status) { should == "Active" }
+    its(:enrolled_on) { should == Date.today }
+    its(:reversal_reason_id) { should == 0}
+  end
+  
+  context "Build" do
+    before { @enrollment = FactoryGirl.build(:enrollment) }
+    subject { @enrollment }
+    
+    it "should call set_defaults once" do
+      Enrollment.any_instance.should_receive(:set_defaults)
+      Enrollment.new
+    end
+    
+    it "should call User.build_from_enrollment once" do
+      User.should_receive(:build_from_enrollment).with(an_instance_of(Enrollment)).and_return(FactoryGirl.build(:student))
+      Enrollment.build(@enrollment_attrs)
+    end
+    
+    it "should call Roll.build_from_enrollment once" do
+      Roll.should_receive(:build_from_enrollment).with(an_instance_of(Enrollment)).and_return(FactoryGirl.build(:roll))
+      Enrollment.build(@enrollment_attrs)
+    end
+    
+    it "should call StudentSchedule.build_from_enrollment once"
+  end
+  
+  it "should return course_completed? true after course is completed"
 end
