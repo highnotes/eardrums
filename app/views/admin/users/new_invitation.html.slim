@@ -1,7 +1,48 @@
-h2 Send invitation
+.row
+  .large-6.columns
+    h2 Send Invitation
+    
+= simple_form_for @user, :url => send_invitation_admin_users_path do |f|
+  - if @user.errors.any?
+    fieldset.rounded
+      .row
+        .small-12.columns
+          #error_explanation
+            h3
+              = pluralize(@user.errors.count, "error")
+              |  prohibited this post from being saved:
+            ul
+              - @user.errors.full_messages.each do |msg|
+                li= msg
+  .row
+    .large-12.columns
+      .row
+        .small-2.columns
+          = f.label :email, class: 'inline'
+        .small-10.columns
+          = f.input :email, placeholder: "john.doe@example.com", label: false
+      .row
+        .small-2.columns
+          = f.label :first_name, class: 'inline'
+        .small-10.columns
+          = f.input :first_name, placeholder: "John", label: false
+      .row
+        .small-2.columns
+          = f.label :last_name, class: 'inline'
+        .small-10.columns
+          = f.input :last_name, placeholder: "Doe", label: false
+      .row
+        .small-2.columns
+          = f.label :role, class: 'inline'
+        .small-10.columns
+          = f.input :role, collection: User::ROLES.each.map { |x| [x.humanize, x] }, include_blank: true, label: false
+      .row
+        .small-2.columns.text-right
+          = f.label :branch_id, class: 'inline'
+        .small-10.columns
+          = f.association :branch, label: false
+        
+  .row
+    .small-12.columns.text-center
+      = f.button :submit, "Send Invitation"
  
-= form_for @user, :url => send_invitation_admin_users_path do |f|
-  div = f.text_field :email, :required => true, placeholder: "Email"
-  div = f.text_field :first_name, placeholder: "First Name"
-  div = f.text_field :last_name, placeholder: "Last Name"
-  div = f.submit  "Send an Invitation"
