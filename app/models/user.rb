@@ -114,6 +114,7 @@ class User < ActiveRecord::Base
         user.course_id = params[:course_id]
         user.password = ('a'..'z').to_a.shuffle[0,10].join #TEMP
         user.role = "student"
+        user.batches << Batch.find(params[:batch_id])
       end
     end
   end

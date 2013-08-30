@@ -134,6 +134,11 @@ describe Enrollment do
       Enrollment.build(@enrollment_attrs)
     end
     
+    it "should add user to a batch" do
+      e = Enrollment.build(@enrollment_attrs)
+      expect(e.student.batches.to_a.count).to eq(1)
+    end
+    
     it "should call StudentSchedule.build_from_enrollment once"
   end
   
@@ -146,9 +151,9 @@ describe Enrollment do
       @enrollment.save
     end
     
-    it "should generate atleast one payment record on save" do
+    it "should generate atleast one payment record on save", focus: true do
       @enrollment.save
-      @enrollment.should have_at_least(1).payments
+      expect(@enrollment).to have_at_least(1).payments
     end
     
     it "should save correct amounts in payment record" do
