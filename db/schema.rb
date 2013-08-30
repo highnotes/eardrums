@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828044649) do
+ActiveRecord::Schema.define(version: 20130830074850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -241,7 +241,6 @@ ActiveRecord::Schema.define(version: 20130828044649) do
 
   create_table "payments", force: true do |t|
     t.string   "mode"
-    t.string   "transaction_type"
     t.decimal  "registration_fee"
     t.decimal  "course_fee"
     t.decimal  "total"
@@ -251,7 +250,11 @@ ActiveRecord::Schema.define(version: 20130828044649) do
     t.integer  "modified_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "transactable_id"
+    t.string   "transactable_type"
   end
+
+  add_index "payments", ["transactable_id", "transactable_type"], name: "index_payments_on_transactable_id_and_transactable_type", using: :btree
 
   create_table "rolls", force: true do |t|
     t.integer  "student_id"

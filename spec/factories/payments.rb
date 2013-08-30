@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :payment do
     mode "Cash"
-    transaction_type "Enrollment"
     registration_fee "500"
     course_fee "2400"
     total "2900"
@@ -11,5 +10,6 @@ FactoryGirl.define do
     status "Active"
     created_by 1
     modified_by 1
+    transactable { |a| a.association(:enrollment) }
   end
 end

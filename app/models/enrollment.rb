@@ -3,12 +3,6 @@ class Enrollment < ActiveRecord::Base
   Enrollment::TXN_STATUSES = %w[Active Reversed]
   Enrollment::STATUSES = %w[Active Completed]
   
-  belongs_to :branch
-  belongs_to :course
-  belongs_to :discipline
-  belongs_to :batch
-  belongs_to :student, -> { where role: 'student' }, class_name: 'User'
-  
   validates :branch_id, :course_id, :discipline_id, :batch_id, :name, :address, :phone, :enrolled_on,  
               :duration, :registration_fee, :course_fee, :total, :created_by, :modified_by, :source_id, 
               presence: true
@@ -36,10 +30,17 @@ class Enrollment < ActiveRecord::Base
   
   validate :student_should_be_valid
   
+  belongs_to :branch
+  belongs_to :course
+  belongs_to :discipline
+  belongs_to :batch
+  belongs_to :student, -> { where role: 'student' }, class_name: 'User'
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
   belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
+  has_many :payments, as: :transactable
   
   after_initialize :set_defaults
+  after_create :record_payment
   
   class << self
     def build(params)
@@ -79,5 +80,18 @@ class Enrollment < ActiveRecord::Base
   private
     def student_should_be_valid
       errors.add(:student, "details should be valid") unless self.student.valid?
+    end
+    
+    def record_payment
+      self.payments.create!(
+        mode: self.mode,
+        registration_fee: self.registration_fee,
+        course_fee: self.course_fee,
+        total: self.total,
+        narration: self.details,
+        status: "Active",
+        created_by: self.created_by,
+        modified_by: self.modified_by
+      )
     end
 end

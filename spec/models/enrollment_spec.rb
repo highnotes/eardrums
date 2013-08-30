@@ -137,5 +137,28 @@ describe Enrollment do
     it "should call StudentSchedule.build_from_enrollment once"
   end
   
+  context "Payments" do
+    before { @enrollment = FactoryGirl.build(:enrollment) }
+    subject { @enrollment }
+    
+    it "should generate payment record on save" do
+      Enrollment.any_instance.should_receive(:record_payment)
+      @enrollment.save
+    end
+    
+    it "should generate atleast one payment record on save" do
+      @enrollment.save
+      @enrollment.should have_at_least(1).payments
+    end
+    
+    it "should save correct amounts in payment record" do
+      @enrollment.save
+      expect(@enrollment.payments.first.mode).to eq(@enrollment.mode)
+      expect(@enrollment.payments.first.registration_fee).to eq(@enrollment.registration_fee)
+      expect(@enrollment.payments.first.course_fee).to eq(@enrollment.course_fee)
+      expect(@enrollment.payments.first.total).to eq(@enrollment.total)
+    end
+  end
+  
   it "should return course_completed? true after course is completed"
 end
