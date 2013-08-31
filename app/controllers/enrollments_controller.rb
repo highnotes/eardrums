@@ -1,6 +1,11 @@
 class EnrollmentsController < ApplicationController
   skip_before_filter :authenticate_user!
   
+  def index
+    @q = Enrollment.search(params[:q])
+    @enrollments = @q.result(distinct: true)
+  end
+  
   def new
     @enrollment = Enrollment.new
     @enrollment.student = User.new

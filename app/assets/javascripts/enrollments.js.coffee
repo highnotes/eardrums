@@ -1,6 +1,5 @@
 jQuery ->
-  $('.datepicker').fdatepicker ->
-		format: 'mm-dd-yyyy'
+  $('.datepicker').fdatepicker()
   
   if($("#enrollment_discipline_id option[selected]").length > 0)
     showCourses()

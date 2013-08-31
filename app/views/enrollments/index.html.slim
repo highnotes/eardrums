@@ -1,0 +1,64 @@
+= content_for :title do 
+  | Enrollments
+  
+.row
+  .large-6.columns
+    h2 Enrollments
+    
+= search_form_for @q do |f|
+  fieldset.rounded
+    legend Search Criteria
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :name_or_membership_no_or_phone_or_email_cont, 'Search on', class: 'inline'
+          .small-8.columns
+            = f.text_field :name_or_membership_no_or_phone_or_email_cont, label: false
+      .small-6.columns
+        .row
+          .small-3.columns.text-right
+            = f.label :discipline_id_eq, 'Discipline',class: 'inline'
+          .small-9.columns
+            = f.select :discipline_id_eq, content_tag(:option,'Select...',:value=>"")+options_from_collection_for_select(Discipline.all, "id", "name", @q.discipline_id_eq), label: false
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :enrolled_on_gteq, 'Enrolled after', class: 'inline'
+          .small-8.columns
+            = f.text_field :enrolled_on_gteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: Date.today.strftime("%d-%m-%Y")
+      .small-6.columns
+        .row
+          .small-3.columns.text-right
+            = f.label :enrolled_on_lteq, 'Enrolled before',class: 'inline'
+          .small-9.columns
+            = f.text_field :enrolled_on_lteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: Date.today.strftime("%d-%m-%Y")
+    .row
+      .small-12.columns.text-center
+        = f.submit "Search", class: 'submit button small success radius'
+
+
+fieldset.rounded
+  legend Results
+  .row
+    .small-12.columns.text-center
+      - if @enrollments.count > 0
+        table.rounded
+          thead
+            tr
+              th.text-center width='10%' Discipline
+              th.text-center width='10%' Membership No.
+              th.text-center width='15%' Name
+              th.text-center width='15%' Email
+              th.text-center width='10%' Phone
+          tbody
+            - @enrollments.each do |e|
+              tr
+                td = e.discipline.name
+                td = e.membership_no
+                td = e.name
+                td = e.email
+                td = e.phone
+      - else
+        span.alert No Results Found!
