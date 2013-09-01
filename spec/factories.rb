@@ -52,7 +52,7 @@ FactoryGirl.define do
       role "staff"
       sequence(:username) { |n| "johndoe_#{n}_staff" }
       sequence(:email) { |n| "john.doe#{n}@staff.com" }
-      branch_id 1
+      branch
     end
   end
 end

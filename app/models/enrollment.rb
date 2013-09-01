@@ -1,5 +1,4 @@
 class Enrollment < ActiveRecord::Base
-  Enrollment::MODES = %w[Cash Card Cheque]
   Enrollment::TXN_STATUSES = %w[Active Reversed]
   Enrollment::STATUSES = %w[Active Completed]
   
@@ -22,7 +21,7 @@ class Enrollment < ActiveRecord::Base
   validates :txn_status, 
               presence: true, inclusion: { in: Enrollment::TXN_STATUSES, message: "%{value} is not a valid transaction status" }
   validates :mode, 
-              presence: true, inclusion: { in: Enrollment::MODES, message: "%{value} is not a valid mode" }
+              presence: true, inclusion: { in: Payment::MODES, message: "%{value} is not a valid mode" }
   
   # NOTES: STUDENT_ID/STUDENT
   # Student ID is mandatory, but could not add a presence:true validation
@@ -90,6 +89,7 @@ class Enrollment < ActiveRecord::Base
         total: self.total,
         narration: self.details,
         status: "Active",
+        branch_id: self.branch_id,
         created_by: self.created_by,
         modified_by: self.modified_by
       )

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130830074850) do
+ActiveRecord::Schema.define(version: 20130831082041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -252,6 +252,7 @@ ActiveRecord::Schema.define(version: 20130830074850) do
     t.datetime "updated_at"
     t.integer  "transactable_id"
     t.string   "transactable_type"
+    t.integer  "branch_id"
   end
 
   add_index "payments", ["transactable_id", "transactable_type"], name: "index_payments_on_transactable_id_and_transactable_type", using: :btree

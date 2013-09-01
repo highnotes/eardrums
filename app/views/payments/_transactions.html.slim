@@ -1,0 +1,22 @@
+h5.text-left 
+  = mode
+table.rounded
+  thead
+    tr
+      th.text-center width='5%' Transaction
+      th.text-center width='5%' Mem. No.
+      th.text-center width='15%' Name
+      th.text-center width='15%' Course
+      th.text-center width='10%' Regn Fee
+      th.text-center width='10%' Course Fee
+      th.text-center width='10%' Total
+  tbody
+    - payments.select { |p| p.mode == mode }.each do |p|
+      tr
+        td = p.transactable_type
+        td = p.transactable.membership_no
+        td = p.transactable.name
+        td = p.transactable.course.name
+        td = p.registration_fee
+        td = p.course_fee
+        td = p.total

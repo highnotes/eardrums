@@ -62,7 +62,7 @@ describe Enrollment do
     
   it { should ensure_inclusion_of(:status).in_array(Enrollment::STATUSES) }
   it { should ensure_inclusion_of(:txn_status).in_array(Enrollment::TXN_STATUSES) }
-  it { should ensure_inclusion_of(:mode).in_array(Enrollment::MODES) }
+  it { should ensure_inclusion_of(:mode).in_array(Payment::MODES) }
   
   it { should belong_to(:creator) }
   it { should belong_to(:modifier) }

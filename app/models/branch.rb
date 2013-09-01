@@ -16,6 +16,7 @@ class Branch < ActiveRecord::Base
   has_many :staffs, -> { where role: 'staff' }, class_name: 'User'
   has_many :enrollments
   has_many :rolls
+  has_many :payments
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
   belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
 end

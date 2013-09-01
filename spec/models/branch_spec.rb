@@ -23,6 +23,7 @@ describe Branch do
   it { should have_many(:staffs) }
   it { should have_many(:enrollments) }
   it { should have_many(:rolls) }
+  it { should have_many(:payments) }
   it { should belong_to(:creator) }
   it { should belong_to(:modifier) }
 end

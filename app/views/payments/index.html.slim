@@ -1,0 +1,31 @@
+= content_for :title do 
+  | Day Book
+  
+.row
+  .large-6.columns
+    h2 Day Book
+
+= search_form_for @q do |f|
+  .row
+    .small-6.columns
+      .row
+        .small-4.columns
+          = f.label :created_at_casted_eq, 'Filter on day', class: 'inline'
+        .small-8.columns
+          = f.text_field :created_at_casted_eq, label: false, class: 'datepicker', 'data-date-format' => "yyyy-mm-dd", value: @date_of_query
+    .small-6.columns.text-left
+      = f.submit "Search", class: 'submit button small success radius'
+        
+fieldset.rounded
+  legend Transactions
+  .row
+    .small-12.columns.text-center
+      - if @payments.length > 0
+        - if @payments.select { |p| p.mode == "Cash" }.length > 0
+          = render partial: 'transactions', locals: { payments: @payments, mode: 'Cash' }
+        - if @payments.select { |p| p.mode == "Card" }.length > 0
+          = render partial: 'transactions', locals: { payments: @payments, mode: 'Card' }
+        - if @payments.select { |p| p.mode == "Cheque" }.length > 0
+          = render partial: 'transactions', locals: { payments: @payments, mode: 'Cheque' }
+      - else
+        span.alert No Results Found!

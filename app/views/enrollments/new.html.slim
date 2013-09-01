@@ -95,7 +95,7 @@
             .small-4.columns
               = f.label :mode, class: 'inline'
             .small-8.columns
-              = f.input :mode, collection: ["Cash", "Card", "Cheque"], as: :radio_buttons, item_wrapper_class: 'inline-block', label: false
+              = f.input :mode, collection: Payment::MODES, as: :radio_buttons, item_wrapper_class: 'inline-block', label: false
           .row
             .small-4.columns
               = f.label :registration_fee, class: 'inline'

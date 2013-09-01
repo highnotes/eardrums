@@ -9,6 +9,7 @@ module Permissions
       allow_action "devise/passwords", [:new, :create, :edit, :update]
       allow_action "courses", [:index, :show]
       allow_action "enrollments", [:new, :create, :edit, :update, :show, :index]
+      allow_action "payments", [:index]
     end
   end
 end

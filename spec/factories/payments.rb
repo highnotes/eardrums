@@ -8,6 +8,7 @@ FactoryGirl.define do
     total "2900"
     narration "Cash Payment"
     status "Active"
+    branch
     created_by 1
     modified_by 1
     transactable { |a| a.association(:enrollment) }
