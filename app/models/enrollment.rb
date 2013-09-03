@@ -76,6 +76,19 @@ class Enrollment < ActiveRecord::Base
     txn_status == "Reversed"
   end
   
+  def reverse!
+    self.txn_status = "Reversed"
+    
+    self.student.rolls.select { |r| r.course_id == course_id }.each do |r|
+      r.destroy!
+    end
+    
+    self.payments.each do |p|
+      p.reverse!
+    end
+    save!
+  end
+  
   private
     def student_should_be_valid
       errors.add(:student, "details should be valid") unless self.student.valid?

@@ -165,5 +165,33 @@ describe Enrollment do
     end
   end
   
+  context "Reversals" do
+    before { @enrollment = Enrollment.build(@enrollment_attrs) }
+    subject { @enrollment }
+    
+    it "should mark enrollment as Reversed" do
+      @enrollment.save!
+      expect { @enrollment.reverse! }.to change{@enrollment.txn_status}
+      expect(@enrollment).to be_txn_reversed
+    end
+    
+    it "should mark payment as Reversed" do
+      @enrollment.save!
+      expect { @enrollment.reverse! }.to change{@enrollment.payments.first.status}
+      expect(@enrollment.payments.first).to be_reversed
+    end
+    
+    it "should mark all payments as Reversed" do
+      @enrollment.save!
+      expect { @enrollment.reverse! }.to change{@enrollment.payments.last.status}
+      expect(@enrollment.payments.last).to be_reversed
+    end
+    
+    it "should remove all rolls associated with enrollment" do
+      @enrollment.save!
+      expect { @enrollment.reverse! }.to change{@enrollment.student.rolls.count}.to(0)
+    end
+  end
+  
   it "should return course_completed? true after course is completed"
 end

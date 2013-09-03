@@ -66,5 +66,36 @@ describe EnrollmentsController do
       end
       
     end
+    
+    describe "GET reverse" do
+      before { 
+        @enrollment = Enrollment.build(@enrollment_attrs) 
+        @enrollment.save!        
+      }
+      subject { @enrollment }
+      
+      context "on success" do
+        it "calls reverse on enrollment" do
+          @enrollment.should_receive(:reverse!).and_return(true)
+          @enrollment.reverse!
+        end
+        
+        it "calls reverse on payment" do
+          Payment.any_instance.should_receive(:reverse!).and_return(true)
+          @enrollment.reverse!
+        end
+        
+        it "should show notification successfully reversed" do
+          put :reverse, id: @enrollment.id, enrollment: {}
+          expect(response).to be_redirect
+          expect(response).to redirect_to enrollments_path
+          expect(flash[:notice]).to eq("Successfully reversed!")
+        end
+      end
+      
+      context "on failure" do
+        it "should show notification Error in Enrollment reversal"
+      end
+    end
   end
 end

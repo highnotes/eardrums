@@ -31,4 +31,16 @@ class Payment < ActiveRecord::Base
   ransacker :created_at_casted do |parent|
     Arel::Nodes::SqlLiteral.new("date(payments.created_at)")
   end
+  
+  def reverse!
+    self.status = "Reversed"
+  end
+  
+  def active?
+    status == "Active"
+  end
+  
+  def reversed?
+    status == "Reversed"
+  end
 end

@@ -142,6 +142,7 @@ describe Permissions do
       should allow_action("enrollments", "create") 
       should allow_action("enrollments", "edit")
       should allow_action("enrollments", "update") 
+      should allow_action("enrollments", "reverse") 
       should_not allow_action("enrollments", "destroy")
     end
     

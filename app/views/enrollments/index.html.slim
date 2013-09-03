@@ -52,6 +52,7 @@ fieldset.rounded
               th.text-center width='15%' Name
               th.text-center width='15%' Email
               th.text-center width='10%' Phone
+              th.text-center width='5%'
           tbody
             - @enrollments.each do |e|
               tr
@@ -60,5 +61,6 @@ fieldset.rounded
                 td = e.name
                 td = e.email
                 td = e.phone
+                td = link_to "Reverse", reverse_enrollment_path(e), method: :put, data: { confirm: 'Are you sure you want to reverse this enrollment?' }
       - else
         span.alert No Results Found!

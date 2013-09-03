@@ -55,7 +55,7 @@ class BatchSchedule < ActiveRecord::Base
   
   private
     def scheduled_in_past
-      errors.add(:scheduled_on, " should always be in the future") if self.scheduled_on.present? and self.scheduled_on < Date.today
+      errors.add(:scheduled_on, "should always be in the future") if self.scheduled_on.present? and self.scheduled_on < Date.today
     end
     
     def batch_is_active
