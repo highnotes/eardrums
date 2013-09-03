@@ -2,6 +2,9 @@ class EnrollmentsController < ApplicationController
   skip_before_filter :authenticate_user!
   
   def index
+    params[:q] ||= Hash.new.merge(enrolled_on_gteq: Date.today, enrolled_on_lteq: Date.today)
+    @enrolled_on_gteq = params[:q][:enrolled_on_gteq]
+    @enrolled_on_lteq = params[:q][:enrolled_on_lteq]
     @q = Enrollment.search(params[:q])
     @enrollments = @q.result(distinct: true)
   end

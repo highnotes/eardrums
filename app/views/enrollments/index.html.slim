@@ -27,13 +27,13 @@
           .small-4.columns
             = f.label :enrolled_on_gteq, 'Enrolled after', class: 'inline'
           .small-8.columns
-            = f.text_field :enrolled_on_gteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: Date.today.strftime("%d-%m-%Y")
+            = f.text_field :enrolled_on_gteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: @enrolled_on_gteq
       .small-6.columns
         .row
           .small-3.columns.text-right
             = f.label :enrolled_on_lteq, 'Enrolled before',class: 'inline'
           .small-9.columns
-            = f.text_field :enrolled_on_lteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: Date.today.strftime("%d-%m-%Y")
+            = f.text_field :enrolled_on_lteq, label: false, class: 'datepicker', 'data-date-format' => "dd-mm-yyyy", value: @enrolled_on_lteq
     .row
       .small-12.columns.text-center
         = f.submit "Search", class: 'submit button small success radius'
