@@ -1,59 +1,66 @@
 = content_for :title do 
   = @course.name
   
-.row
-  .large-1.columns
-    img src="http://placehold.it/64x64"
-  .large-6.columns
-    h2 = @course.name
-  .large-5.columns
-    = link_to 'Enroll Now!', '#', class: 'btn-big' 
-    = link_to 'Contact me', '#', class: 'btn' 
-.row
-  .large-6.columns.panel.course-contents
+.row.padding-bottom-10px
+  .large-2.columns
+    img src="http://placehold.it/100x100"
+  .large-7.columns
     .row
       .large-12.columns
-        h3
-          | Contents
-    - @course.lessons.each do |lesson|
-      .row.panel.lessons class=cycle('odd','even')
-        .large-3.columns
-          = "Lesson #{lesson.index}"
-        .large-9.columns
-          = lesson.name
-      
-  .large-6.columns.panel.course-contents
+        h2 = @course.name
+    .row
+      .large-12.columns
+        span.level_color class="#{@course.level.name.parameterize}"
+        = @course.level.name
+  .large-3.columns
+    span.right = link_to 'Enroll Now!', '#', class: 'btn-big' 
+    //= link_to 'Contact me', '#', class: 'btn' 
+.row
+  .large-6.columns.panel.course-contents.rounded
     .row.details
       .large-12.columns
         h3
-          | Course Details
+          | What you will learn
     .row.details
-      .large-5.columns
-        | Level
-      .large-7.columns
-        span.level_color class="#{@course.level.name.parameterize}"
-        = @course.level.name
+      .large-12.columns
+        = @course.description.html_safe
+    .row
+      .large-12.columns
+        h3 Syllabus
+    .row
+      .large-12.columns
+        table.rounded
+          tbody
+            - @course.lessons.each do |lesson|
+              tr
+                td.text-center width='10%'
+                  = "Lesson #{lesson.index}"
+                td.text-left width='40%'
+                  = lesson.name  
+  .large-6.columns.panel.course-contents.rounded
     .row.details
-      .large-5.columns
-        | Teacher
-      .large-7.columns
-        = @course.teacher.full_name
+      .large-12.columns
+        h3 Your Teacher
     .row.details
-      .large-5.columns
-        img src="http://placehold.it/128x128"
+      .large-5.columns.text-left
+        img src="http://placehold.it/100x100"
       .large-7.columns
-        | lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h5 = @course.teacher.full_name
     .row.details
-      .large-5.columns
-        | Course Fee
-      .large-7.columns
+      .large-2.columns
+        h5 Fee
+      .large-10.columns
         span.course-price
           | &#x20B9; 
           = @course.price
     .row.details
-      .large-5.columns
-        | Batches
-      .large-7.columns
+      .large-2.columns
+        h5 Batches
+      .large-10.columns
         - @course.discipline.batches.each do |batch|
           span.batch
             = batch.timings
+            = "  (#{batch.capacity-batch.students.count} slots left)"
+    .row.details
+      .large-12.columns
+        = @course.teacher.profile.html_safe

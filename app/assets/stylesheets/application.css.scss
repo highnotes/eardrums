@@ -69,6 +69,8 @@ html, body {
   @extend %button;
   margin: 10px;
   font-size: 24px;
+  background-color: #5da423;
+  margin: 10px;
 }
 
 .btn:first-child {
@@ -177,4 +179,8 @@ body:before {
 
 .underline {
   text-decoration:underline;
+}
+
+.padding-bottom-10px {
+  padding-bottom: 10px;
 }

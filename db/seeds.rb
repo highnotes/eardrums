@@ -16,6 +16,7 @@ teacher_subhash = User.create! do |r|
   r.password    = 'password'
   r.role        = 'teacher'
   r.username    = 'subhashb'
+  r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
 User.where(email: 'nikhil.sivakumar@eardrums.in').first.try(:delete)
 teacher_nikhil = User.create! do |r|
@@ -24,6 +25,7 @@ teacher_nikhil = User.create! do |r|
   r.password    = 'password'
   r.role        = 'teacher'
   r.username    = 'nikhils'
+  r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
 User.where(email: 'deepak.nair@eardrums.in').first.try(:delete)
 teacher_deepak = User.create! do |r|
@@ -32,6 +34,7 @@ teacher_deepak = User.create! do |r|
   r.password    = 'password'
   r.role        = 'teacher'
   r.username    = 'deepakn'
+  r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
 
 Discipline.delete_all
@@ -138,16 +141,25 @@ branch_wf = Branch.create(
 Batch.delete_all
 guitar_batch1 = Batch.create(
                   { status: "Active", discipline: dis_guitar, teacher: teacher_subhash, day: "Sunday", start_time: "16:30",
-                    duration: 60, created_by: 1, modified_by: 1})
+                    duration: 60, created_by: 1, modified_by: 1, capacity: 8})
 guitar_batch2 = Batch.create(
                   { status: "Active", discipline: dis_guitar, teacher: teacher_subhash, day: "Saturday", start_time: "16:30",
-                    duration: 60, created_by: 1, modified_by: 1})
+                    duration: 60, created_by: 1, modified_by: 1, capacity: 8})
 drums_batch1 = Batch.create(
                   { status: "Active", discipline: dis_drums, teacher: teacher_nikhil, day: "Sunday", start_time: "14:00",
-                    duration: 60, created_by: 1, modified_by: 1})
+                    duration: 60, created_by: 1, modified_by: 1, capacity: 8})
 keyboard_batch1 = Batch.create(
                   { status: "Active", discipline: dis_keyboard, teacher: teacher_deepak, day: "Sunday", start_time: "18:00",
-                    duration: 60, created_by: 1, modified_by: 1})
+                    duration: 60, created_by: 1, modified_by: 1, capacity: 8})
 keyboard_batch2 = Batch.create(
                   { status: "Active", discipline: dis_keyboard, teacher: teacher_deepak, day: "Saturday", start_time: "18:00",
-                    duration: 60, created_by: 1, modified_by: 1})
+                    duration: 60, created_by: 1, modified_by: 1, capacity: 8})
+
+guitar_lesson1 = Lesson.create(name: 'Lesson 1', description: 'Lesson 1', course_id: 1, index: 1)
+guitar_lesson2 = Lesson.create(name: 'Lesson 2', description: 'Lesson 2', course_id: 1, index: 2)
+guitar_lesson3 = Lesson.create(name: 'Lesson 3', description: 'Lesson 3', course_id: 1, index: 3)
+guitar_lesson4 = Lesson.create(name: 'Lesson 4', description: 'Lesson 4', course_id: 1, index: 4)
+guitar_lesson5 = Lesson.create(name: 'Lesson 5', description: 'Lesson 5', course_id: 1, index: 5)
+guitar_lesson6 = Lesson.create(name: 'Lesson 6', description: 'Lesson 6', course_id: 1, index: 6)
+guitar_lesson7 = Lesson.create(name: 'Lesson 7', description: 'Lesson 7', course_id: 1, index: 7)
+guitar_lesson8 = Lesson.create(name: 'Lesson 8', description: 'Lesson 8', course_id: 1, index: 8)

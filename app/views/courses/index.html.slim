@@ -22,7 +22,7 @@
     - @disciplines.each do |d|
       section
         p.title data-section-title=""
-          a href="#" = d.name
+          a.discipline href="#" = d.name
         .content data-section-content=""
           .row
             - if Course.beginner_courses(d).count > 0
