@@ -30,6 +30,8 @@ body
     - if current_user
       - if current_user.staff?
         = render 'layouts/staff_menu'
+      - elsif current_user.admin?
+        = render 'layouts/admin_menu'
 
     .row
       .large-12.columns
