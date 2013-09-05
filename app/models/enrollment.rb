@@ -45,6 +45,7 @@ class Enrollment < ActiveRecord::Base
     def build(params)
       Enrollment.new(params).tap do |e|
         e.set_defaults
+        e.enrolled_on ||= Date.today
         e.student = User.build_from_enrollment(e)
         e.student.rolls << Roll.build_from_enrollment(e)
       end
@@ -56,7 +57,6 @@ class Enrollment < ActiveRecord::Base
       self.status = "Active"
       self.txn_status = "Active"
       self.reversal_reason_id = 0
-      self.enrolled_on = Date.today
     end
   end
   

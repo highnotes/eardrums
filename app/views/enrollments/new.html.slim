@@ -122,7 +122,7 @@
           .small-6.columns
             = f.label :date_of_birth, class: 'inline'
           .small-3.columns.left
-            = f.input_field :date_of_birth, as: :string, class: 'datepicker', label: false
+            = f.input_field :date_of_birth, as: :string, class: 'datepicker', label: false, 'data-date-format' => "dd-mm-yyyy"
     .row
       .large-12.columns
         .row
@@ -153,6 +153,15 @@
             label for="enrollment_source_id" How did you get to know about Eardrums:
           .small-6.columns
             = f.input :source_id, collection: Master.get_group_collection("INFORMATION_SOURCES").collect { |m| [m.description, m.id] }, as: :radio_buttons, item_wrapper_class: 'radio inline-block', label: false
+  fieldset.rounded
+    legend Temporary Details
+    .row
+      .large-12.columns
+        .row
+          .small-6.columns
+            = f.label :enrolled_on, class: 'inline'
+          .small-3.columns.left
+            = f.input_field :enrolled_on, as: :string, class: 'datepicker', label: false, 'data-date-format' => "dd-mm-yyyy"
   .row
     .small-12.columns.text-center
       =link_to 'Submit', '#', class: 'submit button small success radius'
