@@ -13,7 +13,7 @@
           #error_explanation
             h3
               = pluralize(@enrollment.student.errors.count, "error")
-              |  prohibited this post from being saved:
+              |  prohibited this enrollment from being saved:
             ul
               - @enrollment.student.errors.full_messages.each do |msg|
                 li= msg
