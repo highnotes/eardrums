@@ -128,6 +128,10 @@ c_course1 = Course.create(
               { name: "Intro to Carnatic", description: "Intro to Carnatic", duration: 8,  
               price: "2400", status: "Active", code: "CV0001", index: 1, level: level1,
               discipline: dis_carnatic, teacher: teacher_nikhil, created_by: 1, modified_by: 1 })
+k_course1 = Course.create(
+              { name: "Intro to Keyboard", description: "Intro to Keyboard", duration: 8,  
+              price: "2400", status: "Active", code: "KB0001", index: 1, level: level1,
+              discipline: dis_keyboard, teacher: teacher_deepak, created_by: 1, modified_by: 1 })
 
 franchise_wf = Franchise.create(
                 { name: "New World Music", franchisees: "John Doe", emails: "john.doe@example.com",
