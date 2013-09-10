@@ -59,6 +59,16 @@ describe Permissions do
       should allow_action("users/omniauth_callbacks", "facebook")
       should allow_action("users/omniauth_callbacks", "google_oauth2")
     end
+    
+    it "allows teachers" do
+      should allow_action("teachers", "index")
+      should allow_action("teachers", "show")
+      should_not allow_action("teachers", "new")
+      should_not allow_action("teachers", "create") 
+      should_not allow_action("teachers", "edit")
+      should_not allow_action("teachers", "update") 
+      should_not allow_action("teachers", "destroy")
+    end
   end
   
   describe "as user" do
@@ -119,6 +129,16 @@ describe Permissions do
       should allow_action("users/omniauth_callbacks", "twitter")
       should allow_action("users/omniauth_callbacks", "facebook")
       should allow_action("users/omniauth_callbacks", "google_oauth2")
+    end
+    
+    it "allows teachers" do
+      should allow_action("teachers", "index")
+      should allow_action("teachers", "show")
+      should_not allow_action("teachers", "new")
+      should_not allow_action("teachers", "create") 
+      should_not allow_action("teachers", "edit")
+      should_not allow_action("teachers", "update") 
+      should_not allow_action("teachers", "destroy")
     end
   end
   
@@ -181,6 +201,16 @@ describe Permissions do
       should allow_action("users/omniauth_callbacks", "twitter")
       should allow_action("users/omniauth_callbacks", "facebook")
       should allow_action("users/omniauth_callbacks", "google_oauth2")
+    end
+    
+    it "allows teachers" do
+      should allow_action("teachers", "index")
+      should allow_action("teachers", "show")
+      should allow_action("teachers", "new")
+      should allow_action("teachers", "create") 
+      should allow_action("teachers", "edit")
+      should allow_action("teachers", "update") 
+      should_not allow_action("teachers", "destroy")
     end
   end
   

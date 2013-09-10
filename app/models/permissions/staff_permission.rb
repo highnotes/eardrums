@@ -10,6 +10,7 @@ module Permissions
       allow_action "courses", [:index, :show]
       allow_action "enrollments", [:new, :create, :edit, :update, :show, :index, :reverse]
       allow_action "payments", [:index]
+      allow_action "teachers", [:new, :create, :edit, :update, :show, :index]
     end
   end
 end

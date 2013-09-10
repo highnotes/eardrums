@@ -29,12 +29,6 @@ FactoryGirl.define do
       sequence(:email) { |n| "john.doe#{n}@admin.com" }
     end
     
-    factory :teacher do
-      role "teacher"
-      sequence(:username) { |n| "johndoe_#{n}_teacher" }
-      sequence(:email) { |n| "john.doe#{n}@teacher.com" }
-    end
-    
     factory :student do
       role "student"
       sequence(:username) { |n| "johndoe_#{n}_student" }

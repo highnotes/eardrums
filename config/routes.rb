@@ -13,6 +13,7 @@ Eardrums::Application.routes.draw do
     put 'reverse', on: :member
   end
   resources :payments
+  resources :teachers
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

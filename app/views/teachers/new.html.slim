@@ -1,0 +1,58 @@
+= content_for :title do 
+  | New Teacher
+  
+.row
+  .large-6.columns
+    h2 New Teacher
+    
+= simple_form_for @teacher do |f|
+  fieldset.rounded
+    legend Basic Details
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :first_name, class: 'inline'
+          .small-8.columns
+            = f.input :first_name, label: false
+      .small-6.columns
+        .row
+          .small-3.columns.text-right
+            = f.label :last_name, class: 'inline'
+          .small-9.columns
+            = f.input :last_name, label: false
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :email, class: 'inline'
+          .small-8.columns
+            = f.input :email, label: false
+      .small-6.columns
+        .row
+          .small-3.columns.text-right
+            = f.label :branch_id, class: 'inline'
+          .small-9.columns
+            = f.association :branch, label: false
+  fieldset.rounded
+    legend Optional Details
+    .row
+      .large-12.columns
+        .row
+          .small-2.columns
+            = f.label :address, class: 'inline'
+          .small-10.columns
+            = f.input :address, label: false, as: :text
+      .small-6.columns
+    .row
+      .large-12.columns
+        .row
+          .small-2.columns
+            = f.label :profile, class: 'inline'
+          .small-10.columns
+            = f.input :profile, label: false, as: :text
+      .small-6.columns
+  .row
+    .small-12.columns.text-center
+      =link_to 'Submit', '#', class: 'submit button small success radius'
+      =link_to 'Cancel', root_url, class: 'button tiny secondary'
