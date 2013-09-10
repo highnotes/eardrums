@@ -2,6 +2,73 @@
  | Eardrums
 
 .row
-  .large-12.columns
-    section.banner
-      | Coming Soon!
+  .small-4.columns.panel.rounded.text-center.businesses
+    .row
+      .small-12.columns
+        .business = link_to "Learn", courses_path
+    .row
+      .small-12.columns
+        | from the best teachers in a customized environment, through a course based curriculum
+  .small-4.columns.panel.rounded.text-center.businesses
+    .row
+      .small-12.columns
+        .business Jam
+    .row
+      .small-12.columns
+        | with your friends in a sound-proof, acoustically treated Jamming Room and even get your session stored as a video for free
+  .small-4.columns.panel.rounded.text-center.businesses
+    .row
+      .small-12.columns
+        .business Record
+    .row
+      .small-12.columns
+        | with the help of certified Sound Engineers, in an environment built to teach you the core concepts of recording your music
+.row
+  .small-12.columns.panel.rounded
+    .row
+      .small-12.columns
+        h4.padding-bottom-10px Some of our Courses:
+    .row
+      .small-3.columns.panel.text-center.rounded.course-snippet
+        .row
+          .small-12.columns.discipline-image
+            = link_to image_tag("disciplines/#{@courses[0].discipline.name.humanize}.png", width: 100, height: 100), course_path(@courses[0])
+        .row
+          .small-12.columns
+            h5 = link_to @courses[0].name, course_path(@courses[0])
+        .row
+          .small-12.columns
+            = @courses[0].description[0..300]
+      .small-3.columns.panel.text-center.rounded.course-snippet
+        .row
+          .small-12.columns.discipline-image
+            = link_to image_tag("disciplines/#{@courses[1].discipline.name.humanize}.png", width: 100, height: 100), course_path(@courses[1])
+        .row
+          .small-12.columns
+            h5 = link_to @courses[1].name, course_path(@courses[1])
+        .row
+          .small-12.columns
+            = @courses[1].description[0..300] 
+      .small-3.columns.panel.text-center.rounded.course-snippet
+        .row
+          .small-12.columns.discipline-image
+            = link_to image_tag("disciplines/#{@courses[2].discipline.name.humanize}.png", width: 100, height: 100), course_path(@courses[2])
+        .row
+          .small-12.columns
+            h5 = link_to @courses[2].name, course_path(@courses[2])
+        .row
+          .small-12.columns
+            = @courses[2].description[0..300]
+      .small-3.columns.panel.text-center.rounded.course-snippet
+        .row
+          .small-12.columns.discipline-image
+            = link_to image_tag("disciplines/#{@courses[3].discipline.name.humanize}.png", width: 100, height: 100), course_path(@courses[3])
+        .row
+          .small-12.columns
+            h5 = link_to @courses[3].name, course_path(@courses[3])
+        .row
+          .small-12.columns
+            = @courses[3].description[0..300]
+    .row
+      .small-12.columns.text-right
+        = link_to "View all courses >>", courses_path

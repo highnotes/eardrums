@@ -7,14 +7,16 @@ header
       .row
         #sign-in-block
           - if user_signed_in?
-            .large-6.columns.hello
+            .small-4.columns.hello
               | Hey 
               strong = current_user.full_name.empty? ? current_user.email : current_user.full_name
               | !
-            .large-6.columns.text-center
+            .small-8.columns.text-center
               section.right
                 nav.header-nav
                   ul
+                    li
+                      = link_to "Courses", courses_path, class: "btn"
                     li
                       = link_to 'Edit profile', edit_user_registration_path, :class => "btn"
                     li
@@ -23,6 +25,8 @@ header
             section.right
               nav.header-nav
                 ul
+                  li
+                    = link_to "Courses", courses_path, class: "btn"
                   //li
                     //= link_to "Sign up", new_user_registration_path, :class => "btn"
                   li
