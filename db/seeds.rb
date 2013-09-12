@@ -6,6 +6,7 @@ User.create! do |r|
   r.password    = 'password'
   r.type        = 'Administrator'
   r.username    = 'admin'
+  r.confirmed_at = Time.now
 end
 
 # Teachers
@@ -17,20 +18,21 @@ teacher_subhash = User.create! do |r|
   r.type        = 'Teacher'
   r.username    = 'subhashb'
   r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  r.confirmed_at = Time.now
 end
-User.where(email: 'nikhil.sivakumar@eardrums.in').first.try(:delete)
+User.where(email: 'nikhil.sivakumar@strata.co.in').first.try(:delete)
 teacher_nikhil = User.create! do |r|
   r.first_name  = "Nikhil"
-  r.email       = 'nikhil.sivakumar@eardrums.in'
+  r.email       = 'nikhil.sivakumar@strata.co.in'
   r.password    = 'password'
   r.type        = 'Teacher'
   r.username    = 'nikhils'
   r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
-User.where(email: 'deepak.nair@eardrums.in').first.try(:delete)
+User.where(email: 'deepak.nair@strata.co.in').first.try(:delete)
 teacher_deepak = User.create! do |r|
   r.first_name  = "Deepak"
-  r.email       = 'deepak.nair@eardrums.in'
+  r.email       = 'deepak.nair@strata.co.in'
   r.password    = 'password'
   r.type        = 'Teacher'
   r.username    = 'deepakn'
