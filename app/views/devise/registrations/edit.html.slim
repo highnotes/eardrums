@@ -29,6 +29,8 @@
         = f.text_field :last_name, :placeholder => 'Last Name'
 
       = field_set_tag 'Password', :class => 'rounded' do
+        = f.password_field :current_password, :autocomplete => "off", placeholder: "Current Password"
+        
         = f.password_field :password, :autocomplete => "off", :placeholder => "Password"
 
         = f.password_field :password_confirmation, :placeholder => 'Password Confirmation'
