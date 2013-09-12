@@ -119,7 +119,7 @@ describe User do
     
     context "is not a student" do
       context "with course" do
-        before { @user_with_course = FactoryGirl.build(:student, role: 'user') }
+        before { @user_with_course = FactoryGirl.build(:student, type: 'User') }
         subject { @user_with_course }
       
         context "should not be valid" do
@@ -242,7 +242,7 @@ describe User do
   end
   
   context "as admin" do
-    before { @admin = FactoryGirl.build(:admin) }
+    before { @admin = FactoryGirl.build(:administrator) }
     subject { @admin }
   
     it "should return true for admin?" do

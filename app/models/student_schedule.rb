@@ -2,7 +2,7 @@ class StudentSchedule < ActiveRecord::Base
   validates_presence_of :student_id
   validates_presence_of :batch_schedule
   
-  belongs_to :student, -> { where role: 'student' }, class_name: 'User'
+  belongs_to :student, -> { where type: 'Student' }, class_name: 'User'
   belongs_to :batch_schedule
   
   validate :batch_schedule_is_active

@@ -4,7 +4,7 @@ User.create! do |r|
   r.first_name  = "Admin"
   r.email       = 'admin@eardrums.in'
   r.password    = 'password'
-  r.role        = 'admin'
+  r.type        = 'Administrator'
   r.username    = 'admin'
 end
 
@@ -14,7 +14,7 @@ teacher_subhash = User.create! do |r|
   r.first_name  = "Subhash"
   r.email       = 'subhash.bhushan@eardrums.in'
   r.password    = 'password'
-  r.role        = 'teacher'
+  r.type        = 'Teacher'
   r.username    = 'subhashb'
   r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
@@ -23,7 +23,7 @@ teacher_nikhil = User.create! do |r|
   r.first_name  = "Nikhil"
   r.email       = 'nikhil.sivakumar@eardrums.in'
   r.password    = 'password'
-  r.role        = 'teacher'
+  r.type        = 'Teacher'
   r.username    = 'nikhils'
   r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end
@@ -32,7 +32,7 @@ teacher_deepak = User.create! do |r|
   r.first_name  = "Deepak"
   r.email       = 'deepak.nair@eardrums.in'
   r.password    = 'password'
-  r.role        = 'teacher'
+  r.type        = 'Teacher'
   r.username    = 'deepakn'
   r.profile     = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Batch do
-  # TODO Refer to ROLES variable within Batch model
+  # TODO Refer to STATUSES variable within Batch model
   STATUSES = %w[Active Upcoming Inactive Retired]
   
   timings = [ 
@@ -14,7 +14,7 @@ ActiveAdmin.register Batch do
             ]
   
   filter :discipline
-  filter :teacher, :collection => User.where(role: 'teacher')
+  filter :teacher, :collection => User.where(type: 'Teacher')
   filter :status, as: :select, collection: STATUSES
   filter :day, as: :select, collection: Date::DAYNAMES
   filter :start_time, as: :select, collection: timings
@@ -24,7 +24,7 @@ ActiveAdmin.register Batch do
   form do |f|
     f.inputs "Details" do
       f.input :discipline
-      f.input :teacher, collection: User.where(role: 'teacher')
+      f.input :teacher, collection: User.where(type: 'Teacher')
       f.input :status, as: :select, collection: STATUSES.each.map { |x| [x.humanize, x] }
       f.input :day, as: :select, collection: Date::DAYNAMES.each.map { |x| [x, x] }
       f.input :start_time, as: :select, collection: timings.each.map { |x| [x, x] }

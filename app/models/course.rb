@@ -23,7 +23,7 @@ class Course < ActiveRecord::Base
   has_many :enrollments
   has_many :installments
   has_many :rolls
-  belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
+  belongs_to :teacher, -> { where type: 'Teacher' }, class_name: 'User'
   has_and_belongs_to_many :branches
 
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'

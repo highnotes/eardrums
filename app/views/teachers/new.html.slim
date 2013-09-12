@@ -6,6 +6,17 @@
     h2 New Teacher
     
 = simple_form_for @teacher do |f|
+  - if @teacher.errors.any?
+    fieldset.rounded
+      .row
+        .small-12.columns
+          #error_explanation
+            h3
+              = pluralize(@teacher.errors.count, "error")
+              |  prohibited this teacher from being saved:
+            ul
+              - @teacher.errors.full_messages.each do |msg|
+                li= msg
   fieldset.rounded
     legend Basic Details
     .row

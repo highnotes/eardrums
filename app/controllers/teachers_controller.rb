@@ -6,7 +6,7 @@ class TeachersController < ApplicationController
   end
   
   def create
-    @teacher = Teacher.new(teacher_params.merge(created_by: current_user.id, modified_by: current_user.id))
+    @teacher = Teacher.new(teacher_params.merge(password: 'eardrums123'))
     respond_to do |format|
       if @teacher.save
         format.html { redirect_to root_url, notice: 'Successfully created!' }

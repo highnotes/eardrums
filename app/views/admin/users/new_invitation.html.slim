@@ -33,9 +33,9 @@
           = f.input :last_name, placeholder: "Doe", label: false
       .row
         .small-2.columns
-          = f.label :role, class: 'inline'
+          = f.label :type, class: 'inline'
         .small-10.columns
-          = f.input :role, collection: User::ROLES.each.map { |x| [x.humanize, x] }, include_blank: true, label: false
+          = f.input :type, collection: User::TYPES, include_blank: true, label: false
       .row
         .small-2.columns.text-right
           = f.label :branch_id, class: 'inline'

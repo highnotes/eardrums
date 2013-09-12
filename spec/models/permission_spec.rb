@@ -215,7 +215,7 @@ describe Permissions do
   end
   
   describe "as admin" do
-    subject { Permissions.permission_for(FactoryGirl.build(:user, role: "admin")) }
+    subject { Permissions.permission_for(FactoryGirl.build(:user, type: "Administrator")) }
     it { should allow_action("anything", "here") }
   end
 end

@@ -14,8 +14,8 @@ class Batch < ActiveRecord::Base
   validates_numericality_of :duration, only_integer: true
   
   belongs_to :discipline
-  belongs_to :teacher, -> { where role: 'teacher' }, class_name: 'User'
-  has_and_belongs_to_many :students, -> { where role: 'student' }, class_name: 'User'
+  belongs_to :teacher, -> { where type: 'Teacher' }, class_name: 'User'
+  has_and_belongs_to_many :students, -> { where type: 'Student' }, class_name: 'User'
   has_many :batch_schedules
   has_many :enrollments
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'

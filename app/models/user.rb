@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :identities
   attr_accessor :login
   
-  ROLES = %w[admin teacher staff student user]
+  TYPES = %w[Administrator Teacher Staff Student]
   
   validates_uniqueness_of :username, case_sensitive: false
   validate :students_belong_to_a_course
@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   has_many :student_schedules, foreign_key: "student_id"
   has_many :enrollments, foreign_key: "student_id"
   has_many :rolls, foreign_key: "student_id"
+  
+  before_save :set_username
   
   def full_name
     ([first_name, last_name] - ['']).compact.join(' ')
@@ -91,11 +93,11 @@ class User < ActiveRecord::Base
   end
   
   def admin?
-    (self.role == "admin")
+    (self.type == "Administrator")
   end
   
   def staff?
-    (self.role == "staff")
+    (self.type == "Staff")
   end
   
   class << self
@@ -113,7 +115,7 @@ class User < ActiveRecord::Base
         user.username = user.generate_username
         user.course_id = params[:course_id]
         user.password = ('a'..'z').to_a.shuffle[0,10].join #TEMP
-        user.role = "student"
+        user.type = "Student"
         user.batches << Batch.find(params[:batch_id])
       end
     end
@@ -123,20 +125,28 @@ class User < ActiveRecord::Base
     email[/[^@]+/]
   end
   
+  def confirmation_required?
+    false
+  end
+  
   private
     def students_belong_to_a_course
-      errors.add(:course, " should be associated with a course" ) if self.role == "student" && self.course_id.nil?
+      errors.add(:course, " should be associated with a course" ) if self.type == "Student" && self.course_id.nil?
     end
     
     def non_students_do_not_belong_to_a_course
-      errors.add("non-student", " should not be associated with a course" ) if self.role != "student" && self.course_id.present?
+      errors.add("non-student", " should not be associated with a course" ) if self.type != "Student" && self.course_id.present?
     end
     
     def staff_are_associated_with_branch
-      errors.add(:branch, " should be associated with a branch" ) if self.role == "staff" && self.branch_id.nil?
+      errors.add(:branch, " should be associated with a branch" ) if self.type == "Staff" && self.branch_id.nil?
     end
     
     def staff_are_associated_with_branch
-      errors.add(:branch, " should be associated with a branch" ) if self.role == "staff" && self.branch_id.nil?
+      errors.add(:branch, " should be associated with a branch" ) if self.type == "Staff" && self.branch_id.nil?
+    end
+    
+    def set_username
+      self.username = generate_username if username.blank?
     end
 end

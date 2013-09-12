@@ -10,7 +10,7 @@ describe "Courses" do
   
   it "cannot edit course as non-admin" do
     pending
-    login role: "user"
+    login type: "User"
     course = FactoryGirl.create(:course)
     visit edit_course_path(course)
     expect(page).to have_content 'Not authorized'
@@ -18,7 +18,7 @@ describe "Courses" do
   
   it "can edit course as admin" do
     pending
-    login role: "admin"
+    login type: "Admin"
     course = FactoryGirl.create(:course)
     visit edit_course_path(course)
     expect(page).to have_content 'Edit Course'

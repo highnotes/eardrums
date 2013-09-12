@@ -17,7 +17,7 @@ describe TeachersController do
     end
   end
   
-  context "as Guest or User", focus: true do
+  context "as Guest or User" do
     describe "GET 'show'" do
       it "returns http success" do
         @teacher = FactoryGirl.create(:teacher)

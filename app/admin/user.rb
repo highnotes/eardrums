@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
-  # TODO Refer to ROLES variable within User model
-  ROLES = %w[admin teacher staff student user]
+  # TODO Refer to TYPES variable within User model
+  TYPES = %w[Administrator Teacher Staff Student]
   
   config.clear_action_items! # To clear "New User" link
   
@@ -10,7 +10,7 @@ ActiveAdmin.register User do
     column :username
     column :first_name
     column :last_name
-    column :role
+    column :type
     default_actions
   end
   
@@ -18,7 +18,7 @@ ActiveAdmin.register User do
   filter :username
   filter :first_name
   filter :last_name
-  filter :role
+  filter :type
   filter :invited_by_type
   
   form do |f|
@@ -29,7 +29,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :username
-      f.input :role, as: :select, collection: ROLES.each.map { |x| [x.humanize, x] }
+      f.input :type, as: :select, collection: TYPES
       f.input :branch
       f.input :invitation_limit
     end

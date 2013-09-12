@@ -33,7 +33,7 @@ class Enrollment < ActiveRecord::Base
   belongs_to :course
   belongs_to :discipline
   belongs_to :batch
-  belongs_to :student, -> { where role: 'student' }, class_name: 'User'
+  belongs_to :student, -> { where type: 'Student' }, class_name: 'User'
   belongs_to :creator, class_name: 'User', foreign_key: 'created_by'
   belongs_to :modifier, class_name: 'User', foreign_key: 'modified_by'
   has_many :payments, as: :transactable
