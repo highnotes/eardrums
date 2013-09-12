@@ -6,6 +6,7 @@ FactoryGirl.define do
     day "Sunday"
     start_time "14:30"
     duration 60
+    capacity 6
     created_by 1
     modified_by 1
   end
