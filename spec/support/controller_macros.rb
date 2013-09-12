@@ -16,4 +16,13 @@ module ControllerMacros
       sign_in staff
     end
   end
+  
+  def login_admin_before_each(attributes = {})
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      admin = FactoryGirl.create(:administrator, attributes)
+      #user.confirm! # or set a confirmed_at inside the factory. Only necessary if you are using the confirmable module
+      sign_in admin
+    end
+  end
 end
