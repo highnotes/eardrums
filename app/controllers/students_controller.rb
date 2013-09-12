@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   
   def index
     @q = Student.search(params[:q])
-    @students = @q.result(distinct: true)    
+    @students = @q.result(distinct: true)
   end
   
   def show
@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
   
   private
   
-  def teacher_params
+  def student_params
     params.require(:student).permit!
   end
 end

@@ -4,3 +4,43 @@
 .row
   .large-6.columns
     h2 Students
+    
+= search_form_for @q do |f|
+  fieldset.rounded
+    legend Search Criteria
+    .row
+      .small-6.columns
+        .row
+          .small-4.columns
+            = f.label :name_or_membership_no_or_phone_or_email_cont, 'Search on', class: 'inline'
+          .small-8.columns
+            = f.text_field :name_or_membership_no_or_phone_or_email_cont, label: false
+      .small-6.columns
+        = f.submit "Search", class: 'submit button small success radius'
+
+
+fieldset.rounded
+  legend Results
+  .row
+    .small-12.columns.text-center
+      - if @students.count > 0
+        table.rounded
+          thead
+            tr
+              th.text-center width='10%' Discipline
+              th.text-center width='10%' Membership No.
+              th.text-center width='15%' Name
+              th.text-center width='15%' Email
+              th.text-center width='10%' Phone
+              th.text-center width='5%'
+          tbody
+            - @students.each do |s|
+              tr
+                td = s.course.discipline.name
+                td = s.membership_no
+                td = s.name
+                td = s.email
+                td = s.phone
+                td = link_to "Show", student_path(s)
+      - else
+        span.alert No Results Found!
