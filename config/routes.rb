@@ -15,6 +15,7 @@ Eardrums::Application.routes.draw do
   resources :payments
   resources :teachers
   resources :staffs
+  resources :students
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

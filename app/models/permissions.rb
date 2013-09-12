@@ -6,8 +6,12 @@ module Permissions
       AdminPermission.new(user)
     elsif user.staff?
       StaffPermission.new(user)
+    elsif user.student?
+      StudentPermission.new(user)
+    elsif user.teacher?
+      TeacherPermission.new(user)
     else
-      UserPermission.new(user)
+      ap user
     end
   end
 end

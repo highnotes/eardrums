@@ -2,11 +2,13 @@ require 'spec_helper'
 
 describe "Registration" do
   it "should have the content 'Sign up'" do
+    pending
     visit '/users/sign_up'
     expect(page).to have_content 'Sign up'
   end
   
   it "should sign up user" do
+    pending
     visit '/users/sign_up'
     within("#new_user") do
       fill_in 'user_email', with: 'john.doe@example.com'
@@ -18,6 +20,7 @@ describe "Registration" do
   end
   
   it "should not sign up user when password is not given" do
+    pending
     visit '/users/sign_up'
     within("#new_user") do
       fill_in 'user_email', with: 'john.doe@example.com'

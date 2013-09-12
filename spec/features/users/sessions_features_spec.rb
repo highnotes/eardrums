@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Session" do
   before :each do
-    @user = FactoryGirl.create(:user)
+    @student = FactoryGirl.create(:student)
   end
     
   it "should have the content 'Login'" do
@@ -13,8 +13,8 @@ describe "Session" do
   it "should sign in user" do
     visit '/users/sign_in'
     within("#new_user") do
-      fill_in 'user_login', with: @user.email
-      fill_in 'user_password', with: @user.password
+      fill_in 'user_login', with: @student.email
+      fill_in 'user_password', with: @student.password
     end
     click_button "Login"
     expect(page).to have_content 'Signed in successfully'

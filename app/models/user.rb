@@ -100,6 +100,14 @@ class User < ActiveRecord::Base
     (self.type == "Staff")
   end
   
+  def teacher?
+    (self.type == "Teacher")
+  end
+  
+  def student?
+    (self.type == "Student")
+  end
+  
   class << self
     def build_from_enrollment(enrollment)
       params = enrollment.attributes.with_indifferent_access

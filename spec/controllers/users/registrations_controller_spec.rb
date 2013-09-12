@@ -17,7 +17,7 @@ describe Users::RegistrationsController do
   end
   
   context 'logged in user' do
-    login_user_before_each
+    login_student_before_each
     
     before(:each) { @user = subject.current_user }
     

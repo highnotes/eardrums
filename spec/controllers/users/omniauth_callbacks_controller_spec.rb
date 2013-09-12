@@ -36,7 +36,7 @@ describe Users::OmniauthCallbacksController do
   end
     
   context "when user has signed in" do
-    login_user_before_each
+    login_student_before_each
 
     it "should sign in if identity already exists or by adding identity" do
       Identity.should_receive(:from_omniauth).and_return(@identity)
