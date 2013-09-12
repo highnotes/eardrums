@@ -12,6 +12,7 @@
 
 
 
+
  */
 html, body {
   height: 100%;
@@ -51,7 +52,9 @@ html, body {
 
 .btn-big {
   margin: 10px;
-  font-size: 24px; }
+  font-size: 24px;
+  background-color: #5da423;
+  margin: 10px; }
 
 .btn:first-child {
   -webkit-border-top-left-radius: 5px;
@@ -128,12 +131,19 @@ body:before {
   text-align: center;
   font-size: 48px;
   color: #500050;
-  box-shadow: 0 0 1em #570054; }
+  box-shadow: 0 0 1em #570054;
+  padding-top: 50px; }
 
 .hint {
   font-size: 12px; }
   .hint a {
     text-decoration: underline; }
+
+.underline {
+  text-decoration: underline; }
+
+.padding-bottom-10px {
+  padding-bottom: 10px; }
 *,
 *:before,
 *:after {
@@ -150,7 +160,7 @@ body {
   color: #414141;
   padding: 0;
   margin: 0;
-  font-family: "Fauna One", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Casper", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1197,7 +1207,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Fauna One", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Signika-Bold", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #8a2186;
@@ -4405,6 +4415,27 @@ a.th {
     max-width: 500px; }
   .f-dropdown.large {
     max-width: 800px; }
+/*
+.datepicker {
+  .prev, .next {font-style:normal;}
+  .prev:after {content:"«";}
+  .next:after {content:"»";}
+}
+*/
+/*!
+ * Datepicker for Foundation - less stylesheet, just version customized to foundation
+ *
+ * Copyright 2013 Peter Beno, najlepsiwebdesigner@gmail.com, @benopeter
+ * project website http://foundation-datepicker.peterbeno.com
+ *
+ * Original project https://github.com/eternicode/bootstrap-datepicker
+ * 		Original author 2012 Stefan Petre
+ * 		Improvements by Andrew Rowls
+ * 		Licensed under the Apache License v2.0
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ */
+.datepicker.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;float:left;display:none;min-width:160px;list-style:none;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;*border-right-width:2px;*border-bottom-width:2px;color:#333;font-family:"Open Sans",sans-serif;font-size:13px;line-height:18px}.datepicker.dropdown-menu th,.datepicker.dropdown-menu td{padding:4px 5px}.datepicker{display:none;position:absolute;padding:4px;margin-top:1px;direction:ltr}.datepicker-inline{width:220px}.datepicker-rtl{direction:rtl}.datepicker-rtl table tr td span{float:right}.datepicker-dropdown{top:0;left:0}.datepicker-dropdown:before{content:'';display:inline-block;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid #ccc;border-bottom-color:rgba(0,0,0,.2);position:absolute;top:-7px;left:6px}.datepicker-dropdown:after{content:'';display:inline-block;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff;position:absolute;top:-6px;left:7px}.datepicker>div{display:none}.datepicker.days div.datepicker-days{display:block}.datepicker.months div.datepicker-months{display:block}.datepicker.years div.datepicker-years{display:block}.datepicker table{border:0;margin:0}.datepicker td,.datepicker th{text-align:center;width:20px;height:20px;border:0;font-size:12px;padding:4px 8px;background:#fff;cursor:pointer}.datepicker td.active.day,.datepicker th.active.day{background:#2ba6cb}.datepicker td.active.year,.datepicker th.active.year{background:#2ba6cb}.datepicker td span.active,.datepicker th span.active{background:#2ba6cb}.table-striped .datepicker table tr td,.table-striped .datepicker table tr th{background-color:transparent}.datepicker table tr td span{display:block;width:23%;height:54px;line-height:54px;float:left;margin:1%;cursor:pointer}.datepicker th.date-switch{width:145px}.datepicker thead tr:first-child th,.datepicker tfoot tr:first-child th{cursor:pointer}.datepicker .cw{font-size:10px;width:12px;padding:0 2px 0 5px;vertical-align:middle}.datepicker thead tr:first-child th.cw{cursor:default;background-color:transparent}.datepicker-dropdown::before,.datepicker-dropdown::after{display:none}.datepicker-close{position:absolute;top:-30px;right:0;width:15px;height:30px;padding:0;display:none}.datepicker td.old,.datepicker td.new{color:#999}.datepicker td.day.disabled{color:#eee}
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
 .tag {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4431,11 +4462,29 @@ a.th {
   padding-top: 5px;
   width: 100%; }
 
+.course-name {
+  color: #fff; }
+
+.course-header {
+  background-image: -moz-linear-gradient(0deg, #afa3ac, #450d3d 50%);
+  background-image: -webkit-linear-gradient(0deg, #afa3ac, #450d3d 50%);
+  background-image: -o-linear-gradient(0deg, #afa3ac, #450d3d 50%);
+  background-image: -ms-linear-gradient(0deg, #afa3ac, #450d3d 50%);
+  background-image: linear-gradient(0deg, #afa3ac, #450d3d 50%);
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
 .course {
   display: inline-block;
   margin-right: 15px;
-  font-size: 12px;
+  font-size: 14px;
   padding: 8px; }
+
+.course-contents {
+  min-height: 600px;
+  padding: 10px; }
 
 .meter {
   display: inline-block;
@@ -4451,8 +4500,7 @@ a.th {
 .meter-tag {
   padding-left: 15px;
   padding-right: 15px;
-  font-size: 12px;
-  text-shadow: grey 0 -1px; }
+  font-size: 14px; }
 
 .meters {
   background-color: #d7d7d7;
@@ -4483,22 +4531,6 @@ a.th {
   .course:hover a {
     color: white; }
 
-.lessons:first-child {
-  -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-left-radius: 3px; }
-
-.lessons:last-child {
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-bottom-right-radius: 3px; }
-
 .details {
   padding-bottom: 20px; }
 
@@ -4509,13 +4541,9 @@ a.th {
   background-color: #cccccc; }
 
 .batch {
+  display: inline-block;
   text-align: center;
-  padding: 0;
-  margin: 0;
-  font-size: 14px; }
-
-.course-contents {
-  height: 600px; }
+  padding-bottom: 10px; }
 
 .course-price {
   background-color: green;
@@ -4527,6 +4555,9 @@ a.th {
 
 .inactive {
   opacity: 0.5; }
+
+.teacher-name {
+  text-decoration: underline; }
 
 .specialities {
   background-color: blue; }
@@ -4557,10 +4588,243 @@ a.th {
 
 .early-elementary {
   background-color: green; }
+.medium-bottom-padding {
+  padding-bottom: 15px; }
+
+.large-bottom-padding {
+  padding-bottom: 25px; }
+
+.medium-padding {
+  padding: 4px; }
+
+.simple_form select, .enrollment_search select {
+  background-color: white;
+  font-family: inherit;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 0.875em;
+  margin: 0 0 1em 0;
+  padding: 0.5em;
+  height: 2.3125em;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: -webkit-box-shadow 0.45s, border-color 0.45s ease-in-out;
+  -moz-transition: -moz-box-shadow 0.45s, border-color 0.45s ease-in-out;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+
+.radio_buttons.error small {
+  margin-top: 0px; }
+
+.inline-block {
+  display: inline-block; }
+  .inline-block label {
+    display: inline-block;
+    padding: 5px;
+    padding-right: 20px; }
+
+.no-show {
+  display: none; }
+@font_face {
+  font-family: "Barkentina";
+  src: url(/assets/barkentina_webfont.eot);
+  src: url(/assets/barkentina_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/barkentina_webfont.woff) format("woff"), url(/assets/barkentina_webfont.ttf) format("truetype"), url(/assets/barkentina_webfont.svg#barkentina_testregular) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Bold";
+  src: url(/assets/signika_bold_webfont.eot);
+  src: url(/assets/signika_bold_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signika_bold_webfont.woff) format("woff"), url(/assets/signika_bold_webfont.ttf) format("truetype"), url(/assets/signika_bold_webfont.svg#signikabold) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Light";
+  src: url(/assets/signika_light_webfont.eot);
+  src: url(/assets/signika_light_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signika_light_webfont.woff) format("woff"), url(/assets/signika_light_webfont.ttf) format("truetype"), url(/assets/signika_light_webfont.svg#signikalight) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika";
+  src: url(/assets/signika_regular_webfont.eot);
+  src: url(/assets/signika_regular_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signika_regular_webfont.woff) format("woff"), url(/assets/signika_regular_webfont.ttf) format("truetype"), url(/assets/signika_regular_webfont.svg#signikaregular) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Semibold";
+  src: url(/assets/signika_semibold_webfont.eot);
+  src: url(/assets/signika_semibold_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signika_semibold_webfont.woff) format("woff"), url(/assets/signika_semibold_webfont.ttf) format("truetype"), url(/assets/signika_semibold_webfont.svg#signikasemibold) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Negative_Bold";
+  src: url(/assets/signikanegative_bold_webfont.eot);
+  src: url(/assets/signikanegative_bold_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signikanegative_bold_webfont.woff) format("woff"), url(/assets/signikanegative_bold_webfont.ttf) format("truetype"), url(/assets/signikanegative_bold_webfont.svg#signika_negativebold) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Negative_Light";
+  src: url(/assets/signikanegative_light_webfont.eot);
+  src: url(/assets/signikanegative_light_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signikanegative_light_webfont.woff) format("woff"), url(/assets/signikanegative_light_webfont.ttf) format("truetype"), url(/assets/signikanegative_light_webfont.svg#signika_negativelight) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Negative";
+  src: url(/assets/signikanegative_regular_webfont.eot);
+  src: url(/assets/signikanegative_regular_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signikanegative_regular_webfont.woff) format("woff"), url(/assets/signikanegative_regular_webfont.ttf) format("truetype"), url(/assets/signikanegative_regular_webfont.svg#signika_negativeregular) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Signika_Negative_Semibold";
+  src: url(/assets/signikanegative_semibold_webfont.eot);
+  src: url(/assets/signikanegative_semibold_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/signikanegative_semibold_webfont.woff) format("woff"), url(/assets/signikanegative_semibold_webfont.ttf) format("truetype"), url(/assets/signikanegative_semibold_webfont.svg#signika_negativesemibold) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Casper_Bold_Italic";
+  src: url(/assets/casper_bold_italic_webfont.eot);
+  src: url(/assets/casper_bold_italic_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/casper_bold_italic_webfont.woff) format("woff"), url(/assets/casper_bold_italic_webfont.ttf) format("truetype"), url(/assets/casper_bold_italic_webfont.svg#casper_bold_italicregular) format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+@font_face {
+  font-family: "Casper_Bold";
+  src: url(/assets/casper_bold_webfont.eot);
+  src: url(/assets/casper_bold_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/casper_bold_webfont.woff) format("woff"), url(/assets/casper_bold_webfont.ttf) format("truetype"), url(/assets/casper_bold_webfont.svg#casper_boldregular) format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font_face {
+  font-family: "Casper_Italic";
+  src: url(/assets/casper_italic_webfont.eot);
+  src: url(/assets/casper_italic_webfont.eot?#iefix) format("embedded-opentype"), url(/assets/casper_italic_webfont.woff) format("woff"), url(/assets/casper_italic_webfont.ttf) format("truetype"), url(/assets/casper_italic_webfont.svg#casper_italicregular) format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
+@font_face {
+  font-family: 'Casper';
+  src: url("/assets/casper_webfont.eot?#iefix") format("embedded-opentype"), url("/assets/casper_webfont.woff") format("woff"), url("/assets/casper_webfont.ttf") format("truetype"), url("/assets/casper_webfont.svg#MyFont") format("svg"); }
+
+@font_face {
+  font-family: 'OpenSans_Bold';
+  src: url("OpenSans_Bold_webfont.eot");
+  src: url("OpenSans_Bold_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_Bold_webfont.woff") format("woff"), url("OpenSans_Bold_webfont.ttf") format("truetype"), url("OpenSans_Bold_webfont.svg#open_sansbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_BoldItalic';
+  src: url("OpenSans_BoldItalic_webfont.eot");
+  src: url("OpenSans_BoldItalic_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_BoldItalic_webfont.woff") format("woff"), url("OpenSans_BoldItalic_webfont.ttf") format("truetype"), url("OpenSans_BoldItalic_webfont.svg#open_sansbold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_ExtraBold';
+  src: url("OpenSans_ExtraBold_webfont.eot");
+  src: url("OpenSans_ExtraBold_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_ExtraBold_webfont.woff") format("woff"), url("OpenSans_ExtraBold_webfont.ttf") format("truetype"), url("OpenSans_ExtraBold_webfont.svg#open_sansextrabold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_ExtraBoldItalic';
+  src: url("OpenSans_ExtraBoldItalic_webfont.eot");
+  src: url("OpenSans_ExtraBoldItalic_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_ExtraBoldItalic_webfont.woff") format("woff"), url("OpenSans_ExtraBoldItalic_webfont.ttf") format("truetype"), url("OpenSans_ExtraBoldItalic_webfont.svg#open_sansextrabold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_Italic';
+  src: url("OpenSans_Italic_webfont.eot");
+  src: url("OpenSans_Italic_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_Italic_webfont.woff") format("woff"), url("OpenSans_Italic_webfont.ttf") format("truetype"), url("OpenSans_Italic_webfont.svg#open_sansitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_Light';
+  src: url("OpenSans_Light_webfont.eot");
+  src: url("OpenSans_Light_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_Light_webfont.woff") format("woff"), url("OpenSans_Light_webfont.ttf") format("truetype"), url("OpenSans_Light_webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_LightItalic';
+  src: url("OpenSans_LightItalic_webfont.eot");
+  src: url("OpenSans_LightItalic_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_LightItalic_webfont.woff") format("woff"), url("OpenSans_LightItalic_webfont.ttf") format("truetype"), url("OpenSans_LightItalic_webfont.svg#open_sanslight_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_Regular';
+  src: url("OpenSans_Regular_webfont.eot");
+  src: url("OpenSans_Regular_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_Regular_webfont.woff") format("woff"), url("OpenSans_Regular_webfont.ttf") format("truetype"), url("OpenSans_Regular_webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_Semibold';
+  src: url("OpenSans_Semibold_webfont.eot");
+  src: url("OpenSans_Semibold_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_Semibold_webfont.woff") format("woff"), url("OpenSans_Semibold_webfont.ttf") format("truetype"), url("OpenSans_Semibold_webfont.svg#open_sanssemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'OpenSans_SemiBoldItalic';
+  src: url("OpenSans_SemiboldItalic_webfont.eot");
+  src: url("OpenSans_SemiboldItalic_webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans_SemiboldItalic_webfont.woff") format("woff"), url("OpenSans_SemiboldItalic_webfont.ttf") format("truetype"), url("OpenSans_SemiboldItalic_webfont.svg#open_sanssemibold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'LD_Music_Regular';
+  src: url("LD_Music_webfont.eot");
+  src: url("LD_Music_webfont.eot?#iefix") format("embedded-opentype"), url("LD_Music_webfont.woff") format("woff"), url("LD_Music_webfont.ttf") format("truetype"), url("LD_Music_webfont.svg#ld_musicregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'Amadeus_Regular';
+  src: url("Amadeus_Regular_webfont.eot");
+  src: url("Amadeus_Regular_webfont.eot?#iefix") format("embedded-opentype"), url("Amadeus_Regular_webfont.woff") format("woff"), url("Amadeus_Regular_webfont.ttf") format("truetype"), url("Amadeus_Regular_webfont.svg#amadeus_regularamadeusRg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font_face {
+  font-family: 'Carrington_Regular';
+  src: url("Carrington_webfont.eot");
+  src: url("Carrington_webfont.eot?#iefix") format("embedded-opentype"), url("Carrington_webfont.woff") format("woff"), url("Carrington_webfont.ttf") format("truetype"), url("Carrington_webfont.svg#carringtonregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.businesses {
+  min-height: 200px; }
+
+.business {
+  font-size: 64px;
+  text-transform: uppercase;
+  font-family: 'Amadeus', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  margin-bottom: 20px; }
+
+.discipline-image {
+  min-height: 125px; }
+
+.course-snippet {
+  min-height: 400px; }
 .container {
   padding: 20px;
   overflow: auto;
-  padding-bottom: 75px; }
+  padding-bottom: 100px; }
 
 header {
   background-color: #500050; }
@@ -4598,9 +4862,9 @@ header {
 
 #footer {
   position: relative;
-  margin-top: -75px;
+  margin-top: -100px;
   /* negative value of footer height */
-  height: 75px;
+  height: 100px;
   clear: both;
   background-color: #500050; }
   #footer .btn {
@@ -4622,3 +4886,6 @@ header {
     position: relative;
     padding-left: 15px;
     padding-right: 15px; }
+.top-bar .name h1 {
+  margin-left: 20px;
+  margin-right: 10px; }

@@ -1,262 +1,260 @@
-@font-face {
+@font_face {
     font-family: "Barkentina";
-    src: asset-url("Barkentina/barkentina-webfont.eot");
-    src: asset-url("Barkentina/barkentina-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Barkentina/barkentina-webfont.woff") format("woff"),
-         asset-url("Barkentina/barkentina-webfont.ttf") format("truetype"),
-         asset-url("Barkentina/barkentina-webfont.svg#barkentina_testregular") format("svg");
+    src: asset_url("barkentina_webfont.eot");
+    src: asset_url("barkentina_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("barkentina_webfont.woff") format("woff"),
+         asset_url("barkentina_webfont.ttf") format("truetype"),
+         asset_url("barkentina_webfont.svg#barkentina_testregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Bold";
-    src: asset-url("Signika-Bold/signika-bold-webfont.eot");
-    src: asset-url("Signika-Bold/signika-bold-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Bold/signika-bold-webfont.woff") format("woff"),
-         asset-url("Signika-Bold/signika-bold-webfont.ttf") format("truetype"),
-         asset-url("Signika-Bold/signika-bold-webfont.svg#signikabold") format("svg");
+@font_face {
+    font-family: "Signika_Bold";
+    src: asset_url("signika_bold_webfont.eot");
+    src: asset_url("signika_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signika_bold_webfont.woff") format("woff"),
+         asset_url("signika_bold_webfont.ttf") format("truetype"),
+         asset_url("signika_bold_webfont.svg#signikabold") format("svg");
     font-weight: bold;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Light";
-    src: asset-url("Signika-Light/signika-light-webfont.eot");
-    src: asset-url("Signika-Light/signika-light-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Light/signika-light-webfont.woff") format("woff"),
-         asset-url("Signika-Light/signika-light-webfont.ttf") format("truetype"),
-         asset-url("Signika-Light/signika-light-webfont.svg#signikalight") format("svg");
+@font_face {
+    font-family: "Signika_Light";
+    src: asset_url("signika_light_webfont.eot");
+    src: asset_url("signika_light_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signika_light_webfont.woff") format("woff"),
+         asset_url("signika_light_webfont.ttf") format("truetype"),
+         asset_url("signika_light_webfont.svg#signikalight") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
+@font_face {
     font-family: "Signika";
-    src: asset-url("Signika/signika-regular-webfont.eot");
-    src: asset-url("Signika/signika-regular-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika/signika-regular-webfont.woff") format("woff"),
-         asset-url("Signika/signika-regular-webfont.ttf") format("truetype"),
-         asset-url("Signika/signika-regular-webfont.svg#signikaregular") format("svg");
+    src: asset_url("signika_regular_webfont.eot");
+    src: asset_url("signika_regular_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signika_regular_webfont.woff") format("woff"),
+         asset_url("signika_regular_webfont.ttf") format("truetype"),
+         asset_url("signika_regular_webfont.svg#signikaregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Semibold";
-    src: asset-url("Signika-Semibold/signika-semibold-webfont.eot");
-    src: asset-url("Signika-Semibold/signika-semibold-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Semibold/signika-semibold-webfont.woff") format("woff"),
-         asset-url("Signika-Semibold/signika-semibold-webfont.ttf") format("truetype"),
-         asset-url("Signika-Semibold/signika-semibold-webfont.svg#signikasemibold") format("svg");
+@font_face {
+    font-family: "Signika_Semibold";
+    src: asset_url("signika_semibold_webfont.eot");
+    src: asset_url("signika_semibold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signika_semibold_webfont.woff") format("woff"),
+         asset_url("signika_semibold_webfont.ttf") format("truetype"),
+         asset_url("signika_semibold_webfont.svg#signikasemibold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Negative-Bold";
-    src: asset-url("Signika-Negative-Bold/signikanegative-bold-webfont.eot");
-    src: asset-url("Signika-Negative-Bold/signikanegative-bold-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Negative-Bold/signikanegative-bold-webfont.woff") format("woff"),
-         asset-url("Signika-Negative-Bold/signikanegative-bold-webfont.ttf") format("truetype"),
-         asset-url("Signika-Negative-Bold/signikanegative-bold-webfont.svg#signika_negativebold") format("svg");
+@font_face {
+    font-family: "Signika_Negative_Bold";
+    src: asset_url("signikanegative_bold_webfont.eot");
+    src: asset_url("signikanegative_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signikanegative_bold_webfont.woff") format("woff"),
+         asset_url("signikanegative_bold_webfont.ttf") format("truetype"),
+         asset_url("signikanegative_bold_webfont.svg#signika_negativebold") format("svg");
     font-weight: bold;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Negative-Light";
-    src: asset-url("Signika-Negative-Light/signikanegative-light-webfont.eot");
-    src: asset-url("Signika-Negative-Light/signikanegative-light-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Negative-Light/signikanegative-light-webfont.woff") format("woff"),
-         asset-url("Signika-Negative-Light/signikanegative-light-webfont.ttf") format("truetype"),
-         asset-url("Signika-Negative-Light/signikanegative-light-webfont.svg#signika_negativelight") format("svg");
+@font_face {
+    font-family: "Signika_Negative_Light";
+    src: asset_url("signikanegative_light_webfont.eot");
+    src: asset_url("signikanegative_light_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signikanegative_light_webfont.woff") format("woff"),
+         asset_url("signikanegative_light_webfont.ttf") format("truetype"),
+         asset_url("signikanegative_light_webfont.svg#signika_negativelight") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Negative";
-    src: asset-url("Signika-Negative/signikanegative-regular-webfont.eot");
-    src: asset-url("Signika-Negative/signikanegative-regular-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Negative/signikanegative-regular-webfont.woff") format("woff"),
-         asset-url("Signika-Negative/signikanegative-regular-webfont.ttf") format("truetype"),
-         asset-url("Signika-Negative/signikanegative-regular-webfont.svg#signika_negativeregular") format("svg");
+@font_face {
+    font-family: "Signika_Negative";
+    src: asset_url("signikanegative_regular_webfont.eot");
+    src: asset_url("signikanegative_regular_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signikanegative_regular_webfont.woff") format("woff"),
+         asset_url("signikanegative_regular_webfont.ttf") format("truetype"),
+         asset_url("signikanegative_regular_webfont.svg#signika_negativeregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Signika-Negative-Semibold";
-    src: asset-url("Signika-Negative-Semibold/signikanegative-semibold-webfont.eot");
-    src: asset-url("Signika-Negative-Semibold/signikanegative-semibold-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Signika-Negative-Semibold/signikanegative-semibold-webfont.woff") format("woff"),
-         asset-url("Signika-Negative-Semibold/signikanegative-semibold-webfont.ttf") format("truetype"),
-         asset-url("Signika-Negative-Semibold/signikanegative-semibold-webfont.svg#signika_negativesemibold") format("svg");
+@font_face {
+    font-family: "Signika_Negative_Semibold";
+    src: asset_url("signikanegative_semibold_webfont.eot");
+    src: asset_url("signikanegative_semibold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("signikanegative_semibold_webfont.woff") format("woff"),
+         asset_url("signikanegative_semibold_webfont.ttf") format("truetype"),
+         asset_url("signikanegative_semibold_webfont.svg#signika_negativesemibold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Casper-Bold-Italic";
-    src: asset-url("Casper-Bold-Italic/casper_bold_italic-webfont.eot");
-    src: asset-url("Casper-Bold-Italic/casper_bold_italic-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Casper-Bold-Italic/casper_bold_italic-webfont.woff") format("woff"),
-         asset-url("Casper-Bold-Italic/casper_bold_italic-webfont.ttf") format("truetype"),
-         asset-url("Casper-Bold-Italic/casper_bold_italic-webfont.svg#casper_bold_italicregular") format("svg");
+@font_face {
+    font-family: "Casper_Bold_Italic";
+    src: asset_url("casper_bold_italic_webfont.eot");
+    src: asset_url("casper_bold_italic_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("casper_bold_italic_webfont.woff") format("woff"),
+         asset_url("casper_bold_italic_webfont.ttf") format("truetype"),
+         asset_url("casper_bold_italic_webfont.svg#casper_bold_italicregular") format("svg");
     font-weight: bold;
     font-style: italic;
 
 }
-@font-face {
-    font-family: "Casper-Bold";
-    src: asset-url("Casper-Bold/casper_bold-webfont.eot");
-    src: asset-url("Casper-Bold/casper_bold-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Casper-Bold/casper_bold-webfont.woff") format("woff"),
-         asset-url("Casper-Bold/casper_bold-webfont.ttf") format("truetype"),
-         asset-url("Casper-Bold/casper_bold-webfont.svg#casper_boldregular") format("svg");
+@font_face {
+    font-family: "Casper_Bold";
+    src: asset_url("casper_bold_webfont.eot");
+    src: asset_url("casper_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("casper_bold_webfont.woff") format("woff"),
+         asset_url("casper_bold_webfont.ttf") format("truetype"),
+         asset_url("casper_bold_webfont.svg#casper_boldregular") format("svg");
     font-weight: bold;
     font-style: normal;
 }
-@font-face {
-    font-family: "Caspect-Italic";
-    src: asset-url("Caspect-Italic/casper_italic-webfont.eot");
-    src: asset-url("Caspect-Italic/casper_italic-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Caspect-Italic/casper_italic-webfont.woff") format("woff"),
-         asset-url("Caspect-Italic/casper_italic-webfont.ttf") format("truetype"),
-         asset-url("Caspect-Italic/casper_italic-webfont.svg#casper_italicregular") format("svg");
+@font_face {
+    font-family: "Casper_Italic";
+    src: asset_url("casper_italic_webfont.eot");
+    src: asset_url("casper_italic_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("casper_italic_webfont.woff") format("woff"),
+         asset_url("casper_italic_webfont.ttf") format("truetype"),
+         asset_url("casper_italic_webfont.svg#casper_italicregular") format("svg");
     font-weight: normal;
     font-style: italic;
 
 }
-@font-face {
-    font-family: "Casper";
-    src: asset-url("Casper/casper-webfont.eot");
-    src: asset-url("Casper/casper-webfont.eot?#iefix") format("embedded-opentype"),
-         asset-url("Casper/casper-webfont.woff") format("woff"),
-         asset-url("Casper/casper-webfont.ttf") format("truetype"),
-         asset-url("Casper/casper-webfont.svg#casperregular") format("svg");
-    font-weight: normal;
-    font-style: normal;
+@font_face {
+    font-family: 'Casper';
+    src: url(font_path('casper_webfont.eot') + "?#iefix") format('embedded-opentype'),
+         url(font_path('casper_webfont.woff')) format('woff'), 
+         url(font_path('casper_webfont.ttf'))  format('truetype'),
+         url(font_path('casper_webfont.svg') + "#MyFont") format('svg');
 }
-@font-face {
-    font-family: 'OpenSans-Bold';
-    src: url('OpenSans-Bold/OpenSans-Bold-webfont.eot');
-    src: url('OpenSans-Bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Bold/OpenSans-Bold-webfont.woff') format('woff'),
-         url('OpenSans-Bold/OpenSans-Bold-webfont.ttf') format('truetype'),
-         url('OpenSans-Bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+@font_face {
+    font-family: 'OpenSans_Bold';
+    src: url('OpenSans_Bold_webfont.eot');
+    src: url('OpenSans_Bold_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_Bold_webfont.woff') format('woff'),
+         url('OpenSans_Bold_webfont.ttf') format('truetype'),
+         url('OpenSans_Bold_webfont.svg#open_sansbold') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-@font-face {
-    font-family: 'OpenSans-BoldItalic';
-    src: url('OpenSans-BoldItalic/OpenSans-BoldItalic-webfont.eot');
-    src: url('OpenSans-BoldItalic/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-BoldItalic/OpenSans-BoldItalic-webfont.woff') format('woff'),
-         url('OpenSans-BoldItalic/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-BoldItalic/OpenSans-BoldItalic-webfont.svg#open_sansbold_italic') format('svg');
+@font_face {
+    font-family: 'OpenSans_BoldItalic';
+    src: url('OpenSans_BoldItalic_webfont.eot');
+    src: url('OpenSans_BoldItalic_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_BoldItalic_webfont.woff') format('woff'),
+         url('OpenSans_BoldItalic_webfont.ttf') format('truetype'),
+         url('OpenSans_BoldItalic_webfont.svg#open_sansbold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-ExtraBold';
-    src: url('OpenSans-ExtraBold/OpenSans-ExtraBold-webfont.eot');
-    src: url('OpenSans-ExtraBold/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-ExtraBold/OpenSans-ExtraBold-webfont.woff') format('woff'),
-         url('OpenSans-ExtraBold/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
-         url('OpenSans-ExtraBold/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+@font_face {
+    font-family: 'OpenSans_ExtraBold';
+    src: url('OpenSans_ExtraBold_webfont.eot');
+    src: url('OpenSans_ExtraBold_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_ExtraBold_webfont.woff') format('woff'),
+         url('OpenSans_ExtraBold_webfont.ttf') format('truetype'),
+         url('OpenSans_ExtraBold_webfont.svg#open_sansextrabold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-ExtraBoldItalic';
-    src: url('OpenSans-ExtraBoldItalic/OpenSans-ExtraBoldItalic-webfont.eot');
-    src: url('OpenSans-ExtraBoldItalic/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-ExtraBoldItalic/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
-         url('OpenSans-ExtraBoldItalic/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-ExtraBoldItalic/OpenSans-ExtraBoldItalic-webfont.svg#open_sansextrabold_italic') format('svg');
+@font_face {
+    font-family: 'OpenSans_ExtraBoldItalic';
+    src: url('OpenSans_ExtraBoldItalic_webfont.eot');
+    src: url('OpenSans_ExtraBoldItalic_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_ExtraBoldItalic_webfont.woff') format('woff'),
+         url('OpenSans_ExtraBoldItalic_webfont.ttf') format('truetype'),
+         url('OpenSans_ExtraBoldItalic_webfont.svg#open_sansextrabold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-Italic';
-    src: url('OpenSans-Italic/OpenSans-Italic-webfont.eot');
-    src: url('OpenSans-Italic/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Italic/OpenSans-Italic-webfont.woff') format('woff'),
-         url('OpenSans-Italic/OpenSans-Italic-webfont.ttf') format('truetype'),
-         url('OpenSans-Italic/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+@font_face {
+    font-family: 'OpenSans_Italic';
+    src: url('OpenSans_Italic_webfont.eot');
+    src: url('OpenSans_Italic_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_Italic_webfont.woff') format('woff'),
+         url('OpenSans_Italic_webfont.ttf') format('truetype'),
+         url('OpenSans_Italic_webfont.svg#open_sansitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-Light';
-    src: url('OpenSans-Light/OpenSans-Light-webfont.eot');
-    src: url('OpenSans-Light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Light/OpenSans-Light-webfont.woff') format('woff'),
-         url('OpenSans-Light/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('OpenSans-Light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+@font_face {
+    font-family: 'OpenSans_Light';
+    src: url('OpenSans_Light_webfont.eot');
+    src: url('OpenSans_Light_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_Light_webfont.woff') format('woff'),
+         url('OpenSans_Light_webfont.ttf') format('truetype'),
+         url('OpenSans_Light_webfont.svg#open_sanslight') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-LightItalic';
-    src: url('OpenSans-LightItalic/OpenSans-LightItalic-webfont.eot');
-    src: url('OpenSans-LightItalic/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-LightItalic/OpenSans-LightItalic-webfont.woff') format('woff'),
-         url('OpenSans-LightItalic/OpenSans-LightItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-LightItalic/OpenSans-LightItalic-webfont.svg#open_sanslight_italic') format('svg');
+@font_face {
+    font-family: 'OpenSans_LightItalic';
+    src: url('OpenSans_LightItalic_webfont.eot');
+    src: url('OpenSans_LightItalic_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_LightItalic_webfont.woff') format('woff'),
+         url('OpenSans_LightItalic_webfont.ttf') format('truetype'),
+         url('OpenSans_LightItalic_webfont.svg#open_sanslight_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('OpenSans-Regular/OpenSans-Regular-webfont.eot');
-    src: url('OpenSans-Regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Regular/OpenSans-Regular-webfont.woff') format('woff'),
-         url('OpenSans-Regular/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('OpenSans-Regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+@font_face {
+    font-family: 'OpenSans_Regular';
+    src: url('OpenSans_Regular_webfont.eot');
+    src: url('OpenSans_Regular_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_Regular_webfont.woff') format('woff'),
+         url('OpenSans_Regular_webfont.ttf') format('truetype'),
+         url('OpenSans_Regular_webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-Semibold';
-    src: url('OpenSans-Semibold/OpenSans-Semibold-webfont.eot');
-    src: url('OpenSans-Semibold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-Semibold/OpenSans-Semibold-webfont.woff') format('woff'),
-         url('OpenSans-Semibold/OpenSans-Semibold-webfont.ttf') format('truetype'),
-         url('OpenSans-Semibold/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+@font_face {
+    font-family: 'OpenSans_Semibold';
+    src: url('OpenSans_Semibold_webfont.eot');
+    src: url('OpenSans_Semibold_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_Semibold_webfont.woff') format('woff'),
+         url('OpenSans_Semibold_webfont.ttf') format('truetype'),
+         url('OpenSans_Semibold_webfont.svg#open_sanssemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'OpenSans-SemiBoldItalic';
-    src: url('OpenSans-SemiBoldItalic/OpenSans-SemiboldItalic-webfont.eot');
-    src: url('OpenSans-SemiBoldItalic/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('OpenSans-SemiBoldItalic/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
-         url('OpenSans-SemiBoldItalic/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
-         url('OpenSans-SemiBoldItalic/OpenSans-SemiboldItalic-webfont.svg#open_sanssemibold_italic') format('svg');
+@font_face {
+    font-family: 'OpenSans_SemiBoldItalic';
+    src: url('OpenSans_SemiboldItalic_webfont.eot');
+    src: url('OpenSans_SemiboldItalic_webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans_SemiboldItalic_webfont.woff') format('woff'),
+         url('OpenSans_SemiboldItalic_webfont.ttf') format('truetype'),
+         url('OpenSans_SemiboldItalic_webfont.svg#open_sanssemibold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'LD-Music-Regular';
-    src: url('LD-Music-Regular/LD-Music-webfont.eot');
-    src: url('LD-Music-Regular/LD-Music-webfont.eot?#iefix') format('embedded-opentype'),
-         url('LD-Music-Regular/LD-Music-webfont.woff') format('woff'),
-         url('LD-Music-Regular/LD-Music-webfont.ttf') format('truetype'),
-         url('LD-Music-Regular/LD-Music-webfont.svg#ld_musicregular') format('svg');
+@font_face {
+    font-family: 'LD_Music_Regular';
+    src: url('LD_Music_webfont.eot');
+    src: url('LD_Music_webfont.eot?#iefix') format('embedded-opentype'),
+         url('LD_Music_webfont.woff') format('woff'),
+         url('LD_Music_webfont.ttf') format('truetype'),
+         url('LD_Music_webfont.svg#ld_musicregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Amadeus-Regular';
-    src: url('Amadeus-Regular/Amadeus-Regular-webfont.eot');
-    src: url('Amadeus-Regular/Amadeus-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Amadeus-Regular/Amadeus-Regular-webfont.woff') format('woff'),
-         url('Amadeus-Regular/Amadeus-Regular-webfont.ttf') format('truetype'),
-         url('Amadeus-Regular/Amadeus-Regular-webfont.svg#amadeus_regularamadeusRg') format('svg');
+@font_face {
+    font-family: 'Amadeus_Regular';
+    src: url('Amadeus_Regular_webfont.eot');
+    src: url('Amadeus_Regular_webfont.eot?#iefix') format('embedded-opentype'),
+         url('Amadeus_Regular_webfont.woff') format('woff'),
+         url('Amadeus_Regular_webfont.ttf') format('truetype'),
+         url('Amadeus_Regular_webfont.svg#amadeus_regularamadeusRg') format('svg');
     font-weight: normal;
     font-style: normal;
-}font-face {
-    font-family: 'Carrington-Regular';
-    src: url('Carrington-Regular/Carrington-webfont.eot');
-    src: url('Carrington-Regular/Carrington-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Carrington-Regular/Carrington-webfont.woff') format('woff'),
-         url('Carrington-Regular/Carrington-webfont.ttf') format('truetype'),
-         url('Carrington-Regular/Carrington-webfont.svg#carringtonregular') format('svg');
+}
+@font_face {
+    font-family: 'Carrington_Regular';
+    src: url('Carrington_webfont.eot');
+    src: url('Carrington_webfont.eot?#iefix') format('embedded-opentype'),
+         url('Carrington_webfont.woff') format('woff'),
+         url('Carrington_webfont.ttf') format('truetype'),
+         url('Carrington_webfont.svg#carringtonregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

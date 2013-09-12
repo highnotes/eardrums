@@ -65,7 +65,7 @@ Eardrums::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
-  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$\z/
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
