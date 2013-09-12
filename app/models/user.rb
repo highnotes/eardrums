@@ -24,10 +24,6 @@ class User < ActiveRecord::Base
   
   before_save :set_username
   
-  def full_name
-    ([first_name, last_name] - ['']).compact.join(' ')
-  end
-  
   def self.create_from_omniauth(auth)
     identity = Identity.where(auth.slice(:provider, :uid)).first || Identity.from_omniauth(auth)
     
@@ -86,8 +82,7 @@ class User < ActiveRecord::Base
     self.username = auth["info"].try(:fetch, "nickname", nil) || self.username
     self.email = auth["info"].try(:fetch, "email", nil) || self.email
     self.username = generate_username if self.username.blank? && !self.email.blank?
-    self.first_name = auth["info"].try(:fetch, "first_name", nil) || self.first_name
-    self.last_name = auth["info"].try(:fetch, "last_name", nil) || self.last_name
+    self.name = auth["info"].try(:fetch, "first_name", nil) || self.name
     
     self.identities << identity
   end
@@ -112,12 +107,7 @@ class User < ActiveRecord::Base
     def build_from_enrollment(enrollment)
       params = enrollment.attributes.with_indifferent_access
       keys = columns.collect(&:name)
-      attrs = params.select{|k, v| keys.include?(k.to_s)}.merge(
-              first_name: params[:name],
-              email: params[:email],
-              address: params[:address], 
-              course_id: params[:course_id],
-              branch_id: params[:branch_id])
+      attrs = params.select{|k, v| keys.include?(k.to_s)}
             
       new(attrs).tap do |user|
         user.username = user.generate_username

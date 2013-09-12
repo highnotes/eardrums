@@ -9,7 +9,7 @@ header
           - if user_signed_in?
             .small-4.columns.hello
               | Hey 
-              strong = current_user.full_name.empty? ? current_user.email : current_user.full_name
+              strong = current_user.name.empty? ? current_user.email : current_user.name
               | !
             .small-8.columns.text-center
               section.right

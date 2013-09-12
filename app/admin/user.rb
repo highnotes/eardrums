@@ -8,16 +8,14 @@ ActiveAdmin.register User do
     column :email
     column :last_sign_in_at
     column :username
-    column :first_name
-    column :last_name
+    column :name
     column :type
     default_actions
   end
   
   filter :email
   filter :username
-  filter :first_name
-  filter :last_name
+  filter :name
   filter :type
   filter :invited_by_type
   
@@ -26,8 +24,7 @@ ActiveAdmin.register User do
   
     f.inputs "Details" do
       f.input :email
-      f.input :first_name
-      f.input :last_name
+      f.input :name
       f.input :username
       f.input :type, as: :select, collection: TYPES
       f.input :branch

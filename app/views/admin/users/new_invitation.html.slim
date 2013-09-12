@@ -23,14 +23,9 @@
           = f.input :email, placeholder: "john.doe@example.com", label: false
       .row
         .small-2.columns
-          = f.label :first_name, class: 'inline'
+          = f.label :name, class: 'inline'
         .small-10.columns
-          = f.input :first_name, placeholder: "John", label: false
-      .row
-        .small-2.columns
-          = f.label :last_name, class: 'inline'
-        .small-10.columns
-          = f.input :last_name, placeholder: "Doe", label: false
+          = f.input :name, placeholder: "John Doe", label: false
       .row
         .small-2.columns
           = f.label :type, class: 'inline'

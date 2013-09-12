@@ -25,8 +25,7 @@
       = f.text_field :username, :placeholder => 'Username'
             
       = field_set_tag 'Personal Info', :class => 'rounded' do
-        = f.text_field :first_name, :placeholder => 'First Name'
-        = f.text_field :last_name, :placeholder => 'Last Name'
+        = f.text_field :name, :placeholder => 'John Doe'
 
       = field_set_tag 'Password', :class => 'rounded' do
         = f.password_field :current_password, :autocomplete => "off", placeholder: "Current Password"

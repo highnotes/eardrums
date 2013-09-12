@@ -20,18 +20,12 @@
   fieldset.rounded
     legend Basic Details
     .row
-      .small-6.columns
+      .large-12.columns
         .row
-          .small-4.columns
-            = f.label :first_name, class: 'inline'
-          .small-8.columns
-            = f.input :first_name, label: false
-      .small-6.columns
-        .row
-          .small-3.columns.text-right
-            = f.label :last_name, class: 'inline'
-          .small-9.columns
-            = f.input :last_name, label: false
+          .small-2.columns
+            = f.label :name, class: 'inline'
+          .small-10.columns
+            = f.input :name, label: false
     .row
       .small-6.columns
         .row

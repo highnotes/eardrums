@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910114202) do
+ActiveRecord::Schema.define(version: 20130912105552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -313,8 +313,6 @@ ActiveRecord::Schema.define(version: 20130910114202) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "username"
     t.string   "unconfirmed_email"
     t.string   "confirmation_token"
@@ -332,6 +330,11 @@ ActiveRecord::Schema.define(version: 20130910114202) do
     t.datetime "invitation_created_at"
     t.text     "profile"
     t.string   "type"
+    t.string   "membership_no"
+    t.string   "name"
+    t.integer  "batch_id"
+    t.string   "phone"
+    t.string   "gender"
   end
 
   add_index "users", ["branch_id"], name: "index_users_on_branch_id", using: :btree

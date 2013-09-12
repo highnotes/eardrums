@@ -1,7 +1,7 @@
 # Admin
 User.where(email: 'admin@eardrums.in').first.try(:delete)
 User.create! do |r|
-  r.first_name  = "Admin"
+  r.name        = "Admin User"
   r.email       = 'admin@eardrums.in'
   r.password    = 'password'
   r.type        = 'Administrator'
@@ -12,7 +12,7 @@ end
 # Teachers
 User.where(email: 'subhash.bhushan@eardrums.in').first.try(:delete)
 teacher_subhash = User.create! do |r|
-  r.first_name  = "Subhash"
+  r.name        = "Subhash Bhushan"
   r.email       = 'subhash.bhushan@eardrums.in'
   r.password    = 'password'
   r.type        = 'Teacher'
@@ -22,7 +22,7 @@ teacher_subhash = User.create! do |r|
 end
 User.where(email: 'nikhil.sivakumar@strata.co.in').first.try(:delete)
 teacher_nikhil = User.create! do |r|
-  r.first_name  = "Nikhil"
+  r.name        = "Nikhil Sivakumar"
   r.email       = 'nikhil.sivakumar@strata.co.in'
   r.password    = 'password'
   r.type        = 'Teacher'
@@ -31,7 +31,7 @@ teacher_nikhil = User.create! do |r|
 end
 User.where(email: 'deepak.nair@strata.co.in').first.try(:delete)
 teacher_deepak = User.create! do |r|
-  r.first_name  = "Deepak"
+  r.name        = "Deepak Nair"
   r.email       = 'deepak.nair@strata.co.in'
   r.password    = 'password'
   r.type        = 'Teacher'

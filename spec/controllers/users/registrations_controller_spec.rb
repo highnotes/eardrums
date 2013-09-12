@@ -30,7 +30,7 @@ describe Users::RegistrationsController do
       user = mock_model(User)
       User.stub(:find).and_return(user)
       user.should_receive(:update_without_password)
-      patch :update, id: user, user: { first_name: "John Not Doe" }
+      patch :update, id: user, user: { name: "John Not Doe" }
     end
     
     it "can update with password" do

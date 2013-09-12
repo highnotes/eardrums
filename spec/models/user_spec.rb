@@ -11,9 +11,7 @@ describe User do
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:encrypted_password) }
     it { should respond_to(:email) }
-    it { should respond_to(:first_name) }
-    it { should respond_to(:last_name) }
-    it { should respond_to(:full_name) }
+    it { should respond_to(:name) }
     
     it { should belong_to(:course) }
     it { should have_and_belong_to_many(:batches) }
@@ -86,20 +84,6 @@ describe User do
       end
     end
   
-    context "name" do
-      it "should return full name when both names are given" do
-        expect(@user.full_name).to eq("John Doe")
-      end
-    
-      describe "should return only first name when no second name is given" do
-        before { @user.last_name = "" }
-      
-        it "should return just the first name when no last name" do
-          expect(@user.full_name).to eq("John")
-        end
-      end
-    end
-    
     context "username" do
       context "when already taken" do
         before {
