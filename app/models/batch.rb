@@ -10,8 +10,10 @@ class Batch < ActiveRecord::Base
   validates_presence_of :duration
   validates_presence_of :created_by
   validates_presence_of :modified_by
+  validates_presence_of :capacity
   
   validates_numericality_of :duration, only_integer: true
+  validates_numericality_of :capacity, only_integer: true
   
   belongs_to :discipline
   belongs_to :teacher, -> { where type: 'Teacher' }, class_name: 'User'

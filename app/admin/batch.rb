@@ -29,6 +29,7 @@ ActiveAdmin.register Batch do
       f.input :day, as: :select, collection: Date::DAYNAMES.each.map { |x| [x, x] }
       f.input :start_time, as: :select, collection: timings.each.map { |x| [x, x] }
       f.input :duration, label: "Duration (in hours)"
+      f.input :capacity
     end
     f.actions
   end

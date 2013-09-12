@@ -14,8 +14,10 @@ describe Batch do
   it { should validate_presence_of(:duration) }
   it { should validate_presence_of(:created_by) }
   it { should validate_presence_of(:modified_by) }
+  it { should validate_presence_of(:capacity) }
   
   it { should validate_numericality_of(:duration).only_integer }
+  it { should validate_numericality_of(:capacity).only_integer }
   it { should ensure_inclusion_of(:status).in_array(Batch::STATUSES) }
   
   it { should belong_to(:discipline) }
