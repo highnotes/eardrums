@@ -4714,9 +4714,9 @@ a.th {
   font-style: italic; }
 
 @font-face {
-  font-family: 'Casper';
+  font-family: "Casper";
   src: url("/fonts/casper_webfont.eot");
-  src: url("/fonts/casper_webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/casper_webfont.woff") format("woff"), url("/fonts/casper_webfont.ttf") format("truetype"), url("/fonts/casper_webfont.svg#casper") format("svg");
+  src: url("/fonts/casper_webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/casper_webfont.woff") format("woff"), url("/fonts/casper_webfont.ttf") format("truetype"), url("/fonts/casper_webfont.svg#casperregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
