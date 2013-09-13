@@ -1,121 +1,121 @@
 @font_face {
     font-family: "Barkentina";
-    src: asset_url("barkentina_webfont.eot");
-    src: asset_url("barkentina_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("barkentina_webfont.woff") format("woff"),
-         asset_url("barkentina_webfont.ttf") format("truetype"),
-         asset_url("barkentina_webfont.svg#barkentina_testregular") format("svg");
+    src: asset_url("/fonts/barkentina_webfont.eot");
+    src: asset_url("/fonts/barkentina_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/barkentina_webfont.woff") format("woff"),
+         asset_url("/fonts/barkentina_webfont.ttf") format("truetype"),
+         asset_url("/fonts/barkentina_webfont.svg#barkentina_testregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Bold";
-    src: asset_url("signika_bold_webfont.eot");
-    src: asset_url("signika_bold_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signika_bold_webfont.woff") format("woff"),
-         asset_url("signika_bold_webfont.ttf") format("truetype"),
-         asset_url("signika_bold_webfont.svg#signikabold") format("svg");
+    src: asset_url("/fonts/signika_bold_webfont.eot");
+    src: asset_url("/fonts/signika_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signika_bold_webfont.woff") format("woff"),
+         asset_url("/fonts/signika_bold_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signika_bold_webfont.svg#signikabold") format("svg");
     font-weight: bold;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Light";
-    src: asset_url("signika_light_webfont.eot");
-    src: asset_url("signika_light_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signika_light_webfont.woff") format("woff"),
-         asset_url("signika_light_webfont.ttf") format("truetype"),
-         asset_url("signika_light_webfont.svg#signikalight") format("svg");
+    src: asset_url("/fonts/signika_light_webfont.eot");
+    src: asset_url("/fonts/signika_light_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signika_light_webfont.woff") format("woff"),
+         asset_url("/fonts/signika_light_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signika_light_webfont.svg#signikalight") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika";
-    src: asset_url("signika_regular_webfont.eot");
-    src: asset_url("signika_regular_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signika_regular_webfont.woff") format("woff"),
-         asset_url("signika_regular_webfont.ttf") format("truetype"),
-         asset_url("signika_regular_webfont.svg#signikaregular") format("svg");
+    src: asset_url("/fonts/signika_regular_webfont.eot");
+    src: asset_url("/fonts/signika_regular_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signika_regular_webfont.woff") format("woff"),
+         asset_url("/fonts/signika_regular_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signika_regular_webfont.svg#signikaregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Semibold";
-    src: asset_url("signika_semibold_webfont.eot");
-    src: asset_url("signika_semibold_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signika_semibold_webfont.woff") format("woff"),
-         asset_url("signika_semibold_webfont.ttf") format("truetype"),
-         asset_url("signika_semibold_webfont.svg#signikasemibold") format("svg");
+    src: asset_url("/fonts/signika_semibold_webfont.eot");
+    src: asset_url("/fonts/signika_semibold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signika_semibold_webfont.woff") format("woff"),
+         asset_url("/fonts/signika_semibold_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signika_semibold_webfont.svg#signikasemibold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Negative_Bold";
-    src: asset_url("signikanegative_bold_webfont.eot");
-    src: asset_url("signikanegative_bold_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signikanegative_bold_webfont.woff") format("woff"),
-         asset_url("signikanegative_bold_webfont.ttf") format("truetype"),
-         asset_url("signikanegative_bold_webfont.svg#signika_negativebold") format("svg");
+    src: asset_url("/fonts/signikanegative_bold_webfont.eot");
+    src: asset_url("/fonts/signikanegative_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signikanegative_bold_webfont.woff") format("woff"),
+         asset_url("/fonts/signikanegative_bold_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signikanegative_bold_webfont.svg#signika_negativebold") format("svg");
     font-weight: bold;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Negative_Light";
-    src: asset_url("signikanegative_light_webfont.eot");
-    src: asset_url("signikanegative_light_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signikanegative_light_webfont.woff") format("woff"),
-         asset_url("signikanegative_light_webfont.ttf") format("truetype"),
-         asset_url("signikanegative_light_webfont.svg#signika_negativelight") format("svg");
+    src: asset_url("/fonts/signikanegative_light_webfont.eot");
+    src: asset_url("/fonts/signikanegative_light_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signikanegative_light_webfont.woff") format("woff"),
+         asset_url("/fonts/signikanegative_light_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signikanegative_light_webfont.svg#signika_negativelight") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Negative";
-    src: asset_url("signikanegative_regular_webfont.eot");
-    src: asset_url("signikanegative_regular_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signikanegative_regular_webfont.woff") format("woff"),
-         asset_url("signikanegative_regular_webfont.ttf") format("truetype"),
-         asset_url("signikanegative_regular_webfont.svg#signika_negativeregular") format("svg");
+    src: asset_url("/fonts/signikanegative_regular_webfont.eot");
+    src: asset_url("/fonts/signikanegative_regular_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signikanegative_regular_webfont.woff") format("woff"),
+         asset_url("/fonts/signikanegative_regular_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signikanegative_regular_webfont.svg#signika_negativeregular") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Signika_Negative_Semibold";
-    src: asset_url("signikanegative_semibold_webfont.eot");
-    src: asset_url("signikanegative_semibold_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("signikanegative_semibold_webfont.woff") format("woff"),
-         asset_url("signikanegative_semibold_webfont.ttf") format("truetype"),
-         asset_url("signikanegative_semibold_webfont.svg#signika_negativesemibold") format("svg");
+    src: asset_url("/fonts/signikanegative_semibold_webfont.eot");
+    src: asset_url("/fonts/signikanegative_semibold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/signikanegative_semibold_webfont.woff") format("woff"),
+         asset_url("/fonts/signikanegative_semibold_webfont.ttf") format("truetype"),
+         asset_url("/fonts/signikanegative_semibold_webfont.svg#signika_negativesemibold") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 @font_face {
     font-family: "Casper_Bold_Italic";
-    src: asset_url("casper_bold_italic_webfont.eot");
-    src: asset_url("casper_bold_italic_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("casper_bold_italic_webfont.woff") format("woff"),
-         asset_url("casper_bold_italic_webfont.ttf") format("truetype"),
-         asset_url("casper_bold_italic_webfont.svg#casper_bold_italicregular") format("svg");
+    src: asset_url("/fonts/casper_bold_italic_webfont.eot");
+    src: asset_url("/fonts/casper_bold_italic_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/casper_bold_italic_webfont.woff") format("woff"),
+         asset_url("/fonts/casper_bold_italic_webfont.ttf") format("truetype"),
+         asset_url("/fonts/casper_bold_italic_webfont.svg#casper_bold_italicregular") format("svg");
     font-weight: bold;
     font-style: italic;
 
 }
 @font_face {
     font-family: "Casper_Bold";
-    src: asset_url("casper_bold_webfont.eot");
-    src: asset_url("casper_bold_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("casper_bold_webfont.woff") format("woff"),
-         asset_url("casper_bold_webfont.ttf") format("truetype"),
-         asset_url("casper_bold_webfont.svg#casper_boldregular") format("svg");
+    src: asset_url("/fonts/casper_bold_webfont.eot");
+    src: asset_url("/fonts/casper_bold_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/casper_bold_webfont.woff") format("woff"),
+         asset_url("/fonts/casper_bold_webfont.ttf") format("truetype"),
+         asset_url("/fonts/casper_bold_webfont.svg#casper_boldregular") format("svg");
     font-weight: bold;
     font-style: normal;
 }
 @font_face {
     font-family: "Casper_Italic";
-    src: asset_url("casper_italic_webfont.eot");
-    src: asset_url("casper_italic_webfont.eot?#iefix") format("embedded-opentype"),
-         asset_url("casper_italic_webfont.woff") format("woff"),
-         asset_url("casper_italic_webfont.ttf") format("truetype"),
-         asset_url("casper_italic_webfont.svg#casper_italicregular") format("svg");
+    src: asset_url("/fonts/casper_italic_webfont.eot");
+    src: asset_url("/fonts/casper_italic_webfont.eot?#iefix") format("embedded-opentype"),
+         asset_url("/fonts/casper_italic_webfont.woff") format("woff"),
+         asset_url("/fonts/casper_italic_webfont.ttf") format("truetype"),
+         asset_url("/fonts/casper_italic_webfont.svg#casper_italicregular") format("svg");
     font-weight: normal;
     font-style: italic;
 
